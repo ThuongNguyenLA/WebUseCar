@@ -1,0 +1,48 @@
+﻿<ion-view view-title="Xe Đưa Đón">
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()">
+
+        </ion-refresher>
+        
+
+        <table style="margin-top:10px;margin-left:5px;">
+            <tr>
+                <td style="width:80px">
+                    Pickup
+                </td>
+                <td>
+                    <input placeholder="current location"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Dropoff
+                </td>
+                <td>
+                    <input style="margin-top:5px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height:30px">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <button class="button button-small button-positive" style="width:100px" ng-click="EstimateFare()">Estimate Fare</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button class="button button-small button-balanced" style="width:100px;margin-top:20px">Request Ride</button>
+                </td>
+            </tr>
+        </table>
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Profile";
+}
+
+<ion-view view-title="<b>Xe Đưa Đón</b>">
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()">
+
+        </ion-refresher>
+        <div style="margin-left:10px;position:relative">
+            <button class="button button-small button-positive" style="position:absolute;right:10px;top:0px;width:80px">Save</button>
+            <table cellpadding="15" width="100%" style="margin-top:8px">
+                <tr>
+                    <td colspan="2" style="text-align:right">
+                       
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td width="90">
+                        <img src="/img/avatar.jpg" style="width:70px;height:70px" />
+                    </td>
+                    <td valign="top" style="vertical-align: top;">
+                        <ul>
+                            <li>
+                                Thinh Ho
+                            </li>
+                            <li >
+                                <i class="ion-android-star"></i>
+                                <i class="ion-android-star"></i>
+                                <i class="ion-android-star"></i>
+                                <i class="ion-android-star"></i>
+                                <i class="ion-android-star"></i>
+                            </li>
+                            <li>
+                                <select><option>Viet Nam<option><option>China<option></select>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                        <input />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input /></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><input /></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input /></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td><input /></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td><input style="width:30px" /> Zip <input style="width:95px" /></td>
+                </tr>
+            </table>
+        </div>
+        
+    </ion-content>
+</ion-view>
+<style>
+    table input {
+        margin-top:5px;
+    }
+    table i {
+        color:#e6b400;
+        position:relative;
+        bottom:3px;
+    }
+</style>

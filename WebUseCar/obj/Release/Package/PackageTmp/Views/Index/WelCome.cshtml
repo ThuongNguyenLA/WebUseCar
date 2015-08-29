@@ -1,0 +1,45 @@
+﻿<ion-view >
+    <ion-content>
+        <div>
+            <ion-slide-box>
+                <ion-slide ng-repeat="image in images">
+
+                    <div  ng-if="slideVisible($index)" class="scrollCanvas">
+                        <ion-scroll class="scrollCanvas" zooming="true" min-zoom="1" direction="xy" locked="false">
+                            <div class="image" style="height:100vh;background-image: url( {{image}} );"></div>
+                        </ion-scroll>
+                    </div>
+                    <div>&nbsp;</div>
+                </ion-slide>
+            </ion-slide-box>
+            <div style="position:fixed;bottom:20px;text-align:center;width:100%;background-color:white;height:60px">
+                <button class="button button-small button-balanced" ng-click="GoSignUp()"  style="margin-top:22px;margin-right:20px;width:90px">Sign up <i class="ion-chevron-right"></i></button>
+                <button class="button button-small button-balanced" onclick="window.location.href = '/Index/Index#/app/profile'" style="margin-top:22px;width:90px">Log in <i class="ion-chevron-right"></i></button>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
+<style>
+    .ion-content{
+	background-color: grey;
+}
+
+
+.scrollCanvas{
+	background-color: grey;
+  width: 100%;
+  background-color: black;
+}
+.slider-pager {
+    bottom:64px!important;
+}
+.image{
+        width:100%;
+    height:100%;
+  background-size: 100% 100%;
+  	/*background-size: contain;
+  	background-repeat: no-repeat;
+  	background-position: center, center;*/
+}
+</style>

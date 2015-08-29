@@ -1,0 +1,113 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+      <ion-nav-bar class="bar-stable" style="">
+          <ion-nav-back-button hide-back-button="true">
+          </ion-nav-back-button>
+          <ion-nav-buttons side="left">
+              <button class="button button-icon button-clear ion-gear-b" menu-toggle="left" style="color:#9e0b0f"></button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right">
+              <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="right">ghgf trhrt</button>-->
+              <img src="/img/icons/logout.png" width="26" height="26" style="margin-top:4px" onclick="window.location.href='/index/TemplateWelcome#/app/welcome'" />
+          </ion-nav-buttons>
+      </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable" style="background-color:#ddd" >
+        <h1  class="title"><i class="ion-gear-a"></i> Setting</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+          <ion-item menu-close href="#/app/profile">
+              <i class="ion-person"></i>Profile
+          </ion-item>
+          <ion-item menu-close  >
+              <i class="ion-ios-book"></i> My Strips
+          </ion-item>
+          <ion-item menu-close >
+              <i class="ion-android-car"></i>  Free Rides
+          </ion-item>
+          <ion-item  menu-close >
+              <i class="ion-social-usd"></i>Payment
+          </ion-item>
+          <ion-item  menu-close >
+              <i class="ion-social-vimeo"></i>Verifycation
+          </ion-item>
+          <ion-item menu-close href="/index/TemplateWelcome#/app/welcome">
+              <i class="ion-power"></i>Log out
+          </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+    <!--<ion-side-menu side="right">
+        <header class="bar bar-header bar-stable">
+            <h1 class="title">Right</h1>
+        </header>
+        <ion-content class="has-header">
+            <ion-list>
+                <ion-item menu-close href="#/app/test">
+                    test
+                </ion-item>
+                <a ui-sref= "testsub">
+                    test sub
+                </a>
+           </ion-list>
+</ion-content>
+    </ion-side-menu>-->
+</ion-side-menus>
+<ion-footer-bar class="bar bar-footer" style="height:50px;background-color:#ddd">
+    <table class="icon-footer" style="margin-bottom:5px;">
+        <tr>
+            <td>
+                <span id="1" ng-click="FooterMenuActive($event,1)"><img src="/img/icons/book.png" width="35" height="35" /></span>
+</td>
+            <td>
+                <span id="2" ng-click="FooterMenuActive($event,2)"><img src="/img/icons/local.png" width="35" height="35" /></span>
+</td>
+            <td>
+                <span id="3" ng-click="FooterMenuActive($event,3)"><img src="/img/icons/Ride.png" width="35" height="35" /></span>
+</td>
+            <td>
+                <span id="4" ng-click="FooterMenuActive($event,4)"><img src="/img/icons/Airport.png" width="35" height="35" /></span>
+</td>
+            <td>
+                <span id="5" ng-click="FooterMenuActive($event,5)"><img src="/img/icons/baggage.png" width="35" height="35" /></span>
+</td>
+        </tr>
+    </table>
+</ion-footer-bar>
+<style type="text/css">
+    .icon-footer td {
+        position:relative;
+    }
+    .icon-footer span{
+        display:inline-block;
+        position:absolute;
+        left:11px;
+        border: #ddd solid 3px;
+        border-radius: 9px;
+        padding:3px;
+        padding-bottom:0;
+    }
+    .icon-footer {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        position:relative;
+        bottom:5px;
+    }
+    .bar-header {
+    background-color:#ddd!important;
+    }
+    i {color:gray;margin-right:6px;
+    }
+    .active {
+        border: gray solid 3px!important;
+        border-radius: 9px;
+        padding:3px;
+    }
+</style>

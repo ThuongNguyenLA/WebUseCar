@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Profile";
+}
+
+<ion-view view-title="<b>Xe Đưa Đón</b>">
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()">
+
+        </ion-refresher>
+        <div>
+            <div class="profile-header">
+                <img src="/img/avatar.jpg" class="avatar" />
+                <div>
+                    <h4 class="name">Thinh Ho</h4>
+                    <select><option>Viet Nam<option><option>China<option></select>
+                </div>
+
+            </div>
+            <input class="input-profile" placeholder="Email" />
+            <input class="input-profile" placeholder="Password" />
+            <input class="input-profile" placeholder="Phone number"/>
+            <input class="input-profile" placeholder="Address" />
+            <select class="input-profile"><option>City</option></select>
+            <select class="input-profile"><option>State</option></select>
+            <input class="input-profile" placeholder="Zip" />
+            <div style="text-align:center">
+                <button class="button button-small" style="background-color:#48ccaa;color:white;width:80%;margin-top:15px">Save</button>
+
+            </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>
+<style>
+    
+    .profile-header {
+        text-align: center;
+        background-color: #37b998;
+        height: 140px;
+    }
+    .input-profile {
+        width:100%;
+        height:35px;
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        border-bottom:#eee solid 1px;
+        padding-left:8px;
+    }
+    .avatar {
+        width: 70px;
+        height: 70px;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    .name {
+        line-height: 4px;
+        color: #fff;
+    }
+</style>

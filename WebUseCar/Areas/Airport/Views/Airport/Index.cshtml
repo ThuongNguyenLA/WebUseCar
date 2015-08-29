@@ -1,0 +1,119 @@
+﻿<ion-view view-title="Xe Đưa Đón">
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        <div style="margin-top:10px;margin-left:5px;">
+            <label class="checkbox">
+                <input type="radio" name="a" style="float:left" checked="checked"><span style="position:relative;top:3px;left:3px">Airport Pickup</span>
+            </label>
+            <label class="checkbox">
+                <input type="radio" name="a" style="margin-left:10px;float:left"><span style="position:relative;top:3px;left:3px">Airport Dropoff</span>
+            </label>
+            <table style="margin-top:10px">
+                <tr>
+                    <td width="80">
+                        Airport
+                    </td>
+                    <td>
+                        <input />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dat/Time</td>
+                    <td><input type="date" /></td>
+                </tr>
+                <tr>
+                    <td>Drogoff</td>
+                    <td><input /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button class="button button-small button-positive" style="margin-top:15px;width:105px">Show Driver(s)</button></td>
+                </tr>
+
+            </table>
+
+            <ul class="ul-table" style="background-color:#ddd;height:35px;margin-top:15px;">
+                <li style="padding-top:7px">Driver</li>
+                <li style="padding-top:7px">Car</li>
+                <li style="padding-top:7px"><nobr>Distance</nobr></li>
+                <li style="padding-top:7px">Fare $</li>
+                <li class="last"></li>
+            </ul>
+            <ul class="ul-table" style="height:35px">
+                <li><span>Thuong</span></li>
+                <li><span>SUV</span></li>
+                <li><span>1km</span></li>
+                <li><span><nobr>1000vnđ</nobr></span></li>
+                <li class="last">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                </li>
+            </ul>
+            <ul class="ul-table" style="background-color:#f3f3f3;height:35px">
+                <li><span>Thuong</span></li>
+                <li><span>Sanda</span></li>
+                <li><span>5km</span></li>
+                <li><span><nobr>1000vnđ</nobr></span></li>
+                <li class="last">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                </li>
+            </ul>
+            <ul class="ul-table" style="height:35px">
+                <li><span>Thuong</span></li>
+                <li><span>Toyota</span></li>
+                <li><span>10km</span></li>
+                <li><span><nobr>1000vnđ</nobr></span></li>
+                <li class="last">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                </li>
+            </ul>
+            <center><button class="button button-small button-balanced" style="margin-top:15px;width:80px">Book</button></center>
+        </div>
+        <style>
+            .ul-table {
+                margin-top:15px;
+                width: 100%;
+                display: block;
+            }
+
+                .ul-table li span {
+                    position: relative;
+                    bottom: 5px;
+                    
+                }
+
+                .ul-table li {
+                    display: inline-block;
+                    width: 18%;
+                    padding-left:10px;
+                }
+            .last {
+                width:40px!important;
+            }
+                    ul li input {
+                        position: relative;
+                        top: 3px;
+                        left:10px;
+                    }
+
+            .checkbox {
+                padding: 0;
+            }
+
+            table input {
+                margin-top: 5px;
+            }
+
+            table i {
+                color: #e6b400;
+                position: relative;
+                bottom: 3px;
+            }
+        </style>
+    </ion-content>
+</ion-view>

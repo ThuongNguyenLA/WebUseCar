@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Profile";
+}
+
+<ion-view view-title="<b >Xe Đưa Đón</b>">
+    <ion-content>
+
+            <div style="border:gray solid 1px;">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search">
+                </label>
+
+            </div>
+        <ion-scroll direction="y" class="theroot">
+            <ul class="localevent">
+                <li>
+                    <img src="~/img/1.jpg" height="200" width="100%" />
+
+                    <span>
+                        <b>Cafe shop Monaco</b><br/>
+                        30 miles
+                    </span>
+                </li>
+                <li>
+                    <img src="~/img/2.jpg" height="200" width="100%" />
+                    <span>
+                        <b>
+                            AirPort Monaco</b>
+                                <br />
+                                10 miles
+                    </span>
+                </li>
+                <li>
+                    <img src="~/img/3.jpg" height="200" width="100%" />
+                    <span>
+                        <b>
+                            Supermartket BigC</b>
+                                <br />
+                                22 miles
+                    </span>
+                </li>
+                <li>
+                    <img src="~/img/1.jpg" height="200" width="100%" />
+                    <span>
+                        <b>
+                            KFC Monaco</b>
+                                <br />
+                                12 miles
+                    </span>
+                </li>
+                <li>
+                    <img src="~/img/2.jpg" height="200" width="100%" />
+                    <span>
+                        <b>
+                            Cinema Monaco
+                            </b>
+                                <br />
+                                22 miles
+                    </span>
+                </li>
+                <li>
+                    <img src="~/img/3.jpg" height="200" width="100%" />
+                    <span>
+                        <b>
+                            Foody Monaco/<b>
+                                <br />
+                                22 miles
+                    </span>
+                </li>
+            </ul>
+        </ion-scroll>
+    </ion-content>
+</ion-view>
+<style>
+    .localevent li {
+        position: relative;
+        color: white;
+    }
+
+        .localevent li span {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+        }
+
+    .theroot {
+        height: 100%;
+    }
+</style>
