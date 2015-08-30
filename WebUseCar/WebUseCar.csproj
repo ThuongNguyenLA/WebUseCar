@@ -114,6 +114,8 @@
     <Compile Include="Areas\LocalEvent\LocalEventAreaRegistration.cs" />
     <Compile Include="Areas\MyTrip\Controllers\MyTripController.cs" />
     <Compile Include="Areas\MyTrip\MyTripAreaRegistration.cs" />
+    <Compile Include="Areas\Payment\Controllers\PaymentController.cs" />
+    <Compile Include="Areas\Payment\PaymentAreaRegistration.cs" />
     <Compile Include="Areas\Profile\Controllers\LoginController.cs" />
     <Compile Include="Areas\Profile\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Profile\ProfileAreaRegistration.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Areas\Airport\JSController\AirportController.js" />
     <Content Include="Areas\MyTrip\JSController\MyTripController.js" />
+    <Content Include="Areas\Payment\JSController\PaymentController.js" />
     <Content Include="Areas\Profile\JSController\ProfileController.js" />
     <Content Include="Areas\Profile\JSController\LoginController.js" />
     <Content Include="Areas\Ride\JSController\EstimateFareController.js" />
@@ -206,6 +209,9 @@
     <Folder Include="Areas\MyTrip\JSFactory\" />
     <Folder Include="Areas\MyTrip\Models\" />
     <Folder Include="Areas\MyTrip\Views\Shared\" />
+    <Folder Include="Areas\Payment\JSFactory\" />
+    <Folder Include="Areas\Payment\Models\" />
+    <Folder Include="Areas\Payment\Views\Shared\" />
     <Folder Include="Areas\Profile\JSFactory\" />
     <Folder Include="Areas\Profile\Models\" />
     <Folder Include="Areas\Profile\Views\Shared\" />
@@ -318,6 +324,8 @@
   <ItemGroup>
     <Content Include="Areas\MyTrip\Views\MyTrip\Index.cshtml" />
     <Content Include="Areas\Ride\Views\FreeRide\Index.cshtml" />
+    <Content Include="Areas\Payment\Views\Web.config" />
+    <Content Include="Areas\Payment\Views\Payment\Index.cshtml" />
     <None Include="Properties\PublishProfiles\car.pubxml" />
     <Content Include="Views\Index\HomeCreen.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />

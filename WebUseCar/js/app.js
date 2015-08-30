@@ -125,6 +125,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
       })
+    .state('app.payment', {
+        url: "/payment",
+        views: {
+            'menuContent': {
+                templateUrl: '/Payment/Payment/Index',
+                controller: 'PaymentCtrl'
+            }
+        }
+    })
     .state('app.ride', {
         url: "/ride",
         views: {
