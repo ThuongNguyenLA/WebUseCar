@@ -1,5 +1,15 @@
 ﻿<ion-view view-title="Xe Đưa Đón">
     <ion-content style="background-color:#edeeef">
         <ion-refresher on-refresh="doRefresh()"></ion-refresher>
-    </ion-content>
+        <ion-list style="position:relative;top:50px;">
+            <ion-item style="height:55px">
+                <img src="~/img/icons/icon-visa.png" height="10" style="float:left;position:relative;top:7px;"/>
+                <input type="text" placeholder="Personal" style="padding-left:20px;position:relative;top:-4px"/>
+            </ion-item>
+            <ion-item >
+                <img src="~/img/icons/icon-plug.png" height="10"/>
+                <span>Add payment</span>
+            </ion-item>
+        </ion-list>
+</ion-content>
 </ion-view>
