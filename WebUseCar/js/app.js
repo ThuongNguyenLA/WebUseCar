@@ -107,6 +107,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             }
         }
     })
+      .state('app.mytrip', {
+          url: "/mytrip",
+          views: {
+              'menuContent': {
+                  templateUrl: '/MyTrip/MyTrip/Index',
+                  controller: 'MyTripCtrl'
+              }
+          }
+      })
     .state('app.ride', {
         url: "/ride",
         views: {
