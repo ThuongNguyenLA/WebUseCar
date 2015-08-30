@@ -117,6 +117,7 @@
     <Compile Include="Areas\Profile\Controllers\LoginController.cs" />
     <Compile Include="Areas\Profile\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Profile\ProfileAreaRegistration.cs" />
+    <Compile Include="Areas\Ride\Controllers\FreeRideController.cs" />
     <Compile Include="Areas\Ride\Controllers\RideController.cs" />
     <Compile Include="css\RideAreaRegistration.cs" />
     <Compile Include="Controllers\IndexController.cs" />
@@ -134,6 +135,7 @@
     <Content Include="Areas\Profile\JSController\ProfileController.js" />
     <Content Include="Areas\Profile\JSController\LoginController.js" />
     <Content Include="Areas\Ride\JSController\EstimateFareController.js" />
+    <Content Include="Areas\Ride\JSController\FreeRideController.js" />
     <Content Include="Areas\Ride\JSController\RideController.js" />
     <Content Include="css\index.css" />
     <Content Include="css\style.css" />
@@ -315,6 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\MyTrip\Views\MyTrip\Index.cshtml" />
+    <Content Include="Areas\Ride\Views\FreeRide\Index.cshtml" />
     <None Include="Properties\PublishProfiles\car.pubxml" />
     <Content Include="Views\Index\HomeCreen.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />

@@ -116,6 +116,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
       })
+      .state('app.freeride', {
+          url: "/freeride",
+          views: {
+              'menuContent': {
+                  templateUrl: '/Ride/FreeRide/Index',
+                  controller: 'FreeRideCtrl'
+              }
+          }
+      })
     .state('app.ride', {
         url: "/ride",
         views: {

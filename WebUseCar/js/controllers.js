@@ -5,6 +5,7 @@ usecar.controller("RideCtrl", RideCtrl);
 usecar.controller("EstimateFareCtrl", EstimateFareCtrl);
 usecar.controller("AirportCtrl", AirportCtrl);
 usecar.controller("MyTripCtrl", MyTripCtrl);
+usecar.controller("FreeRideCtrl", FreeRideCtrl);
 usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory) {
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -42,7 +43,7 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
         switch (id)
         {
             case 1:
-            $state.go("app.browse");
+            $state.go("app.mytrip");
             $ionicHistory.clearHistory();
             break;
         case 2:
