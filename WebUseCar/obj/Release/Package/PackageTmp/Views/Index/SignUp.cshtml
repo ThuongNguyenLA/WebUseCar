@@ -1,62 +1,79 @@
 ﻿
-    <ion-header-bar align-title="center">
-        <h1 class="title">Xe Đưa Đón</h1>
-    </ion-header-bar>
-    <ion-content>
-        <div  >
+    <ion-header-bar align-title="center" style="background-color:#44afb9;color:#fff;text-align:center">
+    <button class="button button-icon button-clear ion-home" onclick="window.location.href='#/app/homecreen'" style="color:#fff;position:relative;top:-2px"></button>
+    <center style="margin-top:5px;width:100%;font-size:14px">Sign Up</center>
+</ion-header-bar>
+    <ion-content style="background-color:#f5f2f9;">
+        <div style="position:relative;height:100vh">
+            <div style="background-color:#fff;text-align:center">
+                <span style="line-height:40px;color:#4fbee6">Driver</span>
+            </div>
+            <input type="button" value="SIGNUP VIA FACEBOOK" class="signup-facebook" />
 
-            <table width="100%">
-                <tr>
-                    <td style="width:120px"><span class="lbl">Email or Phone</span></td>
-                    <td ><input /></td>
-                    <td ></td>
-                </tr>
-                <tr>
-                    <td><span class="lbl">First Name</span></td>
-                    <td><input /></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><span class="lbl">Last Name</span></td>
-                    <td><input /></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><span class="lbl">Password</span></td>
-                    <td><input /></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="3" height="30">
+            <div class="or">
+                <span >OR</span>
+            </div>
+            <div style="width:100%">
+                <table width="100%" class="signup">
+                    <tr>
+                        <td><input placeholder="Email or Phone" /></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="First Name" /></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Last Name" /></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Password" /></td>
+                    </tr>
+                </table>
 
-                    </td>  
-                </tr>
-                <tr style="height:120px;background:#ddd;">
-                    <td colspan="2">
-                        <div style="margin-top:5px;">
-                            <center><b>Or, Signup with </b></center>
-                            <center><img src="~/img/face.png" width="140" style="margin-top:30px" /></center>
-                        </div>
-                        
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="2" height="60">
-                        <center>
-                            <button class="button button-small button-balanced" style="width:100px;margin-top:10px" onclick="window.location.href = '/Index/Index#/app/profile'">Next <i class="ion-chevron-right"></i></button>
-                        </center>
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
-           </div>
+            </div>
+            <input type="button" value="SignUp" class="btn-signup" />
+        </div>
+
 </ion-content>
 <style>
-    table input {
-    margin-top:5px!important;
-    }
-    .lbl {
-   margin-left:5px;
-         }
+.signup-facebook {
+    background-color:#43afbc;
+    color:white;
+    height:35px;
+    width:80%;
+    margin-left:10%;
+    border:none;
+    margin-top:40px;
+    margin-bottom:15px;
+}
+.signup input {
+    border:none;
+    width:100%;
+    background-color:white;
+    margin-top:1px!important;
+    height:35px;
+    padding-left:5px;
+}
+.lbl {
+    margin-left:5px;
+        }
+.or {
+    background:url(/img/icons/bg_or.png)repeat-x center;
+    height:60px;
+    text-align:center;
+}
+.or span {
+    background-color:#f5f2f9;
+    position:relative;
+    top:19px;
+}
+.btn-signup {
+    background-color:#43afbc;
+    color:white;
+    height:35px;
+    width:80%;
+    margin-left:10%;
+    border:none;
+    position:absolute;
+    bottom:41px;
+}
 </style>

@@ -1,47 +1,42 @@
 ﻿
-<ion-header-bar align-title="center" style="background-color:#44afb9;color:#fff;text-align:center">
+<ion-header-bar align-title="center" style="background-color:#48ccaa;color:#fff;text-align:center">
     <button class="button button-icon button-clear ion-home" onclick="window.location.href='#/app/homecreen'" style="color:#fff;position:relative;top:-2px"></button>
     <center style="margin-top:5px;width:100%;font-size:14px">Sign Up</center>
 </ion-header-bar>
 <ion-content style="background-color:#f5f2f9;">
     <div style="position:relative;height:100vh">
         <div style="background-color:#fff;text-align:center">
-            <span style="line-height:40px;color:#4fbee6">Driver</span>
+            <span style="line-height:40px;color:#48ccaa">Driver</span>
         </div>
-        <div class="fb-like"
-             data-share="true"
-             data-width="450"
-             data-show-faces="true">
-            <input type="button" value="LOGIN VIA FACEBOOK" class="signup-facebook" ng-click="aa()" />
+        <input type="button" value="SIGNUP VIA FACEBOOK" class="signup-facebook-driver" />
 
-        </div>
-        <fb:login-button scope="public_profile,email" onclick="aa();">
-        sssssssssssss
-        </fb:login-button>
-        <div id="status">
-        </div>
         <div class="or">
             <span>OR</span>
         </div>
         <div style="width:100%">
             <table width="100%" class="signup">
                 <tr>
-                    <td><input placeholder="Email or Phone#" /></td>
+                    <td><input placeholder="Email or Phone" /></td>
+                </tr>
+                <tr>
+                    <td><input placeholder="First Name" /></td>
+                </tr>
+                <tr>
+                    <td><input placeholder="Last Name" /></td>
                 </tr>
                 <tr>
                     <td><input placeholder="Password" /></td>
                 </tr>
-                
             </table>
 
         </div>
-        <input type="button" value="Login" class="btn-signup" />
+        <input type="button" value="SignUp" class="btn-signup-driver" />
     </div>
-    
+
 </ion-content>
 <style>
-    .signup-facebook {
-        background-color: #43afbc;
+    .signup-facebook-driver {
+        background-color: #48ccaa;
         color: white;
         height: 35px;
         width: 80%;
@@ -71,13 +66,13 @@
     }
 
         .or span {
-            background-color: #f5f2f9;
+            /*background-color: #f5f2f9;*/
             position: relative;
             top: 19px;
         }
 
-    .btn-signup {
-        background-color: #43afbc;
+    .btn-signup-driver {
+        background-color: #48ccaa;
         color: white;
         height: 35px;
         width: 80%;

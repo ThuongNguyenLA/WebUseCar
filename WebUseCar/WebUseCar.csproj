@@ -143,6 +143,7 @@
     <Content Include="css\index.css" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\bg_2.png" />
     <Content Include="img\icons\airport.png" />
     <Content Include="img\icons\baggage.png" />
     <Content Include="img\icons\book.png" />
@@ -329,6 +330,8 @@
     <None Include="Properties\PublishProfiles\car.pubxml" />
     <Content Include="Views\Index\HomeCreen.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />
+    <Content Include="Views\Index\SignUpType.cshtml" />
+    <Content Include="Views\Index\SignUpDriver.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

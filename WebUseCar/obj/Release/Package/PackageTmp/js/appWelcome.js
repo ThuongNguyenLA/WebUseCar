@@ -26,16 +26,25 @@ angular.module('app', ['ionic'])
                     }
                 }
             })
-        .state('app.welcome', {
-            url: '/welcome',
-            views: {
-                'TemplateWelCome': {
-                    templateUrl: '/Index/WelCome',
-                    controller: 'WelComeCtrl'
+            .state('app.login', {
+                url: '/login',
+                views: {
+                    'TemplateWelCome': {
+                        templateUrl: '/Index/Login',
+                        controller: 'LoginCtrl'
+                    }
                 }
-            }
-        });
-       $urlRouterProvider.otherwise('app/welcome');
+            })
+            .state('app.homecreen', {
+                url: '/homecreen',
+                views: {
+                    'TemplateWelCome': {
+                        templateUrl: '/Index/HomeCreen'
+
+                    }
+                }
+            });
+       $urlRouterProvider.otherwise('app/homecreen');
 
     })
 .controller('WelComeCtrl', function ($scope, $ionicSlideBoxDelegate,$location) {
@@ -58,6 +67,10 @@ angular.module('app', ['ionic'])
     {
         $location.path("/app/signup");
     }
+
+})
+.controller('LoginCtrl', function ($scope) {
+
 
 })
 .controller('SignUpCtrl', function ($scope) {

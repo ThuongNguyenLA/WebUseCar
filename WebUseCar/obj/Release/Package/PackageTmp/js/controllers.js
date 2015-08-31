@@ -4,6 +4,9 @@ usecar.controller("ProfileCtrl", ProfileCtrl);
 usecar.controller("RideCtrl", RideCtrl);
 usecar.controller("EstimateFareCtrl", EstimateFareCtrl);
 usecar.controller("AirportCtrl", AirportCtrl);
+usecar.controller("MyTripCtrl", MyTripCtrl);
+usecar.controller("FreeRideCtrl", FreeRideCtrl);
+usecar.controller("PaymentCtrl", PaymentCtrl);
 usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory) {
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -40,6 +43,10 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
         $ionicHistory.clearHistory();
         switch (id)
         {
+            case 1:
+            $state.go("app.mytrip");
+            $ionicHistory.clearHistory();
+            break;
         case 2:
             $state.go("app.localevent");
             $ionicHistory.clearHistory();
@@ -245,55 +252,8 @@ usecar.controller('ListCtrl', function ($scope) {
     $scope.items = [
       { id: 0 },
       { id: 1 },
-      { id: 2 },
-      { id: 3 },
-      { id: 4 },
-      { id: 5 },
-      { id: 6 },
-      { id: 7 },
-      { id: 8 },
-      { id: 9 },
-      { id: 10 },
-      { id: 11 },
-      { id: 12 },
-      { id: 13 },
-      { id: 14 },
-      { id: 15 },
-      { id: 16 },
-      { id: 17 },
-      { id: 18 },
-      { id: 19 },
-      { id: 20 },
-      { id: 21 },
-      { id: 22 },
-      { id: 23 },
-      { id: 24 },
-      { id: 25 },
-      { id: 26 },
-      { id: 27 },
-      { id: 28 },
-      { id: 29 },
-      { id: 30 },
-      { id: 31 },
-      { id: 32 },
-      { id: 33 },
-      { id: 34 },
-      { id: 35 },
-      { id: 36 },
-      { id: 37 },
-      { id: 38 },
-      { id: 39 },
-      { id: 40 },
-      { id: 41 },
-      { id: 42 },
-      { id: 43 },
-      { id: 44 },
-      { id: 45 },
-      { id: 46 },
-      { id: 47 },
-      { id: 48 },
-      { id: 49 },
-      { id: 50 }
+      { id: 2 }
+    
     ];
 });
 usecar.controller("RefeshCtrl", function ($scope, $timeout) {
@@ -317,66 +277,7 @@ usecar.controller('MainCtrl', function ($scope, $ionicSideMenuDelegate) {
     $scope.toggleLeft = function () {
         $ionicSideMenuDelegate.toggleLeft();
     };
-})
-;
-
-//angular.module('starter', ['ionic'])
-
-//    .run(function ($ionicPlatform) {
-//        $ionicPlatform.ready(function () {
-//            if (window.StatusBar) {
-//                // org.apache.cordova.statusbar required
-//                StatusBar.styleDefault();
-//            }
-//        });
-//    })
-
-//    .config(function ($stateProvider, $urlRouterProvider) {
-//        $stateProvider
-
-//            .state('app', {
-//                url: "/app",
-//                abstract: true,
-//                templateUrl: "main.html"
-//            })
+});
 
 
-//            .state('app.state1', {
-//                url: "/state1",
-//                views: {
-//                    'menuContent': {
-//                        templateUrl: "state-1-center.html",
-//                    },
-//                    'right-menu': {
-//                        templateUrl: "state-1-right.html"
-//                    }
-//                }
-//            })
 
-//            .state('app.state2', {
-//                url: "/state2",
-//                views: {
-//                    'menuContent': {
-//                        templateUrl: "state-2-center.html"
-//                    },
-//                    'right-menu': {
-//                        templateUrl: "state-2-right.html"
-//                    }
-//                }
-//            })
-
-//        // if none of the above states are matched, use this as the fallback
-//        $urlRouterProvider.otherwise('/app/state1');
-//    })
-
-//    .controller('MainCtrl', function ($scope, $ionicSideMenuDelegate) {
-//        console.log('MainCtrl');
-
-//        $scope.toggleLeft = function () {
-//            alert("55");
-//            $ionicSideMenuDelegate.toggleLeft();
-//        };
-//    })
-//.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
-//    alert("1");
-//})

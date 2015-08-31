@@ -4,7 +4,7 @@
           <ion-nav-back-button hide-back-button="true">
           </ion-nav-back-button>
           <ion-nav-buttons side="left">
-              <button class="button button-icon button-clear ion-gear-b" menu-toggle="left" style="color:#9e0b0f"></button>
+              <button class="button button-icon button-clear ion-gear-b" menu-toggle="left" style="color:#fff"></button>
           </ion-nav-buttons>
           <ion-nav-buttons side="right">
               <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="right">ghgf trhrt</button>-->
@@ -17,27 +17,27 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable" style="background-color:#ddd" >
-        <h1  class="title"><i class="ion-gear-a"></i> Setting</h1>
+        <h1  class="title" style="color:white"> Setting</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
-          <ion-item menu-close href="#/app/profile">
-              <i class="ion-person"></i>Profile
+          <ion-item menu-close id="menuProfile" href="#/app/profile">
+              Profile
           </ion-item>
-          <ion-item menu-close  >
-              <i class="ion-ios-book"></i> My Strips
+          <ion-item menu-close id="menuMyTrip" href="#app/mytrip"  >
+              My Strips
           </ion-item>
-          <ion-item menu-close >
-              <i class="ion-android-car"></i>  Free Rides
+          <ion-item menu-close id="menuFreeRide" href="#app/freeride">
+              Free Rides
+          </ion-item>
+          <ion-item menu-close id="menuPayment" href="#app/payment">
+              Payment
           </ion-item>
           <ion-item  menu-close >
-              <i class="ion-social-usd"></i>Payment
-          </ion-item>
-          <ion-item  menu-close >
-              <i class="ion-social-vimeo"></i>Verifycation
+              Verifycation
           </ion-item>
           <ion-item menu-close href="/index/TemplateWelcome#/app/welcome">
-              <i class="ion-power"></i>Log out
+             Log out
           </ion-item>
       </ion-list>
     </ion-content>
@@ -58,39 +58,48 @@
 </ion-content>
     </ion-side-menu>-->
 </ion-side-menus>
-<ion-footer-bar class="bar bar-footer" style="height:50px;background-color:#ddd">
+<ion-footer-bar class="bar bar-footer" style="height:60px;background-color:#48ccaa">
     <table class="icon-footer" style="margin-bottom:5px;">
         <tr>
             <td>
-                <span id="1" ng-click="FooterMenuActive($event,1)"><img src="/img/icons/book.png" width="35" height="35" /></span>
+                <span id="1" style="margin-top:3px" ng-click="FooterMenuActive($event,1)"><img src="/img/icons/icon-mystrip.png"  height="35" /></span>
+                <span class="icon-text"> My Trip</span>
 </td>
             <td>
-                <span id="2" ng-click="FooterMenuActive($event,2)"><img src="/img/icons/local.png" width="35" height="35" /></span>
+                <span id="2" ng-click="FooterMenuActive($event,2)"><img src="/img/icons/icon-local-event.png"  height="35" /></span>
+                <span class="icon-text">Local Event</span>
 </td>
             <td>
-                <span id="3" ng-click="FooterMenuActive($event,3)"><img src="/img/icons/Ride.png" width="35" height="35" /></span>
+                <span id="3" ng-click="FooterMenuActive($event,3)"><img src="/img/icons/icon-rider.png"  height="35" /></span>
+                <span class="icon-text">Ride</span>
 </td>
             <td>
-                <span id="4" ng-click="FooterMenuActive($event,4)"><img src="/img/icons/Airport.png" width="35" height="35" /></span>
+                <span id="4" ng-click="FooterMenuActive($event,4)"><img src="/img/icons/icon-airport.png"  height="35" /></span>
+                <span class="icon-text">Airport Service</span>
 </td>
             <td>
-                <span id="5" ng-click="FooterMenuActive($event,5)"><img src="/img/icons/baggage.png" width="35" height="35" /></span>
+                <span id="5" ng-click="FooterMenuActive($event,5)"><img src="/img/icons/icon-plan.png"  height="35" /></span>
+                <span class="icon-text">Plan</span>
 </td>
         </tr>
     </table>
 </ion-footer-bar>
 <style type="text/css">
+    .header-item {
+        color:white !important;
+    }
     .icon-footer td {
         position:relative;
     }
     .icon-footer span{
-        display:inline-block;
-        position:absolute;
+        display:block;
+        color:white;
+        /*position:absolute;
         left:11px;
         border: #ddd solid 3px;
         border-radius: 9px;
         padding:3px;
-        padding-bottom:0;
+        padding-bottom:0;*/
     }
     .icon-footer {
         max-width: 400px;
@@ -100,14 +109,18 @@
         position:relative;
         bottom:5px;
     }
+    .icon-text {
+        position:relative;
+        bottom:5px;
+    }
     .bar-header {
-    background-color:#ddd!important;
+    background-color:#48ccaa!important;
     }
     i {color:gray;margin-right:6px;
     }
     .active {
-        border: gray solid 3px!important;
+        /*border: gray solid 3px!important;
         border-radius: 9px;
-        padding:3px;
+        padding:3px;*/
     }
 </style>

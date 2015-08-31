@@ -32,56 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: '/templates/menu.html',
     controller: 'AppCtrl'
   })
-  .state('app.test', {
-      url: '/test',
-      views: {
-          'menuContent': {
-              templateUrl: '/templates/test/test.html',
-              controller: 'TestCtrl'
-          }
-      }
-  })
-      .state('testsub', {
-          url: '/testsub',
-          templateUrl: "/test/sub/testsub.html"
-      })
-.state('app.aa', {
-    url: '/testsub',
-    views: {
-        'menuContent': {
-            templateUrl: 'test/sub/testsub.html',
-            controller: 'TestSubCtrl'
-        }
-    }
-})
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-          templateUrl: '/templates/search.html',
-          controller:'ListCtrl'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-            templateUrl: '/templates/browse.html',
-            controller: 'MapCtrl'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: '/templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
+     
     .state('app.refesh', {
         url: '/refesh',
         views: {
@@ -117,22 +68,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //    }
     //})
 
-    .state('app.state2', {
-        url: "/state2",
-        views: {
-            'menuContent': {
-                templateUrl: "state-1-right.html"
-            },
-            'right-menu': {
-                templateUrl: "state-1-right.html"
-            }
-        }
-    })
+    //.state('app.state2', {
+    //    url: "/state2",
+    //    views: {
+    //        'menuContent': {
+    //            templateUrl: "state-1-right.html"
+    //        },
+    //        'right-menu': {
+    //            templateUrl: "state-1-right.html"
+    //        }
+    //    }
+    //})
 
     .state('app.home', {
         url: "/home",
         views: {
-            'menuContent': {
+            'TemplateWelCome': {
                 templateUrl: '/Index/home',
                 controller: 'HomeCtrl'
             }
@@ -153,6 +104,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             'menuContent': {
                 templateUrl: '/Profile/Profile/Profile',
                 controller: 'ProfileCtrl'
+            }
+        }
+    })
+      .state('app.mytrip', {
+          url: "/mytrip",
+          views: {
+              'menuContent': {
+                  templateUrl: '/MyTrip/MyTrip/Index',
+                  controller: 'MyTripCtrl'
+              }
+          }
+      })
+      .state('app.freeride', {
+          url: "/freeride",
+          views: {
+              'menuContent': {
+                  templateUrl: '/Ride/FreeRide/Index',
+                  controller: 'FreeRideCtrl'
+              }
+          }
+      })
+    .state('app.payment', {
+        url: "/payment",
+        views: {
+            'menuContent': {
+                templateUrl: '/Payment/Payment/Index',
+                controller: 'PaymentCtrl'
             }
         }
     })

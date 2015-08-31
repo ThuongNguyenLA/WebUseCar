@@ -14,31 +14,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2015 21:28:47</publishTime>
     </File>
     <File Include="Areas/Airport/Views/Airport/Index.cshtml">
-      <publishTime>08/10/2015 21:36:13</publishTime>
+      <publishTime>08/11/2015 23:24:16</publishTime>
     </File>
     <File Include="Areas/Airport/Views/Web.config">
       <publishTime>08/11/2015 13:35:40</publishTime>
     </File>
     <File Include="Areas/LocalEvent/Views/LocalEvent/Index.cshtml">
-      <publishTime>08/10/2015 23:33:05</publishTime>
+      <publishTime>08/28/2015 21:36:39</publishTime>
     </File>
     <File Include="Areas/LocalEvent/Views/Web.config">
       <publishTime>08/11/2015 13:35:40</publishTime>
     </File>
+    <File Include="Areas/MyTrip/JSController/MyTripController.js">
+      <publishTime>08/30/2015 20:05:14</publishTime>
+    </File>
+    <File Include="Areas/MyTrip/Views/MyTrip/Index.cshtml">
+      <publishTime>08/31/2015 21:32:13</publishTime>
+    </File>
     <File Include="Areas/MyTrip/Views/Web.config">
       <publishTime>08/11/2015 13:35:40</publishTime>
+    </File>
+    <File Include="Areas/Payment/JSController/PaymentController.js">
+      <publishTime>08/30/2015 20:51:50</publishTime>
+    </File>
+    <File Include="Areas/Payment/Views/Payment/Index.cshtml">
+      <publishTime>08/30/2015 22:28:53</publishTime>
+    </File>
+    <File Include="Areas/Payment/Views/Web.config">
+      <publishTime>08/30/2015 20:55:09</publishTime>
     </File>
     <File Include="Areas/Profile/JSController/LoginController.js">
       <publishTime>08/05/2015 00:46:07</publishTime>
     </File>
     <File Include="Areas/Profile/JSController/ProfileController.js">
-      <publishTime>08/06/2015 21:44:58</publishTime>
+      <publishTime>08/30/2015 20:05:04</publishTime>
     </File>
     <File Include="Areas/Profile/Views/Login/Login.cshtml">
       <publishTime>08/05/2015 00:10:41</publishTime>
     </File>
     <File Include="Areas/Profile/Views/Profile/Profile.cshtml">
-      <publishTime>08/09/2015 22:04:41</publishTime>
+      <publishTime>08/28/2015 22:58:53</publishTime>
     </File>
     <File Include="Areas/Profile/Views/Web.config">
       <publishTime>08/11/2015 13:35:40</publishTime>
@@ -46,11 +61,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/Ride/JSController/EstimateFareController.js">
       <publishTime>08/06/2015 23:43:08</publishTime>
     </File>
+    <File Include="Areas/Ride/JSController/FreeRideController.js">
+      <publishTime>08/30/2015 20:20:01</publishTime>
+    </File>
     <File Include="Areas/Ride/JSController/RideController.js">
       <publishTime>08/10/2015 21:33:16</publishTime>
     </File>
+    <File Include="Areas/Ride/Views/FreeRide/Index.cshtml">
+      <publishTime>08/31/2015 21:33:00</publishTime>
+    </File>
     <File Include="Areas/Ride/Views/Ride/EstimateFare.cshtml">
-      <publishTime>08/09/2015 22:31:57</publishTime>
+      <publishTime>08/11/2015 23:32:55</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/Index.cshtml">
       <publishTime>08/09/2015 22:14:27</publishTime>
@@ -98,7 +119,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2015 21:52:34</publishTime>
     </File>
     <File Include="bin/WebUseCar.dll">
-      <publishTime>08/11/2015 13:35:38</publishTime>
+      <publishTime>08/31/2015 21:33:22</publishTime>
     </File>
     <File Include="css/index.css">
       <publishTime>08/04/2015 21:57:23</publishTime>
@@ -108,6 +129,36 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Global.asax">
       <publishTime>08/04/2015 21:52:26</publishTime>
+    </File>
+    <File Include="img/icons/airport.png">
+      <publishTime>08/05/2015 08:52:01</publishTime>
+    </File>
+    <File Include="img/icons/baggage.png">
+      <publishTime>08/05/2015 08:53:11</publishTime>
+    </File>
+    <File Include="img/icons/book.png">
+      <publishTime>08/05/2015 08:54:13</publishTime>
+    </File>
+    <File Include="img/icons/loading.png">
+      <publishTime>08/17/2015 21:29:01</publishTime>
+    </File>
+    <File Include="img/icons/local.png">
+      <publishTime>08/05/2015 08:57:26</publishTime>
+    </File>
+    <File Include="img/icons/local2.png">
+      <publishTime>08/05/2015 08:30:08</publishTime>
+    </File>
+    <File Include="img/icons/logo.png">
+      <publishTime>08/17/2015 22:12:37</publishTime>
+    </File>
+    <File Include="img/icons/logout.png">
+      <publishTime>08/05/2015 11:32:04</publishTime>
+    </File>
+    <File Include="img/icons/logout2.png">
+      <publishTime>08/05/2015 11:19:31</publishTime>
+    </File>
+    <File Include="img/icons/ride.png">
+      <publishTime>08/05/2015 08:31:14</publishTime>
     </File>
     <File Include="img/ionic.png">
       <publishTime>08/04/2015 21:57:23</publishTime>
@@ -122,13 +173,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 23:38:52</publishTime>
     </File>
     <File Include="js/app.js">
-      <publishTime>08/10/2015 21:59:48</publishTime>
+      <publishTime>08/30/2015 20:43:50</publishTime>
     </File>
     <File Include="js/appWelcome.js">
-      <publishTime>08/09/2015 21:00:33</publishTime>
+      <publishTime>08/28/2015 23:35:29</publishTime>
     </File>
     <File Include="js/controllers.js">
-      <publishTime>08/10/2015 23:33:49</publishTime>
+      <publishTime>08/30/2015 20:40:20</publishTime>
     </File>
     <File Include="js/jquery-2.1.1.min.js">
       <publishTime>08/05/2015 23:06:20</publishTime>
@@ -347,10 +398,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2015 21:57:23</publishTime>
     </File>
     <File Include="templates/menu.html">
-      <publishTime>08/10/2015 21:07:01</publishTime>
+      <publishTime>08/30/2015 20:52:47</publishTime>
     </File>
     <File Include="templates/menuwelcome.html">
-      <publishTime>08/09/2015 00:53:32</publishTime>
+      <publishTime>08/28/2015 23:41:30</publishTime>
     </File>
     <File Include="templates/playlists.html">
       <publishTime>08/04/2015 21:57:23</publishTime>
@@ -364,11 +415,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Index/Home.cshtml">
       <publishTime>08/08/2015 21:34:49</publishTime>
     </File>
+    <File Include="Views/Index/HomeCreen.cshtml">
+      <publishTime>08/28/2015 23:36:22</publishTime>
+    </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>08/10/2015 21:09:30</publishTime>
+      <publishTime>08/30/2015 23:20:21</publishTime>
+    </File>
+    <File Include="Views/Index/Login.cshtml">
+      <publishTime>08/30/2015 23:23:30</publishTime>
     </File>
     <File Include="Views/Index/SignUp.cshtml">
-      <publishTime>08/09/2015 22:02:44</publishTime>
+      <publishTime>08/28/2015 23:48:47</publishTime>
     </File>
     <File Include="Views/Index/TemplateWelcome.cshtml">
       <publishTime>08/09/2015 00:44:52</publishTime>

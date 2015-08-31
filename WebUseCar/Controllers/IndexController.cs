@@ -31,11 +31,19 @@ namespace WebUseCar.Controllers
         {
             return View();
         }
+        public ActionResult SignUpDriver()
+        {
+            return View();
+        }
         public ActionResult Login()
         {
             return View();
         }
         public ActionResult TemplateWelcome()
+        {
+            return View();
+        }
+        public ActionResult SignUpType()
         {
             return View();
         }
