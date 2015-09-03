@@ -26,12 +26,29 @@ angular.module('app', ['ionic'])
                     }
                 }
             })
+            .state('app.signupdriver', {
+                url: '/signupdriver',
+                views: {
+                    'TemplateWelCome': {
+                        templateUrl: '/Index/SignupDriver'
+                        
+                    }
+                }
+            })
             .state('app.login', {
                 url: '/login',
                 views: {
                     'TemplateWelCome': {
                         templateUrl: '/Index/Login',
                         controller: 'LoginCtrl'
+                    }
+                }
+            })
+            .state('app.signuptype', {
+                url: "/signuptype",
+                views: {
+                    'TemplateWelCome': {
+                        templateUrl: '/Index/SignUpType'
                     }
                 }
             })

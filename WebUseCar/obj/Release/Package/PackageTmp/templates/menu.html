@@ -15,16 +15,16 @@
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left">
+  <ion-side-menu side="left" id="leftMenu">
     <ion-header-bar class="bar-stable" style="background-color:#ddd" >
         <h1  class="title" style="color:white"> Setting</h1>
     </ion-header-bar>
-    <ion-content>
+    <ion-content id="contentMenu">
       <ion-list>
           <ion-item menu-close id="menuProfile" href="#/app/profile">
               Profile
           </ion-item>
-          <ion-item menu-close id="menuMyTrip" href="#app/mytrip"  >
+          <ion-item menu-close id="menuMyTrip" href="#/app/mytrip">
               My Strips
           </ion-item>
           <ion-item menu-close id="menuFreeRide" href="#app/freeride">

@@ -1,4 +1,4 @@
-var usecar = angular.module('starter.controllers', []);
+var usecar = angular.module('starter.controllers', ['tommy.GoogleMaps']);
 usecar.controller("LoginCtrl", LoginCtrl);
 usecar.controller("ProfileCtrl", ProfileCtrl);
 usecar.controller("RideCtrl", RideCtrl);
