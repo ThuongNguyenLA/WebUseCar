@@ -133,6 +133,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Areas\Airport\JSController\AirportController.js" />
+    <Content Include="Areas\LocalEvent\JSController\DetailController.js" />
+    <Content Include="Areas\LocalEvent\JSController\LocalEventController.js" />
     <Content Include="Areas\MyTrip\JSController\MyTripController.js" />
     <Content Include="Areas\Payment\JSController\PaymentController.js" />
     <Content Include="Areas\Profile\JSController\ProfileController.js" />
@@ -147,7 +149,22 @@
     <Content Include="img\car.png" />
     <Content Include="img\icons\airport.png" />
     <Content Include="img\icons\baggage.png" />
+    <Content Include="img\icons\bg_home_creen.png" />
+    <Content Include="img\icons\bg_or.png" />
     <Content Include="img\icons\book.png" />
+    <Content Include="img\icons\icon-airport.png" />
+    <Content Include="img\icons\icon-call-driver.png" />
+    <Content Include="img\icons\icon-call.png" />
+    <Content Include="img\icons\icon-chat.png" />
+    <Content Include="img\icons\icon-clock.png" />
+    <Content Include="img\icons\icon-local-event.png" />
+    <Content Include="img\icons\icon-local.png" />
+    <Content Include="img\icons\icon-money.png" />
+    <Content Include="img\icons\icon-mystrip.png" />
+    <Content Include="img\icons\icon-plan.png" />
+    <Content Include="img\icons\icon-plug.png" />
+    <Content Include="img\icons\icon-rider.png" />
+    <Content Include="img\icons\icon-visa.png" />
     <Content Include="img\icons\loading.png" />
     <Content Include="img\icons\local.png" />
     <Content Include="img\icons\local2.png" />
@@ -363,11 +380,17 @@
     <Content Include="Areas\Ride\Views\FreeRide\Index.cshtml" />
     <Content Include="Areas\Payment\Views\Web.config" />
     <Content Include="Areas\Payment\Views\Payment\Index.cshtml" />
+    <Content Include="Areas\LocalEvent\Views\LocalEvent\LocalEventDetail.cshtml" />
+    <Content Include="Areas\Ride\Views\Ride\RideEstimateFare.cshtml" />
+    <Content Include="Areas\Ride\Views\Ride\RideFinalTrip.cshtml" />
     <None Include="Properties\PublishProfiles\car.pubxml" />
     <Content Include="Views\Index\HomeCreen.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />
     <Content Include="Views\Index\SignUpType.cshtml" />
     <Content Include="Views\Index\SignUpDriver.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

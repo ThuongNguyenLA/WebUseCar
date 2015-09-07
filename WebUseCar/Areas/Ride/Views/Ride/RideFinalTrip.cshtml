@@ -1,0 +1,69 @@
+﻿<ion-view view-title="Xe Đưa Đón">
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()">
+
+        </ion-refresher>
+
+        <div style="max-width:500px;margin-left:0px">
+
+            <table style="margin-top:0;width:100%;background-color:#fff">
+                <tr style="border-bottom:#d9d9d9 solid 1px;height:40px">
+                    <td width="80">
+                        <span style="line-height:40px;margin-left:5px;color:gray">Back</span>
+                    </td>
+                    <td>
+                        <center><b style="color:#49ccaa;line-height:40px">YOUR LAST TRIP</b></center>
+                    </td>
+                </tr>
+            </table>
+            <div style="color:gray;text-align:center;line-height:40px;margin-top:10px">
+                August 28,2015 
+            </div>
+            <center ><h3 style="color:#49ccaa;font-weight:700">$500</h3></center>
+            <div style="height:40px;text-align:center;background-color:#49ccaa">
+               <span style="line-height:40px;color:#fff"> Trip Summary</span>
+            </div>
+            <table class="final-trip-detail" cellpadding="10">
+                <tr>
+                    <td width="80">
+                        <span>Pickup</span>
+                    </td>
+                    <td>
+                        <h5>Tan Son Nhat</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>Dropoff</span></td>
+                    <td><h5>Ben Thanh</h5></td>
+                </tr>
+                <tr>
+                    <td><span>Driver</span></td>
+                    <td><h5>Tien Nguyen</h5></td>
+                </tr>
+                <tr>
+                    <td><span>Car</span></td>
+                    <td><h5>Kia Morning</h5></td>
+                </tr>
+            </table>
+            <button>
+
+            </button>
+        </div>
+        <style>
+            .final-trip-detail {
+                width:100%;
+                margin-top:10px;
+
+            }
+                .final-trip-detail td {
+                height:40px;
+                color:gray;
+                border-bottom:#eee solid 1px;
+                }
+                .final-trip-detail span {
+                line-height:40px;
+                margin-left:5px;
+                }
+        </style>
+    </ion-content>
+</ion-view>

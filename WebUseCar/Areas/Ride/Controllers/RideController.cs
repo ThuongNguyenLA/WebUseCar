@@ -19,7 +19,16 @@ namespace WebUseCar.Areas.Ride.Controllers
         {
             return View();
         }
+        public ActionResult RideEstimateFare()
+        {
+            return View();
+        }
         public ActionResult Pickup()
+        {
+
+            return View();
+        }
+        public ActionResult RideFinalTrip()
         {
 
             return View();

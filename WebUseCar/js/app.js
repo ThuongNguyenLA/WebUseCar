@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps'])
+angular.module('starter', ['ionic', 'starter.controllers'])//, 'tommy.GoogleMaps'])
 
 .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
@@ -157,6 +157,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps'])
             }
         }
     })
+    .state('app.ridefinaltrip', {
+        url: "/ridefinaltrip",
+        views: {
+            'menuContent': {
+                templateUrl: '/Ride/Ride/RideFinalTrip'
+            
+            }
+        }
+    })
+      .state('app.rideestimatefare', {
+          url: "/rideestimatefare",
+          views: {
+              'menuContent': {
+                  templateUrl: '/Ride/Ride/RideEstimateFare'
+
+              }
+          }
+      })
  .state('app.airport', {
      url: "/airport",
      views: {
@@ -167,14 +185,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps'])
      }
  })
     .state('app.localevent', {
-        url: "/localevent",
+        url: "/localevent/:id",
         views: {
             'menuContent': {
-                templateUrl: '/LocalEvent/LocalEvent/Index'
+                templateUrl: '/LocalEvent/LocalEvent/Index',
+                controller:"LocalEventCtrl"
             }
         }
     })
-    
+    .state('app.localeventdetail', {
+        url: "/localeventdetail/:id",
+        views: {
+            'menuContent': {
+                templateUrl: '/LocalEvent/LocalEvent/LocalEventDetail',
+                controller: "LocalEventDetailCtrl"
+            }
+        }
+    })
+
     // if none of the above states are matched, use this as the fallback
     //$urlRouterProvider.otherwise('/app/state1');
 

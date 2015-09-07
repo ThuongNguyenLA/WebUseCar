@@ -15,6 +15,9 @@ namespace WebUseCar.Areas.LocalEvent.Controllers
         {
             return View();
         }
-
+        public ActionResult LocalEventDetail()
+        {
+            return View();
+        }
     }
 }

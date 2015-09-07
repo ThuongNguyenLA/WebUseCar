@@ -25,3 +25,4 @@ D:\TheGioiDiDong\WebUseCar\WebUseCar\bin\System.Web.WebPages.Deployment.xml
 D:\TheGioiDiDong\WebUseCar\WebUseCar\bin\System.Web.WebPages.Razor.xml
 D:\TheGioiDiDong\WebUseCar\WebUseCar\obj\Debug\WebUseCar.dll
 D:\TheGioiDiDong\WebUseCar\WebUseCar\obj\Debug\WebUseCar.pdb
+D:\TheGioiDiDong\WebUseCar\WebUseCar\obj\Debug\WebUseCar.csprojResolveAssemblyReference.cache
