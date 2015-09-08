@@ -1,4 +1,4 @@
-﻿var RideCtrl = function ($rootScope, $scope, $location, $ionicHistory,$state) {
+﻿var RideCtrl = function ($rootScope, $scope, $location, $ionicHistory, $state, googleDirections) {
     $scope.EstimateFare = function ()
     {
         $ionicHistory.nextViewOptions({
@@ -8,4 +8,4 @@
         $state.go("app.estimatefare");
     }
 }
-RideCtrl.$inject = ["$rootScope", "$scope", "$location", "$ionicHistory", "$state"];
+RideCtrl.$inject = ["$rootScope", "$scope", "$location", "$ionicHistory", "$state", "googleDirections"];

@@ -5,13 +5,13 @@
         </ion-refresher>
         
        
-        <table style="margin-top:35px;width:100%;background-color:#fff">
+        <table style="margin-top:35px;width:100%;background-color:#fff;margin-right:15px">
             <tr style="border-top:#d9d9d9 solid 1px;border-bottom:#d9d9d9 solid 1px;height:40px">
                 <td style="width:80px">
                     <div style="position:relative;left:8px">Pickup</div>
                 </td>
                 <td>
-                    <input placeholder="current location" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none"/>
+                    <input placeholder="current location" ng-model="result" options="options" details="details1" tommy-address-autocomplete style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
                 </td>
             </tr>
             <tr style="border-bottom:#d9d9d9 solid 2px;height:40px">
@@ -19,7 +19,7 @@
                     <div style="position:relative;left:8px">Dropoff</div>
                 </td>
                 <td>
-                    <input style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none" />
+                    <input ng-model="result2" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" tommy-address-autocomplete options="options" details="details1" />
                 </td>
             </tr>
         </table>
