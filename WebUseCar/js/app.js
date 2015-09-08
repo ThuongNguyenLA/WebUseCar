@@ -47,20 +47,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
             }
         }
     })
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: '/templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  })
-      .state('page', {
-          url: "/page",
-          templateUrl: "page.html",
-          controller: 'MainCtrl'
-      })
+  //.state('app.single', {
+  //  url: '/playlists/:playlistId',
+  //  views: {
+  //    'menuContent': {
+  //      templateUrl: '/templates/playlist.html',
+  //      controller: 'PlaylistCtrl'
+  //    }
+  //  }
+  //})
+      //.state('page', {
+      //    url: "/page",
+      //    templateUrl: "page.html",
+      //    controller: 'MainCtrl'
+      //})
     //.state('app.state1', {
     //    url: "/state1",
     //    views: {
@@ -162,7 +162,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
         views: {
             'menuContent': {
                 templateUrl: '/Ride/Ride/RideFinalTrip'
-            
+              
             }
         }
     })
@@ -170,8 +170,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
           url: "/rideestimatefare",
           views: {
               'menuContent': {
-                  templateUrl: '/Ride/Ride/RideEstimateFare'
-
+                  templateUrl: '/Ride/Ride/RideEstimateFare',
+                  controller: 'RideEstimatefareCtrl'
               }
           }
       })

@@ -76,7 +76,7 @@
                 <button class="button button-icon button-clear ion-gear-b" ng-click="toggleDrawer()" menu-toggle="left" style="color:#fff"></button>
             </ion-nav-buttons>
             <ion-nav-buttons side="right">
-                <img src="/img/icons/logout.png" width="26" height="26" style="margin-top:4px" onclick="window.location.href='/index/TemplateWelcome#/app/welcome'" />
+                <img src="/img/icons/logout.png" class="logout" onclick="window.location.href='/index/TemplateWelcome#/app/welcome'" />
             </ion-nav-buttons>
         </ion-nav-bar>
         <ion-nav-view name="menuContent"></ion-nav-view>
@@ -114,7 +114,7 @@
                     <ion-item menu-close id="menuFreeRide" ng-click="toggleDrawer()" href="#app/freeride">
                         Free Rides
                     </ion-item>
-                    <ion-item menu-close href="#" ng-click="toggleDrawer()">
+                    <ion-item menu-close  ng-click="toggleDrawer()" href="#app/payment">
                         Payment
                     </ion-item>
                     <ion-item menu-close href="#" ng-click="toggleDrawer()">
@@ -144,7 +144,7 @@
                 <span class="icon-text">Ride</span>
 </td>
             <td>
-                <span id="4" ng-click="FooterMenuActive($event,4)"><img src="/img/icons/icon-airport.png"  height="35" /></span>
+                <span id="4" ><img src="/img/icons/icon-airport.png"  height="35" /></span>
                 <span class="icon-text">Airport Service</span>
 </td>
             <td>
@@ -196,5 +196,11 @@
         /*border: gray solid 3px!important;
         border-radius: 9px;
         padding:3px;*/
+    }
+    .logout {
+        margin-top: 6px;
+        margin-right: 10px;
+        width: 32px;
+        height: 20px;
     }
 </style>
