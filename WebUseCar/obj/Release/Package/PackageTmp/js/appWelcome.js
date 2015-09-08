@@ -86,8 +86,19 @@ angular.module('app', ['ionic'])
     }
 
 })
-.controller('LoginCtrl', function ($scope) {
+.controller('LoginCtrl', function ($scope, $ionicHistory) {
 
+    $scope.login = function()
+    {
+
+        $ionicHistory.nextViewOptions({
+            disableBack: true
+        });
+        $ionicHistory.clearHistory();
+        //$state.go("app.home");
+        //$scope.modal.show();
+        window.location.href = "/index#/app/home";
+    }
 
 })
 .controller('SignUpCtrl', function ($scope) {

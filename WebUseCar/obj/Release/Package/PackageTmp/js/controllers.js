@@ -6,7 +6,9 @@ usecar.controller("EstimateFareCtrl", EstimateFareCtrl);
 usecar.controller("AirportCtrl", AirportCtrl);
 usecar.controller("MyTripCtrl", MyTripCtrl);
 usecar.controller("FreeRideCtrl", FreeRideCtrl);
-usecar.controller("PaymentCtrl", PaymentCtrl);
+usecar.controller("PaymentCtrl", PaymentCtrl); 
+usecar.controller("LocalEventCtrl", LocalEventCtrl);
+usecar.controller("LocalEventDetailCtrl", LocalEventDetailCtrl);
 usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory) {
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -32,7 +34,13 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
 
     // Open the login modal
     $scope.login = function () {
-        $scope.modal.show();
+        $ionicHistory.nextViewOptions({
+            disableBack: true
+        });
+        $ionicHistory.clearHistory();
+        //$state.go("app.home");
+        //$scope.modal.show();
+        window.location.href = "/index#/app/home";
     };
     $scope.FooterMenuActive = function (ev, id) {
         $(".icon-footer").find("span").removeClass("active");

@@ -142,6 +142,7 @@
     <Content Include="Areas\Ride\JSController\EstimateFareController.js" />
     <Content Include="Areas\Ride\JSController\FreeRideController.js" />
     <Content Include="Areas\Ride\JSController\RideController.js" />
+    <Content Include="css\drawer.css" />
     <Content Include="css\index.css" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
@@ -180,6 +181,7 @@
     <Content Include="js\appWelcome.js" />
     <Content Include="js\app.js" />
     <Content Include="js\controllers.js" />
+    <Content Include="js\drawer.js" />
     <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\map\lodash.js" />
@@ -383,6 +385,7 @@
     <Content Include="Areas\LocalEvent\Views\LocalEvent\LocalEventDetail.cshtml" />
     <Content Include="Areas\Ride\Views\Ride\RideEstimateFare.cshtml" />
     <Content Include="Areas\Ride\Views\Ride\RideFinalTrip.cshtml" />
+    <Content Include="js\jquery-2.1.1.min.js.map" />
     <None Include="Properties\PublishProfiles\car.pubxml" />
     <Content Include="Views\Index\HomeCreen.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />

@@ -1,47 +1,30 @@
 ﻿<ion-view view-title="Xe Đưa Đón">
-    <ion-content>
+    <ion-content style="background-color:#edeef0">
         <ion-refresher on-refresh="doRefresh()">
 
         </ion-refresher>
         
-
-        <table style="margin-top:10px;margin-left:5px;">
-            <tr>
+       
+        <table style="margin-top:35px;width:100%;background-color:#fff">
+            <tr style="border-top:#d9d9d9 solid 1px;border-bottom:#d9d9d9 solid 1px;height:40px">
                 <td style="width:80px">
-                    Pickup
+                    <div style="position:relative;left:8px">Pickup</div>
                 </td>
                 <td>
-                    <input placeholder="current location"/>
+                    <input placeholder="current location" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none"/>
                 </td>
             </tr>
-            <tr>
+            <tr style="border-bottom:#d9d9d9 solid 2px;height:40px">
                 <td>
-                    Dropoff
+                    <div style="position:relative;left:8px">Dropoff</div>
                 </td>
                 <td>
-                    <input style="margin-top:5px;"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" style="height:30px">
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                </td>
-                <td>
-                    <button class="button button-small button-positive" style="width:100px" ng-click="EstimateFare()">Estimate Fare</button>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <button class="button button-small button-balanced" style="width:100px;margin-top:20px">Request Ride</button>
+                    <input style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none" />
                 </td>
             </tr>
         </table>
+        <button class="button button-small button-positive" style="width:80%;margin-left:10%;margin-top:35px" ng-click="EstimateFare()">Estimate Fare</button>
+        <button class="button button-small button-balanced" style="width:80%;margin-left:10%;margin-top:20px">Request Ride</button>
 
 
     </ion-content>

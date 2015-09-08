@@ -4,87 +4,80 @@
 
 <ion-view view-title="<b >Xe Đưa Đón</b>">
     <ion-content>
-
-            <div style="border:gray solid 1px;">
-                <label class="item item-input">
-                    <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" placeholder="Search">
-                </label>
-
-            </div>
         <ion-scroll direction="y" class="theroot">
-            <ul class="localevent">
+            <select id="ddlCat" style="width:100%;height:30px;background-color:#eaebed;margin-top:4px;margin-bottom:3px" ng-model="ddlCat" ng-change="ChooseLocalEvent(ddlCat)">
+                <option value="-1">Choose Category</option>
+                <option value="1">food</option>
+                <option value="2">entertaiment</option>
+            </select>
+            <ul class="localevent-cat">
                 <li>
-                    <img src="~/img/1.jpg" height="200" width="100%" />
-
+                    <div><b>SHOP</b></div>
                     <span>
-                        <b>Cafe shop Monaco</b><br/>
-                        30 miles
+                        <img src="~/img/1.jpg" height="200" width="100%" ng-click="Detail()" />
                     </span>
                 </li>
                 <li>
+                    <div><b>FOOD</b></div>
                     <img src="~/img/2.jpg" height="200" width="100%" />
+                </li>
+            </ul>
+            <ul class="localevent" style="display:none">
+                <li>
+                    <div><b>Cafe shop Monaco</b>30 miles</div>
                     <span>
-                        <b>
-                            AirPort Monaco</b>
-                                <br />
-                                10 miles
+                        <img src="~/img/1.jpg" height="200" width="100%" />
                     </span>
                 </li>
                 <li>
-                    <img src="~/img/3.jpg" height="200" width="100%" />
-                    <span>
-                        <b>
-                            Supermartket BigC</b>
-                                <br />
-                                22 miles
-                    </span>
-                </li>
-                <li>
-                    <img src="~/img/1.jpg" height="200" width="100%" />
-                    <span>
-                        <b>
-                            KFC Monaco</b>
-                                <br />
-                                12 miles
-                    </span>
-                </li>
-                <li>
+                    <div><b>AirPort Monaco</b>30 miles</div>
                     <img src="~/img/2.jpg" height="200" width="100%" />
-                    <span>
-                        <b>
-                            Cinema Monaco
-                            </b>
-                                <br />
-                                22 miles
-                    </span>
                 </li>
                 <li>
+                    <div><b>Supermartket BigC</b>30 miles</div>
                     <img src="~/img/3.jpg" height="200" width="100%" />
-                    <span>
-                        <b>
-                            Foody Monaco/<b>
-                                <br />
-                                22 miles
-                    </span>
+                </li>
+                <li>
+                    <div><b>KFC Monaco</b>30 miles</div>
+                    <img src="~/img/1.jpg" height="200" width="100%" />
+                </li>
+                <li>
+                    <div><b>Cinema Monaco</b>30 miles</div>
+                    <img src="~/img/2.jpg" height="200" width="100%" />
+                </li>
+                <li>
+                    <div><b>Foody Monaco</b>30 miles</div>
+                    <img src="~/img/3.jpg" height="200" width="100%" />
                 </li>
             </ul>
         </ion-scroll>
     </ion-content>
 </ion-view>
 <style>
-    .localevent li {
+    .localevent-cat li,.localevent li {
         position: relative;
         color: white;
+        margin-bottom:3px;
+    }
+    .localevent li b {
+        display: block;
+        margin-bottom: -3px;
+        margin-top: 1px;
+    }
+    .localevent-cat li b {
+        line-height:38px;
+    }
+    .localevent-cat li div,.localevent li div {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        background-color: #37b997;
+        height: 40px;
+        width: 100%;
+        padding-left: 10px;
     }
 
-        .localevent li span {
-            position: absolute;
-            bottom: 20px;
-            left: 10px;
-        }
-
     .theroot {
-        height: 100%;
+    height: 100%;
     }
 </style>

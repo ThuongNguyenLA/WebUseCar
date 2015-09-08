@@ -1,14 +1,14 @@
 ﻿<ion-view view-title="Xe Đưa Đón">
-    <ion-content>
+    <ion-content >
         @*<ion-refresher on-refresh="doRefresh()"></ion-refresher>*@
         @*<input type="text" disable-tap style="width:100%; border:1px solid #cfcfcf; padding-left:10px;" tommy-address-autocomplete ng-model="result1" options="options" details="details1" />
-            <button ng-click="Caculate(result1)"></button>
-            {{distance}} - {{duration}}*@
-      
-                    @*<div style="width:100%;height:300px;" id="map_canvas"></div>*@
-        <input type="text"  disable-tap style="width:100%; border:1px solid #cfcfcf; padding-left:10px;" tommy-address-autocomplete ng-model="result1" options="options" details="details1" />
-        <button ng-click="OnBlur(details1)">Search</button>
+        <button ng-click="Caculate(result1)"></button>
+        {{distance}} - {{duration}}*@
+
+        <div style="width:100%;height:300px;" id="map_canvas" data-tap-disabled="true"></div>
+        @*<input type="text" disable-tap style="width:100%; border:1px solid #cfcfcf; padding-left:10px;" tommy-address-autocomplete ng-model="result1" options="options" details="details1" />*@
+        @*<button ng-click="OnBlur(details1)">Search</button>*@
         @*{{details1}}*@
-        <div id="map-canvas" style="height:100%; width:100%;"></div>
+        @*<div id="map-canvas" data-tap-disabled="true" style="height:100%; width:100%;"></div>*@
     </ion-content>
 </ion-view>

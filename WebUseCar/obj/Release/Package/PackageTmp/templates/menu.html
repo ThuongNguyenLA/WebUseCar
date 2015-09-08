@@ -1,4 +1,4 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<!--<ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
       <ion-nav-bar class="bar-stable" style="">
           <ion-nav-back-button hide-back-button="true">
@@ -7,8 +7,8 @@
               <button class="button button-icon button-clear ion-gear-b" menu-toggle="left" style="color:#fff"></button>
           </ion-nav-buttons>
           <ion-nav-buttons side="right">
-              <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="right">ghgf trhrt</button>-->
-              <img src="/img/icons/logout.png" width="26" height="26" style="margin-top:4px" onclick="window.location.href='/index/TemplateWelcome#/app/welcome'" />
+              <img src="/img/icons/logout.png" width="34" height="19" style="margin-top:7px" onclick="window.location.href='/index/TemplateWelcome#/app/welcome'" />
+
           </ion-nav-buttons>
       </ion-nav-bar>
 
@@ -42,21 +42,91 @@
       </ion-list>
     </ion-content>
   </ion-side-menu>
-    <!--<ion-side-menu side="right">
-        <header class="bar bar-header bar-stable">
-            <h1 class="title">Right</h1>
-        </header>
-        <ion-content class="has-header">
-            <ion-list>
-                <ion-item menu-close href="#/app/test">
-                    test
-                </ion-item>
-                <a ui-sref= "testsub">
-                    test sub
-                </a>
-           </ion-list>
-</ion-content>
-    </ion-side-menu>-->
+</ion-side-menus>-->
+<ion-side-menus>
+    <!-- Center content -->
+    <ion-nav-bar class="bar-positive nav-title-slide-ios7 has-tabs-top">
+        <ion-nav-buttons side="left">
+            <ion-header-bar class="bar-stable" style="background-color:#ddd">
+                <h1 class="title" style="color:white"> Setting</h1>
+            </ion-header-bar>
+            <button class="button button-icon button-clear ion-gear-b" style="float:right" ng-click="toggleDrawer()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <!--<ion-side-menu-content>
+        <ion-nav-bar class="bar-stable" style="">
+            <ion-nav-back-button hide-back-button="true">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-gear-b" ng-click="toggleDrawer()" menu-toggle="left" style="color:#fff"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <img src="/img/icons/logout.png" width="26" height="26" style="margin-top:4px" onclick="window.location.href='/index/TemplateWelcome#/app/welcome'" />
+            </ion-nav-buttons>
+        </ion-nav-bar>
+
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>-->
+    <ion-side-menu-content>
+      
+        <ion-nav-bar class="bar-stable bar-positive nav-title-slide-ios7 has-tabs-top" style="">
+            <ion-nav-back-button hide-back-button="true">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-gear-b" ng-click="toggleDrawer()" menu-toggle="left" style="color:#fff"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <img src="/img/icons/logout.png" width="26" height="26" style="margin-top:4px" onclick="window.location.href='/index/TemplateWelcome#/app/welcome'" />
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+        <!--<ion-view title="Ionic App" name="menuContent">
+            <ion-content>
+
+            </ion-content>
+        </ion-view>-->
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <drawer side="left">
+        <!--<ion-nav-bar class="bar-stable nav-title-slide-ios7 has-tabs-top">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon icon ion-navicon" ng-click="toggleDrawer()"></button>
+            </ion-nav-buttons>
+            <ion-header-bar class="bar-stable" style="background-color:#ddd">
+                <h1 class="title" style="color:white"> Setting</h1>
+            </ion-header-bar>
+        </ion-nav-bar>-->
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7 has-tabs-top">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-gear-b" style="color:#fff"  ng-click="toggleDrawer()"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-view title="Menu">
+            <ion-content style="margin-top:60px;">
+                <ion-list>
+                    <ion-item menu-close id="menuProfile" ng-click="toggleDrawer()" href="#/app/profile">
+                        Profile
+                    </ion-item>
+                    <ion-item menu-close id="menuMyTrip" ng-click="toggleDrawer()" href="#app/mytrip">
+                        My Strips
+                    </ion-item>
+                    <ion-item menu-close id="menuFreeRide" ng-click="toggleDrawer()" href="#app/freeride">
+                        Free Rides
+                    </ion-item>
+                    <ion-item menu-close href="#" ng-click="toggleDrawer()">
+                        Payment
+                    </ion-item>
+                    <ion-item menu-close href="#" ng-click="toggleDrawer()">
+                        Verifycation
+                    </ion-item>
+                    <ion-item menu-close ng-click="toggleDrawer()" href="/index/TemplateWelcome#/app/welcome">
+                        Log out
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-view>
+    </drawer>
 </ion-side-menus>
 <ion-footer-bar class="bar bar-footer" style="height:60px;background-color:#48ccaa">
     <table class="icon-footer" style="margin-bottom:5px;">
@@ -85,6 +155,10 @@
     </table>
 </ion-footer-bar>
 <style type="text/css">
+    body, div, a, table, table,input {
+        font-family:Arial!important;
+        font-size:12px!important;
+    }
     .header-item {
         color:white !important;
     }

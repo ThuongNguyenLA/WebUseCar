@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Profile";
+}
+
+<ion-view view-title="<b >Xe Đưa Đón</b>">
+    <ion-content style="background-color:#edeef0">
+        <ion-scroll direction="y" class="theroot">
+            <select id="ddlCat" style="width:100%;height:30px;background-color:#eaebed;margin-top:4px;margin-bottom:3px" ng-model="ddlCat" ng-change="ChooseLocalEvent(ddlCat)">
+                <option value="-1">Choose Category</option>
+                <option value="1">food</option>
+                <option value="2">entertaiment</option>
+            </select>
+            <div style="position:relative">
+                <div class="localevent-header"><b>Cafe shop Monaco</b></div>
+                <span>
+                    <img src="~/img/1.jpg" height="200" width="100%" />
+                </span>
+            </div>
+            <div style="color:gray">
+                <b style="color:#37b997">Description:</b>
+                Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco
+                <span style="color:red">Read More</span>
+               <div style="background-color:white">
+                   <ul class="localevent-contact">
+                       <li class="place">
+                           333 nguyen thi minh khai - HCM
+                       </li>
+                       <li class="time">
+                           10:00-21:00
+                       </li>
+                       <li class="call">
+                           09.098533377
+                       </li>
+                       <li class="price">
+                           30$-80$
+                       </li>
+                   </ul>
+
+               </div>
+            </div>
+            <input type="button" value="Book Now" style="width:80%;background-color:#49ccaa;color:#fff;margin-left:10%;height:30px;border:none;margin-top:10px;" />
+        </ion-scroll>
+    </ion-content>
+</ion-view>
+<style>
+    .localevent-contact{
+        margin-top:10px;
+        margin-left:5px;
+        margin-right:5px;
+    }
+    .localevent-contact li{
+    line-height:38px;
+    padding-left:40px;
+    background-color:white;
+    }
+    .place{
+        background:url(/img/icons/icon-local.png) no-repeat 10px center;
+    }
+    .time{
+        border-top:#c4c3c9 solid 1px;
+        border-bottom:#c4c3c9 solid 1px;
+        background:url(/img/icons/icon-clock.png) no-repeat 10px center;
+    }
+    .call{
+        border-bottom:#c4c3c9 solid 1px;
+        background:url(/img/icons/icon-call.png) no-repeat 10px center;
+    }
+    .price{
+        background:url(/img/icons/icon-money.png) no-repeat 10px center;
+    }
+    .localevent-header{
+        position: absolute;
+        top: 0px;
+        left: 0;
+        background-color: #37b997;
+        height: 40px;
+        width: 100%;
+        padding-left: 10px;
+    }
+        .localevent-header b {
+        line-height:40px;
+        color:#fff;
+        }
+    .theroot {
+        height: 100%;
+    }
+</style>

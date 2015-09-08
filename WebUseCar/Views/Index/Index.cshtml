@@ -10,6 +10,7 @@
     <title></title>
     <link href="/lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/drawer.css">
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -18,20 +19,21 @@
     <!-- cordova script (this will be a 404 during development) -->
     @*<script src="cordova.js"></script>*@
     <!-- your app's js -->
-    @*<script src="/scripts/ios/cordova.js"></script>
-    <script src="/scripts/ios/cordova_plugins.js"></script>*@
+    <script src="/scripts/ios/cordova.js"></script>
+    <script src="/scripts/ios/cordova_plugins.js"></script>
 
     <!-- your app's js -->
     <script src="/js/map/lodash.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places,geometry"></script>
     <script src="/js/map/tommyGoogleMaps.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/drawer.js?v=123"></script>
     <script src="/Areas/Profile/JSController/LoginController.js"></script>
     <script src="/Areas/Profile/JSController/ProfileController.js"></script>
     <script src="/Areas/Ride/JSController/RideController.js"></script>
     <script src="/Areas/Ride/JSController/EstimateFareController.js"></script>
     <script src="/Areas/Airport/JSController/AirportController.js"></script>
-    <script src="/Areas/MyTrip/JSController/MyTripController.js"></script>
+    <script src="/Areas/MyTrip/JSController/MyTripController.js?v=875869"></script>
     <script src="/Areas/Ride/JSController/FreeRideController.js"></script>
     <script src="/Areas/Payment/JSController/PaymentController.js"></script>
     <script src="/Areas/LocalEvent/JSController/LocalEventController.js"></script>
@@ -132,6 +134,9 @@
         .scroll {
             height: 100%;
         }
+        .bar-stable.nav-title-slide-ios7.has-tabs-top.nav-bar-container.hide {
+            display:block!important;
+        }
     </style>
 
 </head>
@@ -139,7 +144,9 @@
     <ion-nav-view>
 
     </ion-nav-view>
-
+    @*<ion-view title="Ionic App">
+       
+    </ion-view>*@
 </body>
 
 
