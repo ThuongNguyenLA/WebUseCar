@@ -5,10 +5,9 @@
 <ion-view view-title="<b >Xe Đưa Đón</b>">
     <ion-content>
         <ion-scroll direction="y" class="theroot">
-            <select id="ddlCat" style="width:100%;height:30px;background-color:#eaebed;margin-top:4px;margin-bottom:3px" ng-model="ddlCat" ng-change="ChooseLocalEvent(ddlCat)">
+            <select id="ddlCat" ng-model="ddlCat" ng-init="ddlCat='-1'" style="width:100%;height:30px;background-color:#eaebed;margin-top:4px;margin-bottom:3px" ng-model="ddlCat" ng-change="ChooseLocalEvent(ddlCat)">
                 <option value="-1">Choose Category</option>
-                <option value="1">food</option>
-                <option value="2">entertaiment</option>
+                <option ng-repeat="option in lstCat" value="{{option.value}}">{{option.text}}</option>
             </select>
             <ul class="localevent-cat">
                 <li>

@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Helper.cs" />
     <Compile Include="Areas\Airport\AirportAreaRegistration.cs" />
     <Compile Include="Areas\Airport\Controllers\AirportController.cs" />
     <Compile Include="Areas\LocalEvent\Controllers\LocalEventController.cs" />
@@ -191,6 +192,7 @@
     <Content Include="js\app.js" />
     <Content Include="js\controllers.js" />
     <Content Include="js\drawer.js" />
+    <Content Include="js\helper.js" />
     <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\map\lodash.js" />

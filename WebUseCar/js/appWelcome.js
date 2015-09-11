@@ -1,4 +1,4 @@
-angular.module('app', ['ionic'])
+﻿angular.module('app', ['ionic'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
         //$routeProvider.when('/signup', {
@@ -90,18 +90,69 @@ angular.module('app', ['ionic'])
 
     $scope.login = function()
     {
+        if ($("#user").val() == "") {
+            alert("Please input username");
+            return;
+        }
+        if ($("#pass").val() == "") {
+            alert("Please input password");
+            return;
+        }
+        dataSend = {
+            username: $("#user").val(), password: $("#pass").val(),grant_type : "password"
+        };
+        //dataSend = { strParam: "username=" + $("#user").val() + "&password=" + $("#pass").val() + "&grant_type=password" };
+        try {
 
-        $ionicHistory.nextViewOptions({
-            disableBack: true
-        });
-        $ionicHistory.clearHistory();
-        //$state.go("app.home");
-        //$scope.modal.show();
-        window.location.href = "/index#/app/home";
+            $.post(RiderRootUrl + "/token", dataSend, function (respone) {
+                    localStorage.setItem("token",respone.token_type+" "+ respone.access_token);
+                    $ionicHistory.nextViewOptions({
+                        disableBack: true
+                    });
+                    $ionicHistory.clearHistory();
+                    window.location.href = "/index#/app/home";
+            }).fail(function (e) {alert(JSON.parse(e.responseText).error); });
+            
+        } catch (e) {
+            alert(e)
+        }
+      
     }
 
 })
-.controller('SignUpCtrl', function ($scope) {
+.controller('SignUpCtrl', function ($scope, $timeout) {
+    PostDataAjax("/api/List/GetCountries", "",
+         function (respone) {
+             $timeout(function () {
+                 if (respone && respone.results.length > 0) {
+                     $timeout(function () {
+                         $scope.Countrys = respone;
+                         $scope.ddlCountr = "VN";
+                     }, 10);
+                 }
+                 else {
+                     alert("error");
+                    // callback(null);
+                 }
+             }, 10);
+         }
+       );
+    $scope.Save = function () {
+    dataSend ={
+        Email: $("#txtEmail").val(), Password: $("#txtPassword").val(), FirstName: $("#txtFirstName").val(), LastName: $("#txtLastName").val(), Country:$("#ddlCountry").val(), Phone: $("#txtPhone").val()
+    };
+        PostDataAjax("/api/SignUp/Submit", dataSend,
+             function (respone) {
+                 $timeout(function () {
+                     if (respone && respone.success) {
+                         alert(respone.message);
 
+                     }
+                     else {
+                         alert(respone.message);
+                     }
+                 }, 10);
 
+             });
+    }
 });
