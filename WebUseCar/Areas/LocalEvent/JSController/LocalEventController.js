@@ -1,55 +1,125 @@
-﻿var LocalEventCtrl = function ($rootScope, $scope, $state, $stateParams, $ionicHistory) {
+﻿var LocalEventCtrl = function ($rootScope, $scope, $state, $stateParams, $ionicHistory,$timeout) {
+    //if ($stateParams.id != null) {
+
+    //    $(".localevent-cat").hide();
+    //    $(".localevent").show();
+    //}
+    //else {
+    //    $(".localevent-cat").show();
+    //    $(".localevent").hide();
+
+    //}
    
     function initiate_geolocation() {
         navigator.geolocation.getCurrentPosition(handle_geolocation_query);
     }
 
     function handle_geolocation_query(position) {
+        $scope.lat=position.coords.latitude;
+        $scope.long=position.coords.longitude;
         PostDataAjax("/api/LocalEvent/GetCategoryLocalEvents?lat=" + position.coords.latitude + "&lng="+position.coords.longitude, "", function (respone) {
-            if (respone.message != "") {
-                alert(respone.message);
-                return;
-            }
-            $scope.lstCat = respone.list;
+            $timeout(function () {
+                if (respone.message != "") {
+                    alert(respone.message);
+                    return;
+                }
+                $rootScope.lstCat = respone.results;
+                //$timeout(function () {
+                //    if ($stateParams.id != null) {
+                //        //$("#ddlCat").val($stateParams.id);
+                //        //BindData($stateParams.id);
+                //    }
+                //}, 500);
+            }, 500);
         }, function (e) {  alert(e.responseText);},true, "GET");
     }
     initiate_geolocation();
-    //var dataSend = { lat: 10.779078, lng:106.679229};
-   
-            
-    $scope.ddlCat = $stateParams.id == null ? "-1" : $stateParams.id;
-    if ($("#ddlCat") == "-1") {
-        $(".localevent-cat").show();
-        $(".localevent").hide();
-    }
-    else {
+    $scope.ddlCat = ($stateParams.id == null ? "-1" : $stateParams.id);
+    //if ($stateParams.id != null)
+    //{
+    //    //debugger;
+    //    //$("#ddlCat").val($stateParams.id);
+    //    //BindData($stateParams.id);
+    //}
+    //if ($scope.ddlCat == "-1" || $scope.ddlCat == "") {
+    //    $(".localevent-cat").show();
+    //    $(".localevent").hide();
+    //}
+    //else {
+    //    $(".localevent-cat").hide();
+    //    $(".localevent").show();
+    //}
+    $scope.SelectCat = function (catID) {
+        $scope.ddlCat = catID;
+        $("#ddlCat").val(catID);
         $(".localevent-cat").hide();
         $(".localevent").show();
+        PostDataAjax("/api/LocalEvent/GetLocalEvents?lat=" + $scope.lat + "&lng=" + $scope.long + "&eventCategory=" + catID, "", function (respone) {
+            $timeout(function () {
+                if (respone.message != "") {
+                    alert(respone.message);
+                    return;
+                }
+                else {
+                    $rootScope.lstItem = respone.list;
+                }
+            }, 500);
+        }, function (e) { alert(e.responseText); }, true, "GET");
     }
-    $scope.ChooseLocalEvent = function (val)
+
+    $scope.ChooseLocalEvent = function (catID)
+    {
+        BindData(catID);
+    }
+    function BindData(catID)
     {
         $ionicHistory.nextViewOptions({
             disableBack: true
         });
         $ionicHistory.clearHistory();
-    
-        if (val == "-1") {
+        PostDataAjax("/api/LocalEvent/GetLocalEvents?lat=" + $scope.lat + "&lng=" + $scope.long + "&eventCategory=" + catID, "", function (respone) {
+            $timeout(function () {
+                if (respone.message != "") {
+                    alert(respone.message);
+                    return;
+                }
+                else {
+                    $rootScope.lstItem = respone.list;
+                }
+            }, 500);
+        }, function (e) { alert(e.responseText); }, true, "GET");
+        if (catID == "-1") {
             $(".localevent-cat").show();
             $(".localevent").hide();
+            $("#pnDetail").hide();
         }
         else {
             $(".localevent-cat").hide();
             $(".localevent").show();
+            $("#pnDetail").hide();
         }
     }
-    $scope.Detail = function ()
+    $scope.Detail = function (itemid)
     {
-        $state.go("app.localeventdetail", {id:1});
+        //$state.go("app.localeventdetail", { id: itemid });
+        $(".localevent-cat").hide();
+        $(".localevent").hide();
+        $("#pnDetail").show();
+        if ($rootScope.lstItem != null && $rootScope.lstItem != undefined) {
+            $rootScope.lstItem.forEach(function (obj) {
+                if (obj.id == itemid) {
+                    $scope.item = obj;
+                    return;
+                }
+            })
+        }
+
+
     }
 
 
 
 
 }
-LocalEventCtrl.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "$ionicHistory"];
+LocalEventCtrl.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "$ionicHistory", "$timeout"];
 

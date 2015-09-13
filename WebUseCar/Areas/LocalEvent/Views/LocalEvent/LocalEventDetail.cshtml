@@ -5,34 +5,33 @@
 <ion-view view-title="<b >Xe Đưa Đón</b>">
     <ion-content style="background-color:#edeef0">
         <ion-scroll direction="y" class="theroot">
-            <select id="ddlCat" style="width:100%;height:30px;background-color:#eaebed;margin-top:4px;margin-bottom:3px" ng-model="ddlCat" ng-change="ChooseLocalEvent(ddlCat)">
+            <select id="ddlCat" ng-model="ddlCat" ng-init="ddlCat='-1'" style="width:100%;height:30px;background-color:#eaebed;margin-top:4px;margin-bottom:3px" ng-model="ddlCat" ng-change="ChooseLocalEvent(ddlCat)">
                 <option value="-1">Choose Category</option>
-                <option value="1">food</option>
-                <option value="2">entertaiment</option>
+                <option ng-repeat="option in lstCat" value="{{option.eventCategory}}">{{option.eventCategoryName}}</option>
             </select>
             <div style="position:relative">
-                <div class="localevent-header"><b>Cafe shop Monaco</b></div>
+                <div class="localevent-header"><b>{{item.name}}</b></div>
                 <span>
-                    <img src="~/img/1.jpg" height="200" width="100%" />
+                    <img src="{{item.imagePath}}" height="200" width="100%" />
                 </span>
             </div>
             <div style="color:gray">
                 <b style="color:#37b997">Description:</b>
-                Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco Cafe shop Monaco
+                {{item.description}}
                 <span style="color:red">Read More</span>
                <div style="background-color:white">
                    <ul class="localevent-contact">
-                       <li class="place">
-                           333 nguyen thi minh khai - HCM
+                       <li class="place" style="height:40px;overflow:hidden">
+                           {{item.address}}
                        </li>
                        <li class="time">
-                           10:00-21:00
+                           {{item.openTime}} - {{item.closeTime}}
                        </li>
                        <li class="call">
-                           09.098533377
+                           {{item.phone}}
                        </li>
                        <li class="price">
-                           30$-80$
+                           {{item.price}}
                        </li>
                    </ul>
 

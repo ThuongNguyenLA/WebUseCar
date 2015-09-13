@@ -45,88 +45,8 @@
     <script src="/js/helper.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
     <!-- google maps javascript -->
     @*<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>*@
-    @*<script language="javascript">
-            window.google = window.google || {};
-            google.maps = google.maps || {};
-            (function () {
-
-                function getScript(src) {
-                    document.write('<' + 'script src="' + src + '"><' + '/script>');
-                }
-
-                var modules = google.maps.modules = {};
-                google.maps.__gjsload__ = function (name, text) {
-                    modules[name] = text;
-                };
-
-                google.maps.Load = function (apiLoad) {
-                    delete google.maps.Load;
-                    apiLoad([0.009999999776482582, [[["http://mt0.googleapis.com/vt?lyrs=m@316000000\u0026src=api\u0026hl=en-US\u0026", "http://mt1.googleapis.com/vt?lyrs=m@316000000\u0026src=api\u0026hl=en-US\u0026"], null, null, null, null, "m@316000000", ["https://mts0.google.com/vt?lyrs=m@316000000\u0026src=api\u0026hl=en-US\u0026", "https://mts1.google.com/vt?lyrs=m@316000000\u0026src=api\u0026hl=en-US\u0026"]], [["http://khm0.googleapis.com/kh?v=178\u0026hl=en-US\u0026", "http://khm1.googleapis.com/kh?v=178\u0026hl=en-US\u0026"], null, null, null, 1, "178", ["https://khms0.google.com/kh?v=178\u0026hl=en-US\u0026", "https://khms1.google.com/kh?v=178\u0026hl=en-US\u0026"]], null, [["http://mt0.googleapis.com/vt?lyrs=t@132,r@316000000\u0026src=api\u0026hl=en-US\u0026", "http://mt1.googleapis.com/vt?lyrs=t@132,r@316000000\u0026src=api\u0026hl=en-US\u0026"], null, null, null, null, "t@132,r@316000000", ["https://mts0.google.com/vt?lyrs=t@132,r@316000000\u0026src=api\u0026hl=en-US\u0026", "https://mts1.google.com/vt?lyrs=t@132,r@316000000\u0026src=api\u0026hl=en-US\u0026"]], null, null, [["http://cbk0.googleapis.com/cbk?", "http://cbk1.googleapis.com/cbk?"]], [["http://khm0.googleapis.com/kh?v=86\u0026hl=en-US\u0026", "http://khm1.googleapis.com/kh?v=86\u0026hl=en-US\u0026"], null, null, null, null, "86", ["https://khms0.google.com/kh?v=86\u0026hl=en-US\u0026", "https://khms1.google.com/kh?v=86\u0026hl=en-US\u0026"]], [["http://mt0.googleapis.com/mapslt?hl=en-US\u0026", "http://mt1.googleapis.com/mapslt?hl=en-US\u0026"]], [["http://mt0.googleapis.com/mapslt/ft?hl=en-US\u0026", "http://mt1.googleapis.com/mapslt/ft?hl=en-US\u0026"]], [["http://mt0.googleapis.com/vt?hl=en-US\u0026", "http://mt1.googleapis.com/vt?hl=en-US\u0026"]], [["http://mt0.googleapis.com/mapslt/loom?hl=en-US\u0026", "http://mt1.googleapis.com/mapslt/loom?hl=en-US\u0026"]], [["https://mts0.googleapis.com/mapslt?hl=en-US\u0026", "https://mts1.googleapis.com/mapslt?hl=en-US\u0026"]], [["https://mts0.googleapis.com/mapslt/ft?hl=en-US\u0026", "https://mts1.googleapis.com/mapslt/ft?hl=en-US\u0026"]], [["https://mts0.googleapis.com/mapslt/loom?hl=en-US\u0026", "https://mts1.googleapis.com/mapslt/loom?hl=en-US\u0026"]]], ["en-US", "US", null, 0, null, null, "http://maps.gstatic.com/mapfiles/", "http://csi.gstatic.com", "https://maps.googleapis.com", "http://maps.googleapis.com", null, "https://maps.google.com", "https://gg.google.com", "http://maps.gstatic.com/maps-api-v3/api/images/", "https://www.google.com/maps", 0], ["http://maps.gstatic.com/maps-api-v3/api/js/21/7", "3.21.7"], [10360177], 1, null, null, null, null, null, "", null, null, 0, "http://khm.googleapis.com/mz?v=178\u0026", "AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es", "https://earthbuilder.googleapis.com", "https://earthbuilder.googleapis.com", null, "http://mt.googleapis.com/vt/icon", [["http://mt0.googleapis.com/vt", "http://mt1.googleapis.com/vt"], ["https://mts0.googleapis.com/vt", "https://mts1.googleapis.com/vt"], null, null, null, null, null, null, null, null, null, null, ["https://mts0.google.com/vt", "https://mts1.google.com/vt"], "/maps/vt", 316000000, 132], 2, 500, [null, "http://g0.gstatic.com/landmark/tour", "http://g0.gstatic.com/landmark/config", null, "http://www.google.com/maps/preview/log204", "", "http://static.panoramio.com.storage.googleapis.com/photos/", ["http://geo0.ggpht.com/cbk", "http://geo1.ggpht.com/cbk", "http://geo2.ggpht.com/cbk", "http://geo3.ggpht.com/cbk"]], ["https://www.google.com/maps/api/js/master?pb=!1m2!1u21!2s7!2sen-US!3sUS!4s21/7", "https://www.google.com/maps/api/js/widget?pb=!1m2!1u21!2s7!2sen-US"], null, 0, 0, "/maps/api/js/ApplicationService.GetEntityDetails", 0, null, null, [null, null, null, null, null, null, null, null, null, [0, 0], [0, 0, 0]]], loadScriptTime);
-                };
-                var loadScriptTime = (new Date).getTime();
-                getScript("http://maps.gstatic.com/maps-api-v3/api/js/21/7/main.js");
-            })();
-        </script>*@
-    <script>
-        //window.fbAsyncInit = function () {
-        //    FB.init({
-        //        appId: '1629245770677319',
-        //        xfbml: true,
-        //        version: 'v2.4'
-        //    });
-        //};
-
-        //(function (d, s, id) {
-        //    var js, fjs = d.getElementsByTagName(s)[0];
-        //    if (d.getElementById(id)) { return; }
-        //    js = d.createElement(s); js.id = id;
-        //    js.src = "//connect.facebook.net/en_US/sdk.js";
-        //    fjs.parentNode.insertBefore(js, fjs);
-        //}(document, 'script', 'facebook-jssdk'));
-
-
-
-        // Here we run a very simple test of the Graph API after login is
-        // successful.  See statusChangeCallback() for when this call is made.
-
-        function aa() {
-            alert("8");
-            //FB.getLoginStatus(function (response) {
-            //    statusChangeCallback(response);
-            //});
-        }
-        //// This is called with the results from from FB.getLoginStatus().
-        //function statusChangeCallback(response) {
-        //    console.log('statusChangeCallback');
-        //    console.log(response);
-        //    // The response object is returned with a status field that lets the
-        //    // app know the current login status of the person.
-        //    // Full docs on the response object can be found in the documentation
-        //    // for FB.getLoginStatus().
-        //    if (response.status === 'connected') {
-        //        // Logged into your app and Facebook.
-        //        testAPI();
-        //    } else if (response.status === 'not_authorized') {
-        //        // The person is logged into Facebook, but not your app.
-        //        document.getElementById('status').innerHTML = 'Please log ' +
-        //          'into this app.';
-        //    } else {
-        //        // The person is not logged into Facebook, so we're not sure if
-        //        // they are logged into this app or not.
-        //        document.getElementById('status').innerHTML = 'Please log ' +
-        //          'into Facebook.';
-        //    }
-        //}
-        //function testAPI() {
-        //    console.log('Welcome!  Fetching your information.... ');
-        //    FB.api('/me', function (response) {
-        //        console.log('Successful login for: ' + response.name);
-        //        document.getElementById('status').innerHTML =
-        //          'Thanks for logging in, ' + response.name + '!';
-        //    });
-        //}
-    </script>
-
+    
+ 
     <style>
         #map {
             width: 100%;
@@ -147,9 +67,11 @@
 
 </head>
 <body ng-app="starter">
+    
     <ion-nav-view>
 
     </ion-nav-view>
+    
     @*<ion-view title="Ionic App">
 
         </ion-view>*@

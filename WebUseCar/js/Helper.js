@@ -30,11 +30,15 @@ function PostDataAjax(url, data, success,fail,bSetHeader,strmethod) {
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 beforeSend: function (hd) {
+                    $("#loading").show();
                     if (bSetHeader)
                     hd.setRequestHeader('Authorization', localStorage.getItem("token"));
                 }
     }).done(success).fail(fail);
 }
+$(document).ajaxComplete(function (event, request, settings) {
+    $("#loading").hide();
+});
 //    $.ajax({
 //        method: "POST",
 //        url: "http://api-rider.xeduadon.com/api/signup/submit",

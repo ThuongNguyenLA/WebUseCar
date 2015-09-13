@@ -4,51 +4,60 @@
 
 <ion-view view-title="<b >Xe Đưa Đón</b>">
     <ion-content>
+        <select id="ddlCat" ng-model="ddlCat" ng-init="ddlCat='-1'" style="width:100%;height:30px;background-color:#eaebed;margin-top:4px;margin-bottom:3px"  ng-change="ChooseLocalEvent(ddlCat)">
+            <option value="-1">Choose Category</option>
+            <option ng-repeat="option in lstCat" value="{{option.eventCategory}}">{{option.eventCategoryName}}</option>
+        </select>
         <ion-scroll direction="y" class="theroot">
-            <select id="ddlCat" ng-model="ddlCat" ng-init="ddlCat='-1'" style="width:100%;height:30px;background-color:#eaebed;margin-top:4px;margin-bottom:3px" ng-model="ddlCat" ng-change="ChooseLocalEvent(ddlCat)">
-                <option value="-1">Choose Category</option>
-                <option ng-repeat="option in lstCat" value="{{option.value}}">{{option.text}}</option>
-            </select>
-            <ul class="localevent-cat">
+            <ul class="localevent-cat" ng-repeat="itemCat in lstCat">
                 <li>
-                    <div><b>SHOP</b></div>
+                    <div ><b>{{itemCat.eventCategoryName}}</b></div>
                     <span>
-                        <img src="~/img/1.jpg" height="200" width="100%" ng-click="Detail()" />
+                        <img src="{{itemCat.imagePath}}" height="200" width="100%" ng-click="SelectCat({{itemCat.eventCategory}})" />
                     </span>
                 </li>
-                <li>
-                    <div><b>FOOD</b></div>
-                    <img src="~/img/2.jpg" height="200" width="100%" ng-click="Detail()" />
-                </li>
+                
             </ul>
-            <ul class="localevent" style="display:none">
+            <ul class="localevent" ng-repeat="item in lstItem" >
                 <li>
-                    <div><b>Cafe shop Monaco</b>30 miles</div>
+                    <div style="height:40px;overflow:hidden"><b>{{item.name}}<br />{{item.address}}</br> </div>
                     <span>
-                        <img src="~/img/1.jpg" height="200" width="100%" ng-click="Detail()" />
+                        <img src="{{item.imagePath}}" height="200" width="100%" ng-click="Detail('{{item.id}}')" />
                     </span>
                 </li>
-                <li>
-                    <div><b>AirPort Monaco</b>30 miles</div>
-                    <img src="~/img/2.jpg" height="200" width="100%" ng-click="Detail()" />
-                </li>
-                <li>
-                    <div><b>Supermartket BigC</b>30 miles</div>
-                    <img src="~/img/3.jpg" height="200" width="100%" ng-click="Detail()" />
-                </li>
-                <li>
-                    <div><b>KFC Monaco</b>30 miles</div>
-                    <img src="~/img/1.jpg" height="200" width="100%" ng-click="Detail()" />
-                </li>
-                <li>
-                    <div><b>Cinema Monaco</b>30 miles</div>
-                    <img src="~/img/2.jpg" height="200" width="100%" ng-click="Detail()" />
-                </li>
-                <li>
-                    <div><b>Foody Monaco</b>30 miles</div>
-                    <img src="~/img/3.jpg" height="200" width="100%" ng-click="Detail()" />
-                </li>
+
             </ul>
+            <div id="pnDetail" style="background-color: #edeef0;display:none">
+                <div style="position:relative">
+                    <div class="localevent-header"><b>{{item.name}}</b></div>
+                    <span>
+                        <img src="{{item.imagePath}}" height="200" width="100%" />
+                    </span>
+                </div>
+                <div style="color:gray">
+                    <b style="color:#37b997">Description:</b>
+                    {{item.description}}
+                    <span style="color:red">Read More</span>
+                    <div style="background-color:white">
+                        <ul class="localevent-contact">
+                            <li class="place" style="height:40px;overflow:hidden">
+                                {{item.address}}
+                            </li>
+                            <li class="time">
+                                {{item.openTime}} - {{item.closeTime}}
+                            </li>
+                            <li class="call">
+                                {{item.phone}}
+                            </li>
+                            <li class="price">
+                                {{item.price}}
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <input type="button" value="Book Now" style="width:80%;background-color:#49ccaa;color:#fff;margin-left:10%;height:30px;border:none;margin-top:10px;" />
+            </div>
         </ion-scroll>
     </ion-content>
 </ion-view>
@@ -62,6 +71,7 @@
         display: block;
         margin-bottom: -3px;
         margin-top: 1px;
+      
     }
     .localevent-cat li b {
         line-height:38px;
@@ -78,5 +88,56 @@
 
     .theroot {
     height: 100%;
+    }
+</style>
+<style>
+    .localevent-contact {
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+        .localevent-contact li {
+            line-height: 38px;
+            padding-left: 40px;
+            background-color: white;
+        }
+
+    .place {
+        background: url(/img/icons/icon-local.png) no-repeat 10px center;
+    }
+
+    .time {
+        border-top: #c4c3c9 solid 1px;
+        border-bottom: #c4c3c9 solid 1px;
+        background: url(/img/icons/icon-clock.png) no-repeat 10px center;
+    }
+
+    .call {
+        border-bottom: #c4c3c9 solid 1px;
+        background: url(/img/icons/icon-call.png) no-repeat 10px center;
+    }
+
+    .price {
+        background: url(/img/icons/icon-money.png) no-repeat 10px center;
+    }
+
+    .localevent-header {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        background-color: #37b997;
+        height: 40px;
+        width: 100%;
+        padding-left: 10px;
+    }
+
+        .localevent-header b {
+            line-height: 40px;
+            color: #fff;
+        }
+
+    .theroot {
+        height: 100%;
     }
 </style>
