@@ -23,7 +23,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/13/2015 17:14:45</publishTime>
     </File>
     <File Include="Areas/LocalEvent/JSController/LocalEventController.js">
-      <publishTime>09/13/2015 20:48:43</publishTime>
+      <publishTime>09/14/2015 19:48:27</publishTime>
     </File>
     <File Include="Areas/LocalEvent/Views/LocalEvent/Index.cshtml">
       <publishTime>09/13/2015 20:40:18</publishTime>
@@ -56,7 +56,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2015 09:08:22</publishTime>
     </File>
     <File Include="Areas/Profile/JSController/ProfileController.js">
-      <publishTime>09/13/2015 23:31:09</publishTime>
+      <publishTime>09/14/2015 19:47:17</publishTime>
     </File>
     <File Include="Areas/Profile/Views/Login/Login.cshtml">
       <publishTime>08/05/2015 00:10:41</publishTime>
@@ -101,10 +101,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/06/2015 22:52:08</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>09/14/2015 09:35:57</publishTime>
+      <publishTime>09/14/2015 20:11:24</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>09/14/2015 09:35:57</publishTime>
+      <publishTime>09/14/2015 20:11:24</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>08/04/2015 21:52:33</publishTime>
@@ -143,13 +143,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2015 21:52:34</publishTime>
     </File>
     <File Include="bin/WebUseCar.dll">
-      <publishTime>09/13/2015 20:51:31</publishTime>
+      <publishTime>09/14/2015 20:11:15</publishTime>
     </File>
     <File Include="css/drawer.css">
       <publishTime>09/07/2015 20:35:16</publishTime>
     </File>
     <File Include="css/index.css">
       <publishTime>08/04/2015 21:57:23</publishTime>
+    </File>
+    <File Include="css/jquery-ui.css">
+      <publishTime>09/14/2015 19:08:29</publishTime>
     </File>
     <File Include="css/style.css">
       <publishTime>08/04/2015 21:57:23</publishTime>
@@ -281,10 +284,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/08/2015 17:33:17</publishTime>
     </File>
     <File Include="js/appWelcome.js">
-      <publishTime>09/13/2015 23:01:51</publishTime>
+      <publishTime>09/14/2015 20:10:23</publishTime>
     </File>
     <File Include="js/controllers.js">
-      <publishTime>09/08/2015 17:41:44</publishTime>
+      <publishTime>09/14/2015 19:47:26</publishTime>
     </File>
     <File Include="js/drawer.js">
       <publishTime>09/07/2015 21:24:42</publishTime>
@@ -506,7 +509,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2015 21:52:37</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/14/2015 09:35:54</publishTime>
+      <publishTime>09/14/2015 20:11:20</publishTime>
     </File>
     <File Include="scripts/index.js">
       <publishTime>08/04/2015 21:57:23</publishTime>
@@ -617,10 +620,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2015 21:57:23</publishTime>
     </File>
     <File Include="templates/menu.html">
-      <publishTime>09/13/2015 11:38:41</publishTime>
+      <publishTime>09/14/2015 20:03:38</publishTime>
     </File>
     <File Include="templates/menuwelcome.html">
-      <publishTime>08/28/2015 23:41:30</publishTime>
+      <publishTime>09/14/2015 20:04:26</publishTime>
     </File>
     <File Include="templates/playlists.html">
       <publishTime>08/04/2015 21:57:23</publishTime>
@@ -638,7 +641,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/08/2015 23:20:59</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>09/13/2015 11:23:12</publishTime>
+      <publishTime>09/14/2015 19:12:56</publishTime>
     </File>
     <File Include="Views/Index/Login.cshtml">
       <publishTime>09/10/2015 22:09:55</publishTime>
