@@ -36,11 +36,13 @@
                 </div>
                 <div style="color:gray">
                     <b style="color:#37b997">Description:</b>
-                    {{item.description}}
-                    <span style="color:red">Read More</span>
+                    <div id="description" style="height:50px;overflow:hidden">
+                        {{item.description}}
+                    </div>
+                    <span id="readMore" style="color:red" onclick="$('#readMore').hide(); $('#description').css('height', 'auto'); $('#description').css('overflow', 'auto'); $(this).hide()">Read More</span>
                     <div style="background-color:white">
                         <ul class="localevent-contact">
-                            <li class="place" style="height:40px;overflow:hidden">
+                            <li class="place" style="height:45px;overflow:hidden">
                                 {{item.address}}
                             </li>
                             <li class="time">

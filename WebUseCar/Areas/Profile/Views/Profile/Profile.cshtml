@@ -11,7 +11,7 @@
             <div class="profile-header">
                 <img src="/img/avatar.jpg" class="avatar" />
                 <div>
-                    <h4 class="name">Thinh Ho</h4>
+                    <h4 class="name">{{rider.lastName}} {{rider.firstName}}</h4>
                     <div style="position:relative;top:4px;color:white">
                         <img src="/img/icons/icon-place-profile.png" height="12" style="position:relative;top:2px;" />
                         <span>California</span>
@@ -20,15 +20,22 @@
                 </div>
 
             </div>
-            <input class="input-profile" placeholder="Email" />
-            <input class="input-profile" placeholder="Password" />
-            <input class="input-profile" placeholder="Phone number"/>
-            <input class="input-profile" placeholder="Address" />
-            <select class="input-profile" style="color:#b3b3b3;margin-right:2px"><option>City</option></select>
-            <select class="input-profile" style="color:#b3b3b3;margin-right:2px"><option>State</option></select>
+            <input class="input-profile" placeholder="FirstName" ng-model="txtFirstName"  value="{{rider.firstName}}" />
+            <input class="input-profile" placeholder="LastName" ng-model="txtLastName" value="{{rider.lastName}}" />
+            <input class="input-profile" placeholder="Email" ng-model="txtEmail" value="{{rider.email}}" />
+            <input class="input-profile" type="password" placeholder="Password" ng-model="txtPassword"  />
+            <input class="input-profile" placeholder="Phone number" ng-model="txtPhone" value="{{rider.phone}}" />
+            <input class="input-profile" placeholder="Address" ng-model="txtAddress" value="{{rider.address}}" />
+            <select class="input-profile" ng-model="ddlCountry" id="ddlCountry" ng-init="ddlCountry='VN'">
+                <option ng-repeat="option in Countrys.results" value="{{option.value}}">{{option.text}}</option>
+            </select>
+            <input class="input-profile" placeholder="City" ng-model="txtCity" />
+            <select class="input-profile" ng-model="ddlState" id="ddlState" ng-init="ddlState='AL'">
+                <option ng-repeat="option in States.results" value="{{option.value}}">{{option.text}}</option>
+            </select>
             <input class="input-profile" placeholder="Zip" />
             <div style="text-align:center">
-                <button class="button button-small" style="background-color:#48ccaa;color:white;width:80%;margin-top:15px">Save</button>
+                <button class="button button-small" ng-click="SaveProfile()" style="background-color:#48ccaa;color:white;width:80%;margin-top:15px">Save</button>
 
             </div>
 
@@ -49,7 +56,7 @@
         border-top:none;
         border-left:none;
         border-right:none;
-        border-bottom:#eee solid 1px;
+        border-bottom:#eee solid 1px !important;
         padding-left:8px;
     }
     .avatar {

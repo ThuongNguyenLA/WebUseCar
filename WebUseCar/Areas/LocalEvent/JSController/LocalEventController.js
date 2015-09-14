@@ -101,6 +101,9 @@
     }
     $scope.Detail = function (itemid)
     {
+        $('#description').css('height', '45px');
+        $('#description').css('overflow', 'hidden');
+        $("#readMore").show();
         //$state.go("app.localeventdetail", { id: itemid });
         $(".localevent-cat").hide();
         $(".localevent").hide();

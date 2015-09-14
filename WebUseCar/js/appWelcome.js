@@ -127,7 +127,7 @@
                  if (respone && respone.results.length > 0) {
                      $timeout(function () {
                          $scope.Countrys = respone;
-                         $scope.ddlCountr = "VN";
+                         $scope.ddlCountry = "VN";
                      }, 10);
                  }
                  else {
