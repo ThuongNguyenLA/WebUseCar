@@ -1,4 +1,5 @@
 var usecar = angular.module('starter.controllers', ['tommy.GoogleMaps']);
+
 usecar.controller("LoginCtrl", LoginCtrl);
 usecar.controller("ProfileCtrl", ProfileCtrl);
 usecar.controller("RideCtrl", RideCtrl);
@@ -10,6 +11,51 @@ usecar.controller("PaymentCtrl", PaymentCtrl);
 usecar.controller("LocalEventCtrl", LocalEventCtrl);
 usecar.controller("LocalEventDetailCtrl", LocalEventDetailCtrl);
 usecar.controller("RideEstimatefareCtrl", RideEstimatefareCtrl);
+usecar.factory('CommonPopupCtrl', function ( $ionicPopup, $timeout) {
+    helper = {};
+    
+    helper.show = function (strPopupContent) {
+       // $scope.data = {}
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: strPopupContent,
+            title: 'Alert',
+            subTitle: '',
+            buttons: [
+              { text: 'Cancel',type:'btnUseCar' },
+            ]
+        });
+        myPopup.then(function (res) {
+            console.log('Tapped!', res);
+        });
+    };
+    //// A confirm dialog
+    //$scope.showConfirm = function () {
+    //    var confirmPopup = $ionicPopup.confirm({
+    //        title: 'Consume Ice Cream',
+    //        template: 'Are you sure you want to eat this ice cream?'
+    //    });
+    //    confirmPopup.then(function (res) {
+    //        if (res) {
+    //            console.log('You are sure');
+    //        } else {
+    //            console.log('You are not sure');
+    //        }
+    //    });
+    //};
+    //// An alert dialog
+    //$scope.showAlert = function () {
+    //    var alertPopup = $ionicPopup.alert({
+    //        title: 'Don\'t eat that!',
+    //        template: 'It might taste good'
+    //    });
+    //    alertPopup.then(function (res) {
+    //        console.log('Thank you for not eating my delicious ice cream cone');
+    //    });
+    //};
+    return helper;
+});
 usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory) {
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -102,6 +148,7 @@ usecar.controller('HomeCtrl', function ($scope, $ionicPopup, $timeout, $ionicSli
 usecar.controller('TestSubCtrl', function ($scope, $ionicPopup, $timeout) {
     alert("sub");
 });
+
 usecar.controller('PlaylistsCtrl', function ($scope, $ionicPopup, $timeout) {
     $scope.playlists = [
       { title: 'Reggae', id: 1 },

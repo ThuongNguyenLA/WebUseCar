@@ -1,4 +1,4 @@
-﻿var LocalEventCtrl = function ($rootScope, $scope, $state, $stateParams, $ionicHistory,$timeout) {
+﻿var LocalEventCtrl = function ($rootScope, $scope, $state, $stateParams, $ionicHistory, $timeout, CommonPopupCtrl) {
     //if ($stateParams.id != null) {
 
     //    $(".localevent-cat").hide();
@@ -20,7 +20,7 @@
         PostDataAjax("/api/LocalEvent/GetCategoryLocalEvents?lat=" + position.coords.latitude + "&lng="+position.coords.longitude, "", function (respone) {
             $timeout(function () {
                 if (respone.message != "") {
-                    alert(respone.message);
+                    CommonPopupCtrl.show(respone.message);
                     return;
                 }
                 $rootScope.lstCat = respone.results;
@@ -31,7 +31,7 @@
                 //    }
                 //}, 500);
             }, 500);
-        }, function (e) {  alert(e.responseText);},true, "GET");
+        }, function (e) {  CommonPopupCtrl.show(e.responseText);},true, "GET");
     }
     initiate_geolocation();
     $scope.ddlCat = ($stateParams.id == null ? "-1" : $stateParams.id);
@@ -57,14 +57,14 @@
         PostDataAjax("/api/LocalEvent/GetLocalEvents?lat=" + $scope.lat + "&lng=" + $scope.long + "&eventCategory=" + catID, "", function (respone) {
             $timeout(function () {
                 if (respone.message != "") {
-                    alert(respone.message);
+                    CommonPopupCtrl.show(respone.message);
                     return;
                 }
                 else {
                     $rootScope.lstItem = respone.list;
                 }
             }, 500);
-        }, function (e) { alert(e.responseText); }, true, "GET");
+        }, function (e) { CommonPopupCtrl.show(e.responseText); }, true, "GET");
     }
 
     $scope.ChooseLocalEvent = function (catID)
@@ -80,14 +80,14 @@
         PostDataAjax("/api/LocalEvent/GetLocalEvents?lat=" + $scope.lat + "&lng=" + $scope.long + "&eventCategory=" + catID, "", function (respone) {
             $timeout(function () {
                 if (respone.message != "") {
-                    alert(respone.message);
+                    CommonPopupCtrl.show(respone.message);
                     return;
                 }
                 else {
                     $rootScope.lstItem = respone.list;
                 }
             }, 500);
-        }, function (e) { alert(e.responseText); }, true, "GET");
+        }, function (e) { CommonPopupCtrl.show(e.responseText); }, true, "GET");
         if (catID == "-1") {
             $(".localevent-cat").show();
             $(".localevent").hide();
@@ -124,5 +124,5 @@
 
 
 }
-LocalEventCtrl.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "$ionicHistory", "$timeout"];
+LocalEventCtrl.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "$ionicHistory", "$timeout", "CommonPopupCtrl"];
 

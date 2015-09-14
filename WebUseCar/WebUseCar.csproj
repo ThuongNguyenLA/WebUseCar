@@ -146,6 +146,7 @@
     <Content Include="Areas\Ride\JSController\RideEstimatefareController.js" />
     <Content Include="css\drawer.css" />
     <Content Include="css\index.css" />
+    <Content Include="css\jquery-ui.css" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
     <Content Include="img\1.jpg" />

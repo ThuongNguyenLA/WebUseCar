@@ -1,11 +1,12 @@
-﻿var ProfileCtrl = function ($rootScope, $scope, $timeout) {
+﻿var ProfileCtrl = function ($rootScope, $scope, $timeout, CommonPopupCtrl) {
 
     function BindData()
     {
+        
         PostDataAjax("/api/Profile/GetRider", "", function (respone) {
             $timeout(function () {
                 if (respone.message != "") {
-                    alert(respone.message);
+                    CommonPopupCtrl.show(respone.message);
                     return;
                 }
                 else {
@@ -19,7 +20,7 @@
                     $scope.txtCity = respone.rider.city;
                 }
             }, 500);
-        }, function (e) { alert(e.responseText); }, true, "GET");
+        }, function (e) { CommonPopupCtrl.show(e.responseText); }, true, "GET");
 
         PostDataAjax("/api/List/GetCountries", "",
          function (respone) {
@@ -31,7 +32,7 @@
                      }, 10);
                  }
                  else {
-                     alert("error");
+                     CommonPopupCtrl.show("error");
                      // callback(null);
                  }
              }, 10);
@@ -47,7 +48,7 @@
                      }, 10);
                  }
                  else {
-                     alert("error");
+                     CommonPopupCtrl.show("error");
                      // callback(null);
                  }
              }, 10);
@@ -62,29 +63,27 @@
    
     $scope.SaveProfile = function ()
     {
-        // alert("login");
+        // CommonPopupCtrl.show("login");
         debugger;
-        dataSend = {
-            rider: $scope.rider
-        };
-        PostDataAjax("/api/Profile/Save", dataSend,
+       
+        PostDataAjax("/api/Profile/Save", $scope.rider,
              function (respone) {
                  $timeout(function () {
                      if (respone && respone.results.length > 0) {
                          if (respone.message != "") {
-                             alert(respone.message);
+                             CommonPopupCtrl.show(respone.message);
                              return;
                          }
                          else {
-                             alert("Save success");
+                             CommonPopupCtrl.show("Save success");
                          }
                      }
                      else {
-                         alert("error");
+                         CommonPopupCtrl.show("error");
                          // callback(null);
                      }
                  }, 10);
-             }, function (e) { debugger; alert(e.responseText); }
+             }, function (e) { debugger; CommonPopupCtrl.show(e.responseText); }
            );
 
     }
@@ -94,4 +93,4 @@
     
 
 }
-ProfileCtrl.$inject = ["$rootScope", "$scope", "$timeout"];
+ProfileCtrl.$inject = ["$rootScope", "$scope", "$timeout", "CommonPopupCtrl"];

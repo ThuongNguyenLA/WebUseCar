@@ -1,5 +1,26 @@
-﻿angular.module('app', ['ionic'])
-    .config(function ($stateProvider, $urlRouterProvider) {
+﻿var usecar = angular.module('app', ['ionic']);
+usecar.factory('CommonPopupCtrl', function ($ionicPopup, $timeout) {
+    helper = {};
+
+    helper.show = function (strPopupContent) {
+        // $scope.data = {}
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: strPopupContent,
+            title: 'Alert',
+            subTitle: '',
+            buttons: [
+              { text: 'Cancel', type: 'btnUseCar' },
+            ]
+        });
+        myPopup.then(function (res) {
+            console.log('Tapped!', res);
+        });
+    };
+    return helper;
+});
+usecar.config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
         //$routeProvider.when('/signup', {
         //     templateUrl: '/Index/Signup'
@@ -86,41 +107,40 @@
     }
 
 })
-.controller('LoginCtrl', function ($scope, $ionicHistory) {
+.controller('LoginCtrl', function ($scope, $ionicHistory, CommonPopupCtrl) {
 
     $scope.login = function()
     {
         if ($("#user").val() == "") {
-            alert("Please input username");
+            CommonPopupCtrl.show("Please input username");
             return;
         }
         if ($("#pass").val() == "") {
-            alert("Please input password");
+            CommonPopupCtrl.show("Please input password");
             return;
         }
         dataSend = {
             username: $("#user").val(), password: $("#pass").val(),grant_type : "password"
         };
-        //dataSend = { strParam: "username=" + $("#user").val() + "&password=" + $("#pass").val() + "&grant_type=password" };
         try {
-
+            $("#loading").show();
             $.post(RiderRootUrl + "/token", dataSend, function (respone) {
                     localStorage.setItem("token",respone.token_type+" "+ respone.access_token);
                     $ionicHistory.nextViewOptions({
                         disableBack: true
                     });
                     $ionicHistory.clearHistory();
+                 
                     window.location.href = "/index#/app/home";
-            }).fail(function (e) {alert(JSON.parse(e.responseText).error); });
-            
+            }).fail(function (e) { $("#loading").hide(); CommonPopupCtrl.show(JSON.parse(e.responseText).error); });
         } catch (e) {
-            alert(e)
+            //alert(e)
         }
       
     }
 
 })
-.controller('SignUpCtrl', function ($scope, $timeout) {
+.controller('SignUpCtrl', function ($scope, $timeout, CommonPopupCtrl) {
     PostDataAjax("/api/List/GetCountries", "",
          function (respone) {
              $timeout(function () {
@@ -131,7 +151,7 @@
                      }, 10);
                  }
                  else {
-                     alert("error");
+                     CommonPopupCtrl.show("error");
                     // callback(null);
                  }
              }, 10);
@@ -145,11 +165,11 @@
              function (respone) {
                  $timeout(function () {
                      if (respone && respone.success) {
-                         alert(respone.message);
+                         CommonPopupCtrl.show(respone.message);
 
                      }
                      else {
-                         alert(respone.message);
+                         CommonPopupCtrl.show(respone.message);
                      }
                  }, 10);
 
