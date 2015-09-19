@@ -34,7 +34,7 @@
             <input class="input-profile" placeholder="Email" ng-model="txtEmail" id="txtEmail" />
             <input class="input-profile" type="password" placeholder="Password" ng-model="txtPassword" id="txtPassword" />
             <input class="input-profile" placeholder="Phone number" ng-model="txtPhone" id="txtPhone" />
-            <select class="input-profile" ng-model="ddlCountry" id="ddlCountry" ng-init="ddlCountry='VN'">
+            <select class="input-profile" ng-model="ddlCountry" id="ddlCountry" ng-init="ddlCountry=Countrys.results[2]">
                 <option ng-repeat="option in Countrys.results" value="{{option.value}}">{{option.text}}</option>
             </select>
             <input class="input-profile" placeholder="City" ng-model="txtCity" id="txtCity" />

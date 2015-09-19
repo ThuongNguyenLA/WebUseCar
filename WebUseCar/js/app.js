@@ -89,7 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
     .state('app.home', {
         url: "/home",
         views: {
-            'TemplateWelCome': {
+            'menuContent': {
                 templateUrl: '/Index/home',
                 controller: 'HomeCtrl'
             }
