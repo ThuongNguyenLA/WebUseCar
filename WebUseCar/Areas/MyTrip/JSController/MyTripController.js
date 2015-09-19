@@ -35,114 +35,114 @@
     //        //console.log(arr);
     //    });
     //}
-    var onNativeMapReady = function () {
-        var draggPosition = {};
-        var car_icon = {
-            'url': cordova.file.applicationDirectory + 'www/img/car.png',
-            'size': {
-                width: 40,
-                height: 40
-            }
-        };
-      //  $rootScope.map.setClickable(true);
-        $rootScope.map.getMyLocation(function (location) {
+    ////var onNativeMapReady = function () {
+    ////    var draggPosition = {};
+    ////    var car_icon = {
+    ////        'url': cordova.file.applicationDirectory + 'www/img/car.png',
+    ////        'size': {
+    ////            width: 40,
+    ////            height: 40
+    ////        }
+    ////    };
+    ////  //  $rootScope.map.setClickable(true);
+    ////    $rootScope.map.getMyLocation(function (location) {
 
-            var msg = ["Current your location:\n",
-						"latitude:" + location.latLng.lat,
-						"longitude:" + location.latLng.lng,
-						"speed:" + location.speed,
-						"time:" + location.time,
-						"bearing:" + location.bearing].join("\n");
-            var MYLOCATION = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
-            $rootScope.map.moveCamera({
-                'target': MYLOCATION,
-                'tilt': 30,
-                'zoom': 15
-            }, function () {
-                var pin_icon = {
-                    'url': cordova.file.applicationDirectory + 'www/img/pin.png',
-                    'size': {
-                        width: 40,
-                        height: 40
-                    }
-                };
-                $rootScope.map.addMarker({
-                    'position': MYLOCATION,
-                    'draggable': true,
-                    'icon': pin_icon
-                }, function (marker) {
-                    marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
-                        marker.getPosition(function (latLng) {
-                            draggPosition = latLng;
-                            marker.setTitle(latLng.toUrlValue());
-                            marker.showInfoWindow();
-                        });
-                    });
-                });
+    ////        var msg = ["Current your location:\n",
+	////					"latitude:" + location.latLng.lat,
+	////					"longitude:" + location.latLng.lng,
+	////					"speed:" + location.speed,
+	////					"time:" + location.time,
+	////					"bearing:" + location.bearing].join("\n");
+    ////        var MYLOCATION = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+    ////        $rootScope.map.moveCamera({
+    ////            'target': MYLOCATION,
+    ////            'tilt': 30,
+    ////            'zoom': 15
+    ////        }, function () {
+    ////            var pin_icon = {
+    ////                'url': cordova.file.applicationDirectory + 'www/img/pin.png',
+    ////                'size': {
+    ////                    width: 40,
+    ////                    height: 40
+    ////                }
+    ////            };
+    ////            $rootScope.map.addMarker({
+    ////                'position': MYLOCATION,
+    ////                'draggable': true,
+    ////                'icon': pin_icon
+    ////            }, function (marker) {
+    ////                marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
+    ////                    marker.getPosition(function (latLng) {
+    ////                        draggPosition = latLng;
+    ////                        marker.setTitle(latLng.toUrlValue());
+    ////                        marker.showInfoWindow();
+    ////                    });
+    ////                });
+    ////            });
 
-                var L1 = new plugin.google.maps.LatLng(10.802352, 106.642338);
-                $rootScope.map.addMarker({
-                    'position': L1,
-                    'title': 'Test 1',
-                    'icon': car_icon
-                });
-                var L2 = new plugin.google.maps.LatLng(10.832846, 106.666808);
-                $rootScope.map.addMarker({
-                    'position': L2,
-                    'title': 'Test 2',
-                    'icon': car_icon
-                });
-                var L3 = new plugin.google.maps.LatLng(10.779078, 106.679229);
-                $rootScope.map.addMarker({
-                    'position': L3,
-                    'title': 'Test 3',
-                    'icon': car_icon
-                });
-            });
-            // $cordovaBackgroundGeolocation.configure({})
-            //     .then(
-            //       null, // Background never resolves
-            //       function (err) { // error callback
-            //         console.error("QQQQ cordovaBackgroundGeolocation Error " + err);
-            //       },
-            //       function (location) { // notify callback
-            //         console.log(location);
-            //       });
+    ////            var L1 = new plugin.google.maps.LatLng(10.802352, 106.642338);
+    ////            $rootScope.map.addMarker({
+    ////                'position': L1,
+    ////                'title': 'Test 1',
+    ////                'icon': car_icon
+    ////            });
+    ////            var L2 = new plugin.google.maps.LatLng(10.832846, 106.666808);
+    ////            $rootScope.map.addMarker({
+    ////                'position': L2,
+    ////                'title': 'Test 2',
+    ////                'icon': car_icon
+    ////            });
+    ////            var L3 = new plugin.google.maps.LatLng(10.779078, 106.679229);
+    ////            $rootScope.map.addMarker({
+    ////                'position': L3,
+    ////                'title': 'Test 3',
+    ////                'icon': car_icon
+    ////            });
+    ////        });
+    ////        // $cordovaBackgroundGeolocation.configure({})
+    ////        //     .then(
+    ////        //       null, // Background never resolves
+    ////        //       function (err) { // error callback
+    ////        //         console.error("QQQQ cordovaBackgroundGeolocation Error " + err);
+    ////        //       },
+    ////        //       function (location) { // notify callback
+    ////        //         console.log(location);
+    ////        //       });
 
-        }, function (msg) {
-            alert("error: " + msg);
-        });
-    };
-    var div = document.getElementById("map_canvas");
-    if (div) {
-        var mapHeight = window.innerHeight - 110;
-        div.style.height = mapHeight + 'px';
-        setTimeout(function () {
-            if (window.plugin) {
-                // Initialize the map view
-                if ($rootScope.map === undefined) {
-                    $rootScope.map = plugin.google.maps.Map.getMap(div, {
-                        'backgroundColor': 'white',
-                        'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-                        'controls': {
-                            'compass': true,
-                            'myLocationButton': true,
-                            'indoorPicker': true,
-                            'zoom': true
-                        },
-                        'gestures': {
-                            'scroll': true,
-                            'tilt': true,
-                            'rotate': true,
-                            'zoom': true
-                        }
-                    });
+    ////    }, function (msg) {
+    ////        alert("error: " + msg);
+    ////    });
+    ////};
+    ////var div = document.getElementById("map_canvas");
+    ////if (div) {
+    ////    var mapHeight = window.innerHeight - 110;
+    ////    div.style.height = mapHeight + 'px';
+    ////    setTimeout(function () {
+    ////        if (window.plugin) {
+    ////            // Initialize the map view
+    ////            if ($rootScope.map === undefined) {
+    ////                $rootScope.map = plugin.google.maps.Map.getMap(div, {
+    ////                    'backgroundColor': 'white',
+    ////                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+    ////                    'controls': {
+    ////                        'compass': true,
+    ////                        'myLocationButton': true,
+    ////                        'indoorPicker': true,
+    ////                        'zoom': true
+    ////                    },
+    ////                    'gestures': {
+    ////                        'scroll': true,
+    ////                        'tilt': true,
+    ////                        'rotate': true,
+    ////                        'zoom': true
+    ////                    }
+    ////                });
                     
-                    $rootScope.map.addEventListener(plugin.google.maps.event.MAP_READY, onNativeMapReady);
-                }
-            }
-        }, 10);
-    }
+    ////                $rootScope.map.addEventListener(plugin.google.maps.event.MAP_READY, onNativeMapReady);
+    ////            }
+    ////        }
+    ////    }, 10);
+    ////}
     
     //$scope.OnBlur = function (result) {
     //    var lat = result.geometry.location.lat();

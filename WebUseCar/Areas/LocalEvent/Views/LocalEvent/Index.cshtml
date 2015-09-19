@@ -9,56 +9,58 @@
             <option ng-repeat="option in lstCat" value="{{option.eventCategory}}">{{option.eventCategoryName}}</option>
         </select>
         <ion-scroll direction="y" class="theroot">
-            <ul class="localevent-cat" ng-repeat="itemCat in lstCat">
-                <li>
-                    <div ><b>{{itemCat.eventCategoryName}}</b></div>
-                    <span>
-                        <img src="{{itemCat.imagePath}}" height="200" width="100%" ng-click="SelectCat({{itemCat.eventCategory}})" />
-                    </span>
-                </li>
-                
-            </ul>
-            <ul class="localevent" ng-repeat="item in lstItem" >
-                <li>
-                    <div style="height:40px;overflow:hidden"><b>{{item.name}}<br />{{item.address}}</br> </div>
-                    <span>
-                        <img src="{{item.imagePath}}" height="200" width="100%" ng-click="Detail('{{item.id}}')" />
-                    </span>
-                </li>
+            <div class="usecar-content">
+                <ul class="localevent-cat" ng-repeat="itemCat in lstCat">
+                    <li>
+                        <div><b>{{itemCat.eventCategoryName}}</b></div>
+                        <span>
+                            <img src="{{itemCat.imagePath}}" height="200" width="100%" ng-click="SelectCat({{itemCat.eventCategory}})" />
+                        </span>
+                    </li>
 
-            </ul>
-            <div id="pnDetail" style="background-color: #edeef0;display:none">
-                <div style="position:relative">
-                    <div class="localevent-header"><b>{{item.name}}</b></div>
-                    <span>
-                        <img src="{{item.imagePath}}" height="200" width="100%" />
-                    </span>
-                </div>
-                <div style="color:gray">
-                    <b style="color:#37b997">Description:</b>
-                    <div id="description" style="height:50px;overflow:hidden">
-                        {{item.description}}
-                    </div>
-                    <span id="readMore" style="color:red" onclick="$('#readMore').hide(); $('#description').css('height', 'auto'); $('#description').css('overflow', 'auto'); $(this).hide()">Read More</span>
-                    <div style="background-color:white">
-                        <ul class="localevent-contact">
-                            <li class="place" style="height:45px;overflow:hidden">
-                                {{item.address}}
-                            </li>
-                            <li class="time">
-                                {{item.openTime}} - {{item.closeTime}}
-                            </li>
-                            <li class="call">
-                                {{item.phone}}
-                            </li>
-                            <li class="price">
-                                {{item.price}}
-                            </li>
-                        </ul>
+                </ul>
+                <ul class="localevent" ng-repeat="item in lstItem">
+                    <li>
+                        <div style="height:40px;overflow:hidden"><b>{{item.name}}<br />{{item.address}}</br> </div>
+                        <span>
+                            <img src="{{item.imagePath}}" height="200" width="100%" ng-click="Detail('{{item.id}}')" />
+                        </span>
+                    </li>
 
+                </ul>
+                <div id="pnDetail" style="background-color: #edeef0;display:none">
+                    <div style="position:relative">
+                        <div class="localevent-header"><b>{{item.name}}</b></div>
+                        <span>
+                            <img src="{{item.imagePath}}" height="200" width="100%" />
+                        </span>
                     </div>
+                    <div style="color:gray">
+                        <b style="color:#37b997">Description:</b>
+                        <div id="description" style="height:50px;overflow:hidden">
+                            {{item.description}}
+                        </div>
+                        <span id="readMore" style="color:red" onclick="$('#readMore').hide(); $('#description').css('height', 'auto'); $('#description').css('overflow', 'auto'); $(this).hide()">Read More</span>
+                        <div style="background-color:white">
+                            <ul class="localevent-contact">
+                                <li class="place" style="height:45px;overflow:hidden">
+                                    {{item.address}}
+                                </li>
+                                <li class="time">
+                                    {{item.openTime}} - {{item.closeTime}}
+                                </li>
+                                <li class="call">
+                                    {{item.phone}}
+                                </li>
+                                <li class="price">
+                                    {{item.price}}
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <input type="button" value="Book Now" style="width:80%;background-color:#49ccaa;color:#fff;margin-left:10%;height:30px;border:none;margin-top:10px;" />
                 </div>
-                <input type="button" value="Book Now" style="width:80%;background-color:#49ccaa;color:#fff;margin-left:10%;height:30px;border:none;margin-top:10px;" />
             </div>
         </ion-scroll>
     </ion-content>

@@ -153,6 +153,7 @@
     <Content Include="img\2.jpg" />
     <Content Include="img\3.jpg" />
     <Content Include="img\avatar.jpg" />
+    <Content Include="img\avatar.png" />
     <Content Include="img\bg_1.png" />
     <Content Include="img\bg_2.png" />
     <Content Include="img\car.png" />
@@ -222,6 +223,10 @@
     <Content Include="scripts\ios\cordova_plugins.js" />
     <Content Include="scripts\ios\plugins\com.ionic.keyboard\www\keyboard.js" />
     <Content Include="scripts\ios\plugins\com.transistorsoft.cordova.background-geolocation\www\BackgroundGeolocation.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-camera\www\Camera.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-camera\www\CameraConstants.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-camera\www\ios\CameraPopoverHandle.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-console\www\console-via-logger.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-console\www\logger.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-device\www\device.js" />
@@ -247,6 +252,10 @@
     <Content Include="scripts\ios\plugins\cordova-plugin-file\www\ProgressEvent.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-file\www\requestFileSystem.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-geolocation\www\Coordinates.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-geolocation\www\geolocation.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-geolocation\www\Position.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-geolocation\www\PositionError.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-splashscreen\www\splashscreen.js" />
     <Content Include="scripts\ios\plugins\plugin.google.maps\www\googlemaps-cdv-plugin.js" />
     <Content Include="scripts\ios\plugins\plugin.http.request\www\http-request.js" />

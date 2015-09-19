@@ -21,20 +21,42 @@ function PostDataAjax(url, data, success,fail,bSetHeader,strmethod) {
     {
         strmethod = "POST";
     }
+    if(bSetHeader){
+        $.ajax({
+            method: strmethod,
+            url: RiderRootUrl + url,
+            crossDomain: true,
+            data: JSON.stringify(data),//đưa về chuỗi của đối tượng json
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            headers: {
+                "Authorization":localStorage.getItem("token")
+            },
+            beforeSend: function (hd) {
+                $("#loading").show();
+                //if (bSetHeader)
+                //hd.setRequestHeader('Authorization',)// localStorage.getItem("token"));
+            }
 
-    $.ajax({
-        method: strmethod,
-                url: RiderRootUrl + url,
-                crossDomain: true,
-                data: JSON.stringify(data),//đưa về chuỗi của đối tượng json
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                beforeSend: function (hd) {
-                    $("#loading").show();
-                    if (bSetHeader)
-                    hd.setRequestHeader('Authorization', localStorage.getItem("token"));
-                }
+        }).done(success).fail(fail);
+    }
+    else{
+        $.ajax({
+            method: strmethod,
+            url: RiderRootUrl + url,
+            crossDomain: true,
+            data: JSON.stringify(data),//đưa về chuỗi của đối tượng json
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            beforeSend: function () {
+                $("#loading").show();
+                //if (bSetHeader)
+                //hd.setRequestHeader('Authorization',)// localStorage.getItem("token"));
+            }
     }).done(success).fail(fail);
+
+    }
+  
 }
 $(document).ajaxComplete(function (event, request, settings) {
     $("#loading").hide();

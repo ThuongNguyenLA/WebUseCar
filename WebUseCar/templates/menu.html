@@ -131,7 +131,47 @@
         </ion-view>
     </drawer>
 </ion-side-menus>
-<ion-footer-bar class="bar bar-footer" style="height:60px;background-color:#48ccaa">
+
+    <ion-tabs class="tabs-icon-top">
+
+        <!--<ion-tab title="Home" icon="ion-home" href="#/tab/home">
+            <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="About" icon="ion-ios7-information" href="#/tab/about">
+            <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Contact" icon="ion-ios7-world" ui-sref="tabs.contact">
+            <ion-nav-view name="contact-tab"></ion-nav-view>
+        </ion-tab>-->
+        <table class="icon-footer" style="margin-bottom:5px;">
+            <tr>
+                <td>
+                    <span id="1" style="margin-top:3px" disable-tap ng-click="FooterMenuActive($event,1)"><img src="/img/icons/icon-mystrip.png" height="35" /></span>
+                    <span class="icon-text"> My Trip</span>
+                </td>
+                <td>
+                    <span id="2"  ng-click="FooterMenuActive($event,2)"><img src="/img/icons/icon-local-event.png" height="35" /></span>
+                    <span class="icon-text">Local Event</span>
+                </td>
+                <td>
+                    <span id="3" disable-tap ng-click="FooterMenuActive($event,3)"><img src="/img/icons/icon-rider.png" height="35" /></span>
+                    <span class="icon-text">Ride</span>
+                </td>
+                <td>
+                    <span id="4"><img src="/img/icons/icon-airport.png" height="35" /></span>
+                    <span class="icon-text">Airport Service</span>
+                </td>
+                <td>
+                    <span id="5" ng-click="FooterMenuActive($event,5)"><img src="/img/icons/icon-plan.png" height="35" /></span>
+                    <span class="icon-text">Plan</span>
+                </td>
+            </tr>
+        </table>
+    </ion-tabs>
+
+<!--<ion-footer-bar class="bar bar-footer" style="height:60px;background-color:#48ccaa">
     <table class="icon-footer" style="margin-bottom:5px;">
         <tr>
             <td>
@@ -156,7 +196,7 @@
 </td>
         </tr>
     </table>
-</ion-footer-bar>
+</ion-footer-bar>-->
 <style type="text/css">
     body, div, a, table, table,input {
         font-family:Arial!important;
@@ -171,6 +211,7 @@
     .icon-footer span{
         display:block;
         color:white;
+        height:28px;
         /*position:absolute;
         left:11px;
         border: #ddd solid 3px;
@@ -183,8 +224,8 @@
         width: 100%;
         margin: 0 auto;
         text-align: center;
-        position:relative;
-        bottom:5px;
+        /*position:relative;
+        bottom:5px;*/
     }
     .icon-text {
         position:relative;
@@ -206,9 +247,19 @@
         width: 32px;
         height: 20px;
     }
+    .tab-nav ,.tabs {
+    height:60px!important;
+    background-color:#48ccaa!important;
+    }
     .btnUseCar {
         background-color:#48ccaa;
         color:white;
         height:20px!important;
+    }
+    .tabs-positive > .tabs, .tabs.tabs-positive {
+        border:none!important;
+    }
+    .usecar-content {
+        padding-bottom:70px;
     }
 </style>

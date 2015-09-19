@@ -11,7 +11,7 @@
                     <div style="position:relative;left:8px">Pickup</div>
                 </td>
                 <td>
-                    <input placeholder="current location" ng-model="result" options="options" details="details1" tommy-address-autocomplete style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
+                    <input disable-tap placeholder="current location" ng-model="result" options="options" details="details1" tommy-address-autocomplete style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
                 </td>
             </tr>
             <tr style="border-bottom:#d9d9d9 solid 2px;height:40px">
@@ -19,12 +19,12 @@
                     <div style="position:relative;left:8px">Dropoff</div>
                 </td>
                 <td>
-                    <input ng-model="result2" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" tommy-address-autocomplete options="options" details="details1" />
+                    <input disable-tap ng-model="result2" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" tommy-address-autocomplete options="options" details="details1" />
                 </td>
             </tr>
         </table>
         <button class="button button-small button-positive" style="width:80%;margin-left:10%;margin-top:35px" ng-click="EstimateFare()">Estimate Fare</button>
-        <button class="button button-small button-balanced" style="width:80%;margin-left:10%;margin-top:20px">Request Ride</button>
+        <button class="button button-small button-balanced" style="width:80%;margin-left:10%;margin-top:20px" ng-click="RequestRide()">Request Ride</button>
 
 
     </ion-content>

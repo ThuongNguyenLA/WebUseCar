@@ -1,54 +1,64 @@
 ﻿<ion-view view-title="Xe Đưa Đón">
-    <ion-content>
+    <ion-content cache-view="false">
         <ion-refresher on-refresh="doRefresh()">
 
         </ion-refresher>
 
-        <div style="max-width:500px;margin-left:5px">
+        <div style="max-width:500px;margin-left:5px;position:relative">
 
-            <table style="margin-top:0;width:100%;background-color:#fff;margin-right:15px">
+            <table style="margin-top:0;width:100%;background-color:#fff;margin-right:15px;height:100vh">
                 <tr style="border-bottom:#d9d9d9 solid 1px;height:40px">
                     <td width="80">
                         <span style="line-height:40px;margin-left:5px;color:gray">Back</span>
                     </td>
-                    <td >
+                    <td>
                         <center><b style="color:#49ccaa;line-height:40px">REQUEST RIDER</b></center>
                     </td>
                 </tr>
                 <tr style="border-bottom:#d9d9d9 solid 1px;height:40px">
                     <td>
-                        <div style="position:relative;left:8px">Dropoff</div>
+                        <div style="position:relative;left:8px">Pickup</div>
                     </td>
                     <td>
-                        <input tommy-address-autocomplete ng-model="txtDropoff" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px;" />
+                        <input tommy-address-autocomplete disable-tap ng-model="txtPickup" ng-blur="EnableMap()" ng-focus="DisableMap()" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px;" />
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" height="250">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <center>
-                            <span style="line-height:40px">
-                                Estimate 2 minutes arrival
-                            </span>
-                        </center>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div style="background-color:#49ccaa">
-                            <img src="~/img/avatar.jpg" height="30" width="30" style="position:relative;top:8px;left:9px"/>
-                            <span style="margin-left:10px;line-height:40px;color:#fff">Tien Nguyen</span>
-                            <div style="float:right;margin-right:5px;margin-top:13px;color:white">
-                               <img src="~/img/icons/icon-car.png" style="margin-right:5px;position:relative;bottom:0;width:25px"/> Kia Morning
-                            </div>
+                    <td colspan="2" style="min-height:200px">
+                        <div style="width:100%;height:100%;" id="map_canvas" data-tap-disabled="true">
+
                         </div>
                     </td>
                 </tr>
+
             </table>
-            
+            <div id="pn1" style="position:absolute;bottom:124px;background-color:#edeef0;padding-bottom:30px;width:100%;height:50px;display:none">
+                <button style="width:80%;margin-left:10%;margin-top:10px;background-color:#49ccaa;height:30px;border:none;color:white">Book Now</button>
+            </div>
+            <div id="pn2" style="position:absolute;bottom:103px;background-color:white;padding-bottom:30px;width:100%;display:none">
+                <table width="100%" border="1">
+                    <tr>
+                        <td colspan="2">
+                            <center>
+                                <span style="line-height:40px">
+                                    Estimate 2 minutes arrival
+                                </span>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="background-color:#49ccaa">
+                                <img src="~/img/avatar.jpg" height="30" width="30" style="position:relative;top:8px;left:9px" />
+                                <span style="margin-left:10px;line-height:40px;color:#fff">Tien Nguyen</span>
+                                <div style="float:right;margin-right:5px;margin-top:13px;color:white">
+                                    <img src="~/img/icons/icon-car.png" style="margin-right:5px;position:relative;bottom:0;width:25px" /> Kia Morning
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
     </ion-content>

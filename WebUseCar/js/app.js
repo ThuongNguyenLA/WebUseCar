@@ -27,7 +27,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
   });
 })
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    $ionicConfigProvider.views.maxCache(0);
   $stateProvider
 
 
@@ -167,7 +168,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
         }
     })
       .state('app.rideestimatefare', {
-          url: "/rideestimatefare",
+          url: "/rideestimatefare/:id",
           views: {
               'menuContent': {
                   templateUrl: '/Ride/Ride/RideEstimateFare',

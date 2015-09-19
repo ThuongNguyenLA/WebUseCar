@@ -99,13 +99,11 @@ angular.module("tommy.GoogleMaps")
       link: function() {
         $timeout(function() {
             // Find google places div
-            debugger;
           _.findIndex(angular.element(document.querySelectorAll('.pac-container')), function(container) {
             // disable ionic data tab
             container.setAttribute('data-tap-disabled', 'true');
             // leave input field if google-address-entry is selected
             container.onclick = function () {
-                debugger;
               _.findIndex(angular.element(document.querySelectorAll("[disable-tap]")), function(item){
                 item.blur();
               });

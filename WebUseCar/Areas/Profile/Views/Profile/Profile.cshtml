@@ -7,33 +7,41 @@
         <ion-refresher on-refresh="doRefresh()">
 
         </ion-refresher>
-        <div>
+
+        <div class="usecar-content">
             <div class="profile-header">
-                <img src="/img/avatar.jpg" class="avatar" />
+
+                <img id="avatar" ng-if="rider.imagePath" src="{{rider.imagePath}}" class="avatar" ng-model="avatar" ng-click="ChangeAvatar()" />
+                <img id="avatar" ng-if="!rider.imagePath" src="/img/avatar.png" class="avatar" ng-model="avatar" ng-click="ChangeAvatar()" />
+                <input type="text" id="imgdata" name="imgdata" style="display:none" />
+                <br />
+                <input type='file' id="fileUpload"  style="display:none"/>
+
+
                 <div>
                     <h4 class="name">{{rider.lastName}} {{rider.firstName}}</h4>
+
                     <div style="position:relative;top:4px;color:white">
                         <img src="/img/icons/icon-place-profile.png" height="12" style="position:relative;top:2px;" />
-                        <span>California</span>
+                        <span>{{(rider.city==null||rider.city=="")?rider.countryName:rider.city+","+rider.countryName}}</span>
                     </div>
-                 
+
                 </div>
 
             </div>
-            <input class="input-profile" placeholder="FirstName" ng-model="txtFirstName"  value="{{rider.firstName}}" />
-            <input class="input-profile" placeholder="LastName" ng-model="txtLastName" value="{{rider.lastName}}" />
-            <input class="input-profile" placeholder="Email" ng-model="txtEmail" value="{{rider.email}}" />
-            <input class="input-profile" type="password" placeholder="Password" ng-model="txtPassword"  />
-            <input class="input-profile" placeholder="Phone number" ng-model="txtPhone" value="{{rider.phone}}" />
-            <input class="input-profile" placeholder="Address" ng-model="txtAddress" value="{{rider.address}}" />
+            <input class="input-profile" placeholder="FirstName" ng-model="txtFirstName" name="txtFirstName" id="txtFirstName" />
+            <input class="input-profile" placeholder="LastName" ng-model="txtLastName" id="txtLastName" />
+            <input class="input-profile" placeholder="Email" ng-model="txtEmail" id="txtEmail" />
+            <input class="input-profile" type="password" placeholder="Password" ng-model="txtPassword" id="txtPassword" />
+            <input class="input-profile" placeholder="Phone number" ng-model="txtPhone" id="txtPhone" />
             <select class="input-profile" ng-model="ddlCountry" id="ddlCountry" ng-init="ddlCountry='VN'">
                 <option ng-repeat="option in Countrys.results" value="{{option.value}}">{{option.text}}</option>
             </select>
-            <input class="input-profile" placeholder="City" ng-model="txtCity" />
+            <input class="input-profile" placeholder="City" ng-model="txtCity" id="txtCity" />
             <select class="input-profile" ng-model="ddlState" id="ddlState" ng-init="ddlState='AL'">
                 <option ng-repeat="option in States.results" value="{{option.value}}">{{option.text}}</option>
             </select>
-            <input class="input-profile" placeholder="Zip" />
+            <input class="input-profile" placeholder="Zip" id="txtZip" />
             <div style="text-align:center">
                 <button class="button button-small" ng-click="SaveProfile()" style="background-color:#48ccaa;color:white;width:80%;margin-top:15px">Save</button>
 
@@ -44,21 +52,22 @@
     </ion-content>
 </ion-view>
 <style>
-    
     .profile-header {
         text-align: center;
         background-color: #37b998;
         height: 140px;
     }
+
     .input-profile {
-        width:100%;
-        height:35px;
-        border-top:none;
-        border-left:none;
-        border-right:none;
-        border-bottom:#eee solid 1px !important;
-        padding-left:8px;
+        width: 100%;
+        height: 35px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: #eee solid 1px !important;
+        padding-left: 8px;
     }
+
     .avatar {
         width: 70px;
         height: 70px;

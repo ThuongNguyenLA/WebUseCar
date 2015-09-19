@@ -23,7 +23,7 @@ usecar.factory('CommonPopupCtrl', function ( $ionicPopup, $timeout) {
             title: 'Alert',
             subTitle: '',
             buttons: [
-              { text: 'Cancel',type:'btnUseCar' },
+              { text: 'OK',type:'btnUseCar' },
             ]
         });
         myPopup.then(function (res) {
@@ -56,7 +56,7 @@ usecar.factory('CommonPopupCtrl', function ( $ionicPopup, $timeout) {
     //};
     return helper;
 });
-usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory) {
+usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory, $rootScope, googleDirections) {
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
     // To listen for when this page is active (for example, to refresh data),
@@ -90,6 +90,7 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
         window.location.href = "/index#/app/home";
     };
     $scope.FooterMenuActive = function (ev, id) {
+        //$rootScope.map.setClickable(false);
         $(".icon-footer").find("span").removeClass("active");
         $("#" + id).addClass("active");
         $ionicHistory.nextViewOptions({

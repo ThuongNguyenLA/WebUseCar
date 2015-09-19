@@ -9,7 +9,7 @@
             disableBack: true
         });
         $ionicHistory.clearHistory();
-        $location.path("/app/rideestimatefare");
+        $location.path("/app/rideestimatefare/2");
 
     }
 }

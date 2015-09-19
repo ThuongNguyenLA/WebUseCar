@@ -11,7 +11,7 @@ usecar.factory('CommonPopupCtrl', function ($ionicPopup, $timeout) {
             title: 'Alert',
             subTitle: '',
             buttons: [
-              { text: 'Cancel', type: 'btnUseCar' },
+              { text: 'OK', type: 'btnUseCar' },
             ]
         });
         myPopup.then(function (res) {
@@ -141,7 +141,7 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
 
 })
 .controller('SignUpCtrl', function ($scope, $timeout, CommonPopupCtrl) {
-    PostDataAjax("/api/List/GetCountries", "",
+    PostDataAjax("/api/List/GetCountries?languageCode=en-US", "",
          function (respone) {
              $timeout(function () {
                  if (respone && respone.results.length > 0) {
@@ -155,7 +155,7 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
                     // callback(null);
                  }
              }, 10);
-         }
+         }, function (e) { CommonPopupCtrl.show(e.responseText); },false,"GET"
        );
     $scope.Save = function () {
     dataSend ={
