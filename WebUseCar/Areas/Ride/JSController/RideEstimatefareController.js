@@ -71,7 +71,7 @@
         console.log("get current location failed");
     });
     $scope.Calculate = function (destination) {
-        alert(123);
+        return;
         var args = {
             origin: CURRENT_LOCATION,
             destination: destination,
@@ -98,6 +98,7 @@
         });
     }
     $scope.ExportImage = function () {
+        return;
         if ($rootScope.map !== undefined) {
             $rootScope.map.toDataURL(function (imageData) {
                 var image = document.getElementById("snapshot");
