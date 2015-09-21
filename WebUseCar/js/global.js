@@ -16,12 +16,12 @@ MY_MAP_DEFAULT_OPTION = {
 CURRENT_LOCATION = {};
 var global = (function(){
 	var getLocalIcon = function (args) {
-		args = args || {
-			name: ''
-		};
-		console.log(cordova.file.applicationDirectory + 'img/' + (args.name || 'car.png'));
+		//args = args || {
+		//	name: ''
+		//};
+		//console.log(cordova.file.applicationDirectory + 'img/' + (args.name || 'car.png'));
 		return {
-			'url': cordova.file.applicationDirectory + 'img/' + (args.name || 'car.png'),
+		    'url': "http://fantracking.com/img/" + args,
 			'size':{
 		        width: (Number(args.w) || 40),
 		        height: (Number(args.h) ||40)

@@ -152,8 +152,8 @@ usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeou
     //}
     var onNativeMapReady = function () {
         if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
-            $rootScope.pin_icon = global.getLocalIcon({ name: "pin.png" });
-            $rootScope.car_icon = global.getLocalIcon({ name: "car.png" });
+            $rootScope.pin_icon = global.getLocalIcon("pin.png");
+            $rootScope.car_icon = global.getLocalIcon("car.png");
         }
         $rootScope.map.addMarker({
             'position': CURRENT_LOCATION,

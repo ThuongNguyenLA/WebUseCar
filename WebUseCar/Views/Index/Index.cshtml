@@ -21,13 +21,13 @@
     <!-- cordova script (this will be a 404 during development) -->
     @*<script src="cordova.js"></script>*@
     <!-- your app's js -->
-    <script src="/scripts/ios/cordova.js"></script>
+    @*<script src="/scripts/ios/cordova.js"></script>*@
     @*<script src="/scripts/index.js"></script>*@
     @*<script src="/scripts/ios/cordova_plugins.js"></script>*@
 
     <!-- your app's js -->
     <script src="/js/map/lodash.js"></script>
-    <script src="/js/global.js"></script>
+    <script src="/js/global.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places,geometry"></script>
     <script src="/js/map/tommyGoogleMaps.js"></script>
     <script src="/js/app.js?v=1"></script>

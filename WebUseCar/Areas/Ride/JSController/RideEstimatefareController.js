@@ -17,8 +17,8 @@
     }
     var onNativeMapReady = function () {
         if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
-            $rootScope.pin_icon = global.getLocalIcon({ name: "pin.png" });
-            $rootScope.car_icon = global.getLocalIcon({ name: "car.png" });
+            $rootScope.pin_icon = global.getLocalIcon("pin.png");
+            $rootScope.car_icon = global.getLocalIcon("car.png");
         }
         $rootScope.map.addMarker({
             'position': CURRENT_LOCATION,
@@ -34,7 +34,7 @@
         });
         for (var i = 1; i < 5; i++) {
             $rootScope.map.addMarker({
-                'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 1000), CURRENT_LOCATION.lng + (i / 1000)),
+                'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 100), CURRENT_LOCATION.lng + (i / 100)),
                 'title': 'Test ' + i,
                 'icon': $rootScope.car_icon
             });
