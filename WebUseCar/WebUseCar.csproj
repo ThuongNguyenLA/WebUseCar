@@ -163,6 +163,7 @@
     <Content Include="img\icons\bg_home_creen.png" />
     <Content Include="img\icons\bg_or.png" />
     <Content Include="img\icons\book.png" />
+    <Content Include="img\icons\car2.png" />
     <Content Include="img\icons\icon-airport.png" />
     <Content Include="img\icons\icon-call-driver.png" />
     <Content Include="img\icons\icon-call.png" />
@@ -178,6 +179,7 @@
     <Content Include="img\icons\icon-plug.png" />
     <Content Include="img\icons\icon-rider.png" />
     <Content Include="img\icons\icon-visa.png" />
+    <Content Include="img\icons\loading.gif" />
     <Content Include="img\icons\loading.png" />
     <Content Include="img\icons\local.png" />
     <Content Include="img\icons\local2.png" />
@@ -194,6 +196,7 @@
     <Content Include="js\app.js" />
     <Content Include="js\controllers.js" />
     <Content Include="js\drawer.js" />
+    <Content Include="js\global.js" />
     <Content Include="js\helper.js" />
     <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\jquery-ui.js" />
@@ -229,6 +232,17 @@
     <Content Include="scripts\ios\plugins\cordova-plugin-camera\www\ios\CameraPopoverHandle.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-console\www\console-via-logger.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-console\www\logger.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\Contact.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactAddress.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactError.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactField.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactFieldType.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactFindOptions.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactName.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactOrganization.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\contacts.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ios\Contact.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ios\contacts.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-device\www\device.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-dialogs\www\notification.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-file\www\DirectoryEntry.js" />
@@ -257,6 +271,7 @@
     <Content Include="scripts\ios\plugins\cordova-plugin-geolocation\www\Position.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-geolocation\www\PositionError.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-splashscreen\www\splashscreen.js" />
+    <Content Include="scripts\ios\plugins\de.appplant.cordova.plugin.email-composer\www\email_composer.js" />
     <Content Include="scripts\ios\plugins\plugin.google.maps\www\googlemaps-cdv-plugin.js" />
     <Content Include="scripts\ios\plugins\plugin.http.request\www\http-request.js" />
     <Content Include="scripts\platformOverrides.js" />
@@ -412,6 +427,7 @@
     <Content Include="Views\Index\Login.cshtml" />
     <Content Include="Views\Index\SignUpType.cshtml" />
     <Content Include="Views\Index\SignUpDriver.cshtml" />
+    <Content Include="Views\Index\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -430,7 +446,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62967</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

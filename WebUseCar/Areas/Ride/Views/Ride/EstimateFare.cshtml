@@ -12,7 +12,7 @@
                         <div style="position:relative;left:8px">Pickup</div>
                     </td>
                     <td>
-                        <input placeholder="current location" ng-model="txtPickup" tommy-address-autocomplete style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
+                        <input placeholder="current location" ng-model="txtPickup" tommy-address-autocomplete disable-tap ng-blur="EnableMap()" ng-focus="DisableMap()" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
                     </td>
                 </tr>
                 <tr style="border-bottom:#d9d9d9 solid 2px;height:40px">
@@ -20,7 +20,7 @@
                         <div style="position:relative;left:8px">Dropoff</div>
                     </td>
                     <td>
-                        <input tommy-address-autocomplete ng-model="txtDropoff" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
+                        <input tommy-address-autocomplete disable-tap ng-model="txtDropoff" on ng-change="Calculate(txtDropoff)" ng-blur="EnableMap()" ng-focus="DisableMap()" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
                     </td>
                 </tr>
             </table>
@@ -29,14 +29,14 @@
                     <div style="font-weight:900;margin-top:40px">Estimate Ride Fare</div>
                     <div style="margin-bottom:40px;">
                         <i class="ion-social-usd" style="color: #49ccaa;margin-right:-2px"></i>
-                        <u style="color:#49ccaa;text-decoration:none;"><b>3600</b></u>
+                        <u style="color:#49ccaa;text-decoration:none;"><b>{{EstimatePrice}}</b></u>
                     </div>
                     <center>
                         <table width="100%" style="background-color:#6eccaa;color:#fff">
                             <tr>
                                 <td style="text-align:left;height:40px">
                                     <nobr>
-                                        <img src="/img/avatar.jpg" style="position:relative;top:8px;left:8px;width:30px;height:30px"><span style="position:relative;left:15px;line-height:44px">Tien Nguyen</span>
+                                        <img src="/img/avatar.png" style="position:relative;top:8px;left:8px;width:30px;height:30px"><span style="position:relative;left:15px;line-height:44px">Tien Nguyen</span>
                                     </nobr>
                                 </td>
                             </tr>

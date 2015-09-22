@@ -38,7 +38,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Areas/MyTrip/Views/MyTrip/Index.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/22/2015 00:16:50</publishTime>
     </File>
     <File Include="Areas/MyTrip/Views/Web.config">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -68,22 +68,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/EstimateFareController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/22/2015 00:38:34</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/FreeRideController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/21/2015 20:09:50</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/RideController.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/RideEstimatefareController.js">
-      <publishTime>09/20/2015 23:35:30</publishTime>
+      <publishTime>09/22/2015 00:28:08</publishTime>
     </File>
     <File Include="Areas/Ride/Views/FreeRide/Index.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/21/2015 19:57:33</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/EstimateFare.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/22/2015 00:39:49</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/Index.cshtml">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -92,7 +92,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/RideEstimateFare.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/22/2015 00:36:13</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/RideFinalTrip.cshtml">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -101,10 +101,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>09/20/2015 23:36:30</publishTime>
+      <publishTime>09/22/2015 00:40:10</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>09/20/2015 23:36:30</publishTime>
+      <publishTime>09/22/2015 00:40:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>09/19/2015 23:16:23</publishTime>
@@ -143,7 +143,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:23</publishTime>
     </File>
     <File Include="bin/WebUseCar.dll">
-      <publishTime>09/20/2015 23:10:15</publishTime>
+      <publishTime>09/21/2015 19:57:40</publishTime>
     </File>
     <File Include="css/drawer.css">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -202,6 +202,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="img/icons/book.png">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
+    <File Include="img/icons/car2.png">
+      <publishTime>09/21/2015 19:27:39</publishTime>
+    </File>
     <File Include="img/icons/icon-airport.png">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
@@ -247,6 +250,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="img/icons/icon-visa.png">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
+    <File Include="img/icons/loading.gif">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
     <File Include="img/icons/loading.png">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
@@ -284,16 +290,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="js/app.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/21/2015 23:36:40</publishTime>
     </File>
     <File Include="js/appWelcome.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="js/controllers.js">
-      <publishTime>09/20/2015 23:35:23</publishTime>
+      <publishTime>09/21/2015 19:13:58</publishTime>
     </File>
     <File Include="js/drawer.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="js/global.js">
+      <publishTime>09/21/2015 18:19:51</publishTime>
     </File>
     <File Include="js/helper.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -512,7 +521,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/20/2015 23:36:23</publishTime>
+      <publishTime>09/22/2015 00:40:02</publishTime>
     </File>
     <File Include="scripts/index.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -545,6 +554,39 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-console/www/logger.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/Contact.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactAddress.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactError.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactField.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactFieldType.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactFindOptions.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactName.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactOrganization.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/contacts.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ios/Contact.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ios/contacts.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-device/www/device.js">
@@ -631,6 +673,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="scripts/ios/plugins/cordova-plugin-splashscreen/www/splashscreen.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
+    <File Include="scripts/ios/plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
     <File Include="scripts/ios/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
@@ -647,7 +692,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="templates/menu.html">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/21/2015 19:02:10</publishTime>
     </File>
     <File Include="templates/menuwelcome.html">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -662,13 +707,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Views/Index/Home.cshtml">
-      <publishTime>08/08/2015 21:34:49</publishTime>
+      <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Views/Index/HomeCreen.cshtml">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/21/2015 23:34:14</publishTime>
     </File>
     <File Include="Views/Index/Login.cshtml">
       <publishTime>09/19/2015 23:16:22</publishTime>

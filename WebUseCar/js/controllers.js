@@ -105,7 +105,7 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
         switch (id)
         {
             case 1:
-            $state.go("app.home");
+            $state.go("app.mytrip");
             $ionicHistory.clearHistory();
             break;
         case 2:

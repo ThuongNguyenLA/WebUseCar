@@ -1,4 +1,4 @@
-﻿var RideEstimatefareCtrl = function ($rootScope, $scope, $location, googleDirections, $stateParams) {
+﻿var RideEstimatefareCtrl = function ($rootScope, $scope, $location, googleDirections, $stateParams, CommonPopupCtrl) {
     $("#menuFreeRide a").css("color", "#48ccaa");
     $("#pn1").hide();
     $("#pn2").hide();
@@ -208,4 +208,4 @@
 
 
 }
-RideEstimatefareCtrl.$inject = ["$rootScope", "$scope", "$location", "googleDirections", "$stateParams"];
+RideEstimatefareCtrl.$inject = ["$rootScope", "$scope", "$location", "googleDirections", "$stateParams", "CommonPopupCtrl"];
