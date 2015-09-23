@@ -44,7 +44,7 @@
         CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         var div = document.getElementById("map_canvas");
         if (div) {
-            var mapHeight = window.innerHeight - 250;
+            var mapHeight = window.innerHeight - 210;
             div.style.height = mapHeight + 'px';
             setTimeout(function () {
                 if (window.plugin) {
@@ -98,6 +98,9 @@
         });
     }
     $scope.ExportImage = function () {
+        $("#pn1").hide();
+        $("#pn2").show();
+
         return;
         if ($rootScope.map !== undefined) {
             $rootScope.map.toDataURL(function (imageData) {

@@ -1,5 +1,7 @@
 ﻿var EstimateFareCtrl = function ($rootScope, $scope, $location, $ionicHistory, googleDirections, $stateParams, CommonPopupCtrl) {
     $scope.EstimatePrice = 0;
+    $scope.txtPickup = $rootScope.Pickup;
+    $scope.txtDropoff = $rootScope.Dropoff;
     $scope.EstimateFare = function ()
     {
         $location.path("/app/estimatefare");
@@ -23,16 +25,17 @@
 
     }
     initiate_geolocation();
-
-    $scope.Calculate = function (destination) {
-        //alert(CURRENT_LOCATION);
+    CalculateDistance($scope.txtDropoff);
+    function CalculateDistance(destination) {
+        if (destination == null || destination == undefined)
+            return;
         var currentLocation = CURRENT_LOCATION;
         try {
-            if ($scope.txtPickup == undefined || $scope.txtPickup == "") {
+            if ($("#txtPickup").val() == "") {
                 currentLocation = CURRENT_LOCATION;
             }
             else {
-                currentLocation = txtPickup;
+                currentLocation = $("#txtPickup").val();
             }
             var args = {
                 origin: currentLocation,//"1/2 Út Tịch, Phường 4, Tân Bình, Hồ Chí Minh, Việt Nam",
@@ -40,14 +43,14 @@
                 travelMode: 'driving',
                 unitSystem: 'metric'
             }
-            
+
             googleDirections.getDirections(args).then(function (destination) {
                 if (destination) {
                     if (destination.routes) {
                         if (destination.routes[0].legs) {
                             var ndistance = destination.routes[0].legs[0].distance.text;
                             $scope.duration = destination.routes[0].legs[0].duration.text;
-                            $scope.EstimatePrice = ndistance.replace("km", "").trim()*50;
+                            $scope.EstimatePrice = ndistance.replace("km", "").trim() * 50;
                             //alert($scope.distance + ' ---- ' + $scope.duration);
                         }
                     }
@@ -56,6 +59,11 @@
         } catch (e) {
             alert(e);
         }
+    }
+
+    $scope.Calculate = function (destination) {
+
+        CalculateDistance(destination);
     }
 }
 EstimateFareCtrl.$inject = ["$rootScope", "$scope", "$location", "$ionicHistory", "googleDirections", "$stateParams", "CommonPopupCtrl"];

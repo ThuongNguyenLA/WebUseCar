@@ -221,6 +221,10 @@
     <Content Include="lib\ionic\js\ionic.bundle.min.js" />
     <Content Include="lib\ionic\js\ionic.js" />
     <Content Include="lib\ionic\js\ionic.min.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova-mocks.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova-mocks.min.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova.min.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\ios\cordova.js" />
     <Content Include="scripts\ios\cordova_plugins.js" />
@@ -422,6 +426,12 @@
     <Content Include="Areas\Ride\Views\Ride\RideEstimateFare.cshtml" />
     <Content Include="Areas\Ride\Views\Ride\RideFinalTrip.cshtml" />
     <Content Include="js\jquery-2.1.1.min.js.map" />
+    <Content Include="lib\ngCordova\.bower.json" />
+    <Content Include="lib\ngCordova\bower.json" />
+    <Content Include="lib\ngCordova\CHANGELOG.md" />
+    <Content Include="lib\ngCordova\LICENSE" />
+    <Content Include="lib\ngCordova\package.json" />
+    <Content Include="lib\ngCordova\README.md" />
     <None Include="Properties\PublishProfiles\car.pubxml" />
     <Content Include="Views\Index\HomeCreen.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />

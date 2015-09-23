@@ -12,7 +12,7 @@
         $cordovaEmailComposer.isAvailable().then(function () {
             // is available
             var email = {
-                to: 'quang.nnd.hcmus@gmail.com',
+                to: 'nguyendaominhthuong@gmail.com',
                 cc: '',
                 bcc: [],
                 attachments: [
