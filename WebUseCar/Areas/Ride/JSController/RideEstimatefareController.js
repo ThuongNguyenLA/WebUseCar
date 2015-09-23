@@ -8,7 +8,24 @@
     else {
         $("#pn2").show();
     }
-   // alert("controller freeride available");
+    // alert("controller freeride available");
+
+    function GetPositionByAddress(strAddress,callback)
+    {
+        var geocoder = new google.maps.Geocoder();
+      
+
+        geocoder.geocode({ 'address': strAddress }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                CURRENT_LOCATION= new plugin.google.maps.LatLng(latitude, longitude);
+                callback(CURRENT_LOCATION);
+            }
+        });
+    }
+    
+
     $scope.DisableMap = function () {
         $rootScope.map.setClickable(false);
     }
@@ -20,22 +37,38 @@
             $rootScope.pin_icon = global.getLocalIcon("pin.png");
             $rootScope.car_icon = global.getLocalIcon("car.png");
         }
-        if ($rootScope.Pickup != null && $rootScope.Pickup != undefined) {
-            CURRENT_LOCATION = $rootScope.Pickup;
-
-        }
-        $rootScope.map.addMarker({
-            'position': CURRENT_LOCATION,
-            'icon': $rootScope.pin_icon
-        }, function (marker) {
-            marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
-                marker.getPosition(function (latLng) {
-                    draggPosition = latLng;
-                    marker.setTitle(latLng.toUrlValue());
-                    marker.showInfoWindow();
+        if ($rootScope.Pickup != "" && $rootScope.Pickup != undefined) {
+            GetPositionByAddress($rootScope.Pickup, function (CURRENT_LOCATION) {
+                $rootScope.map.addMarker({
+                    'position': CURRENT_LOCATION,
+                    'icon': $rootScope.pin_icon
+                }, function (marker) {
+                    marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
+                        marker.getPosition(function (latLng) {
+                            draggPosition = latLng;
+                            marker.setTitle(latLng.toUrlValue());
+                            marker.showInfoWindow();
+                        });
+                    });
                 });
             });
-        });
+
+        }
+        else {
+            $rootScope.map.addMarker({
+                'position': CURRENT_LOCATION,
+                'icon': $rootScope.pin_icon
+            }, function (marker) {
+                marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
+                    marker.getPosition(function (latLng) {
+                        draggPosition = latLng;
+                        marker.setTitle(latLng.toUrlValue());
+                        marker.showInfoWindow();
+                    });
+                });
+            });
+        }
+        
         for (var i = 1; i < 5; i++) {
             $rootScope.map.addMarker({
                 'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 100), CURRENT_LOCATION.lng + (i / 100)),
@@ -45,15 +78,41 @@
         }
     };
     navigator.geolocation.getCurrentPosition(function (position) {
-        if ($rootScope.Pickup != null && $rootScope.Pickup != undefined)
+        if ($rootScope.Pickup != "" && $rootScope.Pickup != undefined)
         {
-            CURRENT_LOCATION = $rootScope.Pickup;
+            debugger;
+            GetPositionByAddress($rootScope.Pickup, function (CURRENT_LOCATION) {
+                var div = document.getElementById("map_canvas");
+                if (div) {
+                    var mapHeight = window.innerHeight - 210;
+                    div.style.height = mapHeight + 'px';
+                    setTimeout(function () {
+                        if (window.plugin) {
+                            // Initialize the map view
+                            if ($rootScope.map === undefined) {
+                                MY_MAP_DEFAULT_OPTION['camera'] = {
+                                    'latLng': CURRENT_LOCATION,
+                                    'tilt': 30,
+                                    'zoom': 15,
+                                    'bearing': 50
+                                };
+                                MY_MAP_DEFAULT_OPTION['mapType'] = plugin.google.maps.MapTypeId.ROADMAP;
+                                $rootScope.map = plugin.google.maps.Map.getMap(div, MY_MAP_DEFAULT_OPTION);
+                                $rootScope.map.addEventListener(plugin.google.maps.event.MAP_READY, onNativeMapReady);
+                            }
+                            else {
+                                $rootScope.map.setDiv(div);
+                            }
+                        }
+                    }, 10);
+                }
+            });
 
         }
         else
+        {
             CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-        var div = document.getElementById("map_canvas");
+            var div = document.getElementById("map_canvas");
         if (div) {
             var mapHeight = window.innerHeight - 210;
             div.style.height = mapHeight + 'px';
@@ -62,7 +121,7 @@
                     // Initialize the map view
                     if ($rootScope.map === undefined) {
                         MY_MAP_DEFAULT_OPTION['camera'] = {
-                            'latLng': CURRENT_LOCATION,
+                            'latLng':CURRENT_LOCATION,
                             'tilt': 30,
                             'zoom': 15,
                             'bearing': 50
@@ -77,6 +136,7 @@
                 }
             }, 10);
         }
+    }
     },
     function () {
         console.log("get current location failed");
