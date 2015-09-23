@@ -20,6 +20,10 @@
             $rootScope.pin_icon = global.getLocalIcon("pin.png");
             $rootScope.car_icon = global.getLocalIcon("car.png");
         }
+        if ($rootScope.Pickup != null && $rootScope.Pickup != undefined) {
+            CURRENT_LOCATION = $rootScope.Pickup;
+
+        }
         $rootScope.map.addMarker({
             'position': CURRENT_LOCATION,
             'icon': $rootScope.pin_icon
@@ -41,7 +45,14 @@
         }
     };
     navigator.geolocation.getCurrentPosition(function (position) {
-        CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        if ($rootScope.Pickup != null && $rootScope.Pickup != undefined)
+        {
+            CURRENT_LOCATION = $rootScope.Pickup;
+
+        }
+        else
+            CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
         var div = document.getElementById("map_canvas");
         if (div) {
             var mapHeight = window.innerHeight - 210;
