@@ -12,6 +12,11 @@
             disableBack: true
         });
         $ionicHistory.clearHistory();
+        if ($("#txtDropoff").val() == "" || $("#txtDropoff").val() == null)
+        {
+            CommonPopupCtrl.show("Please, input dropoff");
+            return;
+        }
         $location.path("/app/rideestimatefare/2");
 
     }

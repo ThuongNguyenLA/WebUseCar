@@ -1,4 +1,4 @@
-var usecar = angular.module('starter.controllers', ['tommy.GoogleMaps']);
+﻿var usecar = angular.module('starter.controllers', ['tommy.GoogleMaps']);
 
 usecar.controller("LoginCtrl", LoginCtrl);
 usecar.controller("ProfileCtrl", ProfileCtrl);
@@ -186,7 +186,7 @@ usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeou
                     // Initialize the map view
                     if ($rootScope.map === undefined) {
                         MY_MAP_DEFAULT_OPTION['camera'] = {
-                            'latLng': CURRENT_LOCATION,
+                            'latLng':CURRENT_LOCATION,
                             'tilt': 30,
                             'zoom': 15,
                             'bearing': 50
