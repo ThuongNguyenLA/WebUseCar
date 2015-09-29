@@ -65,12 +65,31 @@
                                         'position': curLocation,
                                         'icon': $rootScope.pin_icon
                                     }, function (marker) {
-                                        $rootScope.map.moveCamera({
-                                            'target': curLocation,
-                                            'tilt': 30,
-                                            'zoom': 15,
-                                            'bearing': 50
-                                        }, function () { });
+                                        //$rootScope.map.moveCamera({
+                                        //    'target': curLocation,
+                                        //    'tilt': 30,
+                                        //    'zoom': 15,
+                                        //    'bearing': 50
+                                        //}, function () { });
+                                        geocoder.geocode({ 'address': $rootScope.Dropoff }, function (results, status) {
+                                            if (status == google.maps.GeocoderStatus.OK) {
+                                                var latitudeDropoff = results[0].geometry.location.lat();
+                                                var longitudeDropoff = results[0].geometry.location.lng();
+                                                var curLocationDropoff = new plugin.google.maps.LatLng(latitudeDropoff, longitudeDropoff);
+
+                                                var points = [curLocation,curLocationDropoff];
+                                                var latLngBounds = new plugin.google.maps.LatLngBounds(points);
+                                                $rootScope.map.animateCamera({
+                                                    'target': latLngBounds
+                                                });
+                                                $rootScope.map.addMarker({
+                                                    'position': curLocationDropoff,
+                                                    'icon': $rootScope.pin_icon
+                                                }, function (marker) { });
+                                            }
+                                        });
+                                       
+
                                         for (var i = 1; i < 5; i++) {
                                             $rootScope.map.addMarker({
                                                 'position': new plugin.google.maps.LatLng(curLocation.lat + (i / 600), curLocation.lng + (i / 400)),
@@ -126,12 +145,23 @@
                                     'position': CURRENT_LOCATION,
                                     'icon': $rootScope.pin_icon
                                 }, function (marker) {
-                                    $rootScope.map.moveCamera({
-                                        'target': CURRENT_LOCATION,
-                                        'tilt': 30,
-                                        'zoom': 15,
-                                        'bearing': 50
-                                    }, function () { });
+                                    //$rootScope.map.moveCamera({
+                                    //    'target': CURRENT_LOCATION,
+                                    //    'tilt': 30,
+                                    //    'zoom': 15,
+                                    //    'bearing': 50
+                                    //}, function () { });
+
+                                    var points = [
+                                           CURRENT_LOCATION,
+                                           new plugin.google.maps.LatLng(41.799240000000005, 140.75875000000002)
+                                    ];
+                                    var latLngBounds = new plugin.google.maps.LatLngBounds(points);
+
+                                    $rootScope.map.animateCamera({
+                                        'target': latLngBounds
+                                    });
+
                                     for (var i = 1; i < 5; i++) {
                                         $rootScope.map.addMarker({
                                             'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 500), CURRENT_LOCATION.lng + (i / 300)),
@@ -148,6 +178,24 @@
             }
         });
     }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //function GetPositionByAddress(strAddress, callback)
     //{
     //    var geocoder = new google.maps.Geocoder();
