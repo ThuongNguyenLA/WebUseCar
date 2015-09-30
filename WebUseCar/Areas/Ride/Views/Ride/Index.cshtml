@@ -11,7 +11,7 @@
                     <div style="position:relative;left:8px">Pickup</div>
                 </td>
                 <td>
-                    <input disable-tap placeholder="current location" ng-model="result" options="options" details="details1" tommy-address-autocomplete style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
+                    <input placeholder="current location" ng-model="txtPickup" id="txtPickup" disable-tap tommy-address-autocomplete style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
                 </td>
             </tr>
             <tr style="border-bottom:#d9d9d9 solid 2px;height:40px">
@@ -19,7 +19,7 @@
                     <div style="position:relative;left:8px">Dropoff</div>
                 </td>
                 <td>
-                    <input disable-tap ng-model="result2" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" tommy-address-autocomplete options="options" details="details1" />
+                    <input tommy-address-autocomplete disable-tap ng-model="txtDropoff" id="txtDropoff" style="padding-left:5px;margin-top:6px;height:26px;width:100%;background-color:#eaebed;border:none;margin-right:5px" />
                 </td>
             </tr>
         </table>

@@ -1,6 +1,16 @@
 ﻿<ion-view view-title="Xe Đưa Đón">
     <ion-content>
         <ion-refresher on-refresh="doRefresh()"></ion-refresher>
-       
+      <div style="text-align:center;margin-top:40px">
+          <span style="color:#49ccaa;position:relative;top:-5px">GET FREE RIDES</span>
+          <img src="/img/icons/car2.png" width="40" style="margin-left:20px"/>
+      </div>
+        <div style="margin-top:20px;text-align:center">
+            Send friends a free ride and you'll get one too, worth $20.
+        </div>
+        <div  style="margin-top:20px">
+            <button style="margin-left:10%;width:80%;margin-top:40px;background-color:#49ccaa;height:30px;border:none;color:white" ng-click="sendMail()">Email Invites</button>
+            <button style="margin-left:10%;width:80%;margin-top:10px;background-color:#49ccaa;height:30px;border:none;color:white" ng-click="getContact()">Text Invites</button>
+        </div>
     </ion-content>
 </ion-view>

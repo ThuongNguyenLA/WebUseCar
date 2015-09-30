@@ -17,17 +17,19 @@
     -->
     <!-- ionic/angularjs js -->
     <script src="/lib/ionic/js/ionic.bundle.js"></script>
+    <script src="/js/jquery-2.1.1.min.js"></script>
     <script src="/lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="/scripts/ios/cordova.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     @*<script src="cordova.js"></script>*@
     <!-- your app's js -->
-    <script src="/scripts/ios/cordova.js"></script>
+    @*<script src="/scripts/ios/cordova.js"></script>*@
     @*<script src="/scripts/index.js"></script>*@
     @*<script src="/scripts/ios/cordova_plugins.js"></script>*@
 
     <!-- your app's js -->
     <script src="/js/map/lodash.js"></script>
-    <script src="/js/global.js"></script>
+    <script src="/js/global.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places,geometry"></script>
     <script src="/js/map/tommyGoogleMaps.js"></script>
     <script src="/js/app.js?v=1"></script>
@@ -44,12 +46,8 @@
     <script src="/Areas/LocalEvent/JSController/DetailController.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
     <script src="/Areas/Ride/JSController/RideEstimatefareController.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
     <script src="/js/controllers.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
-    <script src="/js/jquery-2.1.1.min.js"></script>
     <script src="/js/helper.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
-    <!-- google maps javascript -->
-    @*<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>*@
     
- 
     <style>
         #map {
             width: 100%;

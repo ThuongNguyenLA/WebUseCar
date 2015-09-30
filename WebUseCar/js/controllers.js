@@ -1,4 +1,4 @@
-var usecar = angular.module('starter.controllers', ['tommy.GoogleMaps']);
+﻿var usecar = angular.module('starter.controllers', ['tommy.GoogleMaps']);
 
 usecar.controller("LoginCtrl", LoginCtrl);
 usecar.controller("ProfileCtrl", ProfileCtrl);
@@ -7,15 +7,15 @@ usecar.controller("EstimateFareCtrl", EstimateFareCtrl);
 usecar.controller("AirportCtrl", AirportCtrl);
 usecar.controller("MyTripCtrl", MyTripCtrl);
 usecar.controller("FreeRideCtrl", FreeRideCtrl);
-usecar.controller("PaymentCtrl", PaymentCtrl); 
+usecar.controller("PaymentCtrl", PaymentCtrl);
 usecar.controller("LocalEventCtrl", LocalEventCtrl);
 usecar.controller("LocalEventDetailCtrl", LocalEventDetailCtrl);
 usecar.controller("RideEstimatefareCtrl", RideEstimatefareCtrl);
 usecar.factory('CommonPopupCtrl', function ($rootScope, $ionicPopup, $timeout) {
     helper = {};
-    
+
     helper.show = function (strPopupContent) {
-       // $scope.data = {}
+        // $scope.data = {}
         if ($rootScope.map) {
             $rootScope.map.setClickable(false);
         }
@@ -25,7 +25,7 @@ usecar.factory('CommonPopupCtrl', function ($rootScope, $ionicPopup, $timeout) {
             title: 'Alert',
             subTitle: '',
             buttons: [
-              { text: 'OK',type:'btnUseCar' },
+              { text: 'OK', type: 'btnUseCar' },
             ]
         });
         myPopup.then(function (res) {
@@ -102,17 +102,16 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
             disableBack: true
         });
         $ionicHistory.clearHistory();
-        switch (id)
-        {
+        switch (id) {
             case 1:
-            $state.go("app.home");
-            $ionicHistory.clearHistory();
-            break;
-        case 2:
-            $state.go("app.localevent");
-            $ionicHistory.clearHistory();
-            break;    
-        case 3:
+                $state.go("app.mytrip");
+                $ionicHistory.clearHistory();
+                break;
+            case 2:
+                $state.go("app.localevent");
+                $ionicHistory.clearHistory();
+                break;
+            case 3:
                 $state.go("app.ride");
                 $ionicHistory.clearHistory();
                 break;
@@ -133,78 +132,154 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
         }, 1000);
     };
 });
-usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate) {
-    //alert(123);
-    //$scope.images = [
-    //                        "/img/1.jpg",
-    //                        "/img/2.jpg",
-    //                        "/img/3.jpg"
-    //]
+usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl, $ionicPlatform) {
 
+    //$.ajax({
+    //    type: "GET",
+    //    url: settings.domain + "api/Trip/GetDriversAround?lat=" + settings.currentLocation.lat() + "&lng=" + settings.currentLocation.lng(),
+    //    data: null,
+    //    contentType: "application/json; charset=utf-8",
+    //    dataType: "json",
+    //    cache: false,
+    //    success: function (res) {
+    //        if (res.success) {
 
-    //$scope.slideVisible = function (index) {
-    //    if (index < $ionicSlideBoxDelegate.currentIndex() - 1
-    //   || index > $ionicSlideBoxDelegate.currentIndex() + 1) {
-    //        return false;
+    //            markerCurrentLocation.setPosition(settings.currentLocation);
+
+    //            $(markersDriver).each(function () {
+    //                this.setMap(null);
+    //            });
+
+    //            markersDriver = [];
+
+    //            $(res.drivers).each(function () {
+    //                var driver = this.driver;
+    //                var latlng = new google.maps.LatLng(driver.lat, driver.lng);
+    //                var markerDriver = new google.maps.Marker({
+    //                    map: mapCurrentLocation,
+    //                    position: latlng,
+    //                    draggable: true,
+    //                    animation: google.maps.Animation.DROP,
+    //                    title: driver.firstName + " " + driver.lastName,
+    //                    icon: settings.carIcon
+    //                });
+    //                markersDriver.push(markerDriver);
+    //            });
+
+    //            var bounds = new google.maps.LatLngBounds();
+
+    //            if (markersDriver.length > 0) {
+    //                bounds.extend(settings.currentLocation);
+    //                $(markersDriver).each(function () {
+    //                    var markerDriver = this;
+    //                    bounds.extend(markerDriver.getPosition());
+    //                });
+    //            }
+
+    //            if (markersDriver.length > 0) {
+    //                mapCurrentLocation.setCenter(bounds.getCenter());
+    //                mapCurrentLocation.fitBounds(bounds);
+    //            } else {
+    //                mapCurrentLocation.setCenter(settings.currentLocation);
+    //                mapCurrentLocation.setZoom(settings.zoom);
+    //            }
+    //        } else {
+    //            notify.error(res.message);
+    //            _scrollTop();
+    //        }
+    //    },
+    //    failure: function (errMsg) {
+    //        notify.error(errMsg);
+    //    },
+    //    headers: {
+    //        "Authorization": rider.getToken()
     //    }
-
-    //    return true;
-    //}
-    var onNativeMapReady = function () {
-        if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
-            $rootScope.pin_icon = global.getLocalIcon({ name: "pin.png" });
-            $rootScope.car_icon = global.getLocalIcon({ name: "car.png" });
-        }
-        $rootScope.map.addMarker({
-            'position': CURRENT_LOCATION,
-            'icon': $rootScope.pin_icon
-        }, function (marker) {
-            marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
-                marker.getPosition(function (latLng) {
-                    draggPosition = latLng;
-                    marker.setTitle(latLng.toUrlValue());
-                    marker.showInfoWindow();
+    //});
+    $ionicPlatform.ready(function () {
+        var onNativeMapReady = function () {
+            if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
+                $rootScope.pin_icon = global.getLocalIcon("pin.png");
+                $rootScope.car_icon = global.getLocalIcon("car.png");
+            }
+            $rootScope.map.addMarker({
+                'position': CURRENT_LOCATION,
+                'icon': $rootScope.pin_icon
+            }, function (marker) {
+                marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
+                    marker.getPosition(function (latLng) {
+                        draggPosition = latLng;
+                        marker.setTitle(latLng.toUrlValue());
+                        marker.showInfoWindow();
+                    });
                 });
             });
+            try {
+                var data = "?lat=" + CURRENT_LOCATION.lat + "&lng=" + CURRENT_LOCATION.lng;
+                PostDataAjax("/api/Trip/GetDriversAround" + data, "",
+                function (respone) {
+                    $timeout(function () {
+                        if (respone.message) {
+                            CommonPopupCtrl.show(respone.message);
+                        }
+                        else {
+                            try {
+                                $(respone.drivers).each(function () {
+                                    var driver = this.driver;
+                                    var latlng = new google.maps.LatLng(driver.lat, driver.lng);
+                                    $rootScope.map.addMarker({
+                                        'position': new plugin.google.maps.LatLng(driver.lat, driver.lng),
+                                        'title': driver.firstName + " " + driver.lastName,
+                                        'icon': $rootScope.car_icon
+                                    });
+                                });
+                            } catch (e) { alert(e); }
+                        }
+
+                    }, 10);
+                }, function (error) {
+                    CommonPopupCtrl.show(error.responseText);
+                }, true, "GET");
+            } catch (e) { alert(e); }
+            //for (var i = 1; i < 5; i++) {
+            //    $rootScope.map.addMarker({
+            //        'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 1000), CURRENT_LOCATION.lng + (i / 1000)),
+            //        'title': 'Test ' + i,
+            //        'icon': $rootScope.car_icon
+            //    });
+            //}
+        };
+        navigator.geolocation.getCurrentPosition(function (position) {
+            CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            var div = document.getElementById("map_canvas_2");
+            if (div) {
+                var mapHeight = window.innerHeight - 100;
+                div.style.height = mapHeight + 'px';
+                setTimeout(function () {
+                    if (window.plugin) {
+                        // Initialize the map view
+                        if ($rootScope.map === undefined) {
+                            MY_MAP_DEFAULT_OPTION['camera'] = {
+                                'latLng': CURRENT_LOCATION,
+                                'tilt': 30,
+                                'zoom': 15,
+                                'bearing': 50
+                            };
+                            MY_MAP_DEFAULT_OPTION['mapType'] = plugin.google.maps.MapTypeId.ROADMAP;
+                            $rootScope.map = plugin.google.maps.Map.getMap(div, MY_MAP_DEFAULT_OPTION);
+                            $rootScope.map.addEventListener(plugin.google.maps.event.MAP_READY, onNativeMapReady);
+                        }
+                        else {
+                            $rootScope.map.setDiv(div);
+                        }
+                    }
+                }, 10);
+            }
+        },
+        function () {
+            console.log("get current location failed");
         });
-        for (var i = 1; i < 5; i++) {
-            $rootScope.map.addMarker({
-                'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 1000), CURRENT_LOCATION.lng + (i / 1000)),
-                'title': 'Test ' + i,
-                'icon': $rootScope.car_icon
-            });
-        }
-    };
-    navigator.geolocation.getCurrentPosition(function (position) {
-        CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        var div = document.getElementById("map_canvas_2");
-        if (div) {
-            var mapHeight = window.innerHeight - 100;
-            div.style.height = mapHeight + 'px';
-            setTimeout(function () {
-                if (window.plugin) {
-                    // Initialize the map view
-                    if ($rootScope.map === undefined) {
-                        MY_MAP_DEFAULT_OPTION['camera'] = {
-                            'latLng': CURRENT_LOCATION,
-                            'tilt': 30,
-                            'zoom': 15,
-                            'bearing': 50
-                        };
-                        MY_MAP_DEFAULT_OPTION['mapType'] = plugin.google.maps.MapTypeId.ROADMAP;
-                        $rootScope.map = plugin.google.maps.Map.getMap(div, MY_MAP_DEFAULT_OPTION);
-                        $rootScope.map.addEventListener(plugin.google.maps.event.MAP_READY, onNativeMapReady);
-                    }
-                    else {
-                        $rootScope.map.setDiv(div);
-                    }
-                }
-            }, 10);
-        }
-    },
-    function () {
-        console.log("get current location failed");
     });
+    
 })
 usecar.controller('TestSubCtrl', function ($scope, $ionicPopup, $timeout) {
     alert("sub");
@@ -311,7 +386,7 @@ usecar.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
             infowindow.open(map, marker);
         });
         debugger;
-      
+
         $scope.map = map;
     }
     //google.maps.event.addDomListener(window, 'load', initialize);
@@ -332,11 +407,10 @@ usecar.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
             }, function (error) {
                 alert('Unable to get location: ' + error.message);
             });
-        } catch (e)
-        {
+        } catch (e) {
             alert(e);
         }
- 
+
     };
 
     $scope.clickTest = function () {
@@ -370,7 +444,7 @@ usecar.controller('ListCtrl', function ($scope) {
       { id: 0 },
       { id: 1 },
       { id: 2 }
-    
+
     ];
 });
 usecar.controller("RefeshCtrl", function ($scope, $timeout) {
