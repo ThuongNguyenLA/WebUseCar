@@ -194,6 +194,7 @@
     <Content Include="js\app.js" />
     <Content Include="js\controllers.js" />
     <Content Include="js\drawer.js" />
+    <Content Include="js\global.js" />
     <Content Include="js\helper.js" />
     <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\jquery-ui.js" />
@@ -218,6 +219,10 @@
     <Content Include="lib\ionic\js\ionic.bundle.min.js" />
     <Content Include="lib\ionic\js\ionic.js" />
     <Content Include="lib\ionic\js\ionic.min.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova-mocks.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova-mocks.min.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova.min.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\ios\cordova.js" />
     <Content Include="scripts\ios\cordova_plugins.js" />
@@ -229,6 +234,17 @@
     <Content Include="scripts\ios\plugins\cordova-plugin-camera\www\ios\CameraPopoverHandle.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-console\www\console-via-logger.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-console\www\logger.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\Contact.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactAddress.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactError.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactField.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactFieldType.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactFindOptions.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactName.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ContactOrganization.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\contacts.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ios\Contact.js" />
+    <Content Include="scripts\ios\plugins\cordova-plugin-contacts\www\ios\contacts.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-device\www\device.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-dialogs\www\notification.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-file\www\DirectoryEntry.js" />
@@ -257,6 +273,7 @@
     <Content Include="scripts\ios\plugins\cordova-plugin-geolocation\www\Position.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-geolocation\www\PositionError.js" />
     <Content Include="scripts\ios\plugins\cordova-plugin-splashscreen\www\splashscreen.js" />
+    <Content Include="scripts\ios\plugins\de.appplant.cordova.plugin.email-composer\www\email_composer.js" />
     <Content Include="scripts\ios\plugins\plugin.google.maps\www\googlemaps-cdv-plugin.js" />
     <Content Include="scripts\ios\plugins\plugin.http.request\www\http-request.js" />
     <Content Include="scripts\platformOverrides.js" />
@@ -285,7 +302,7 @@
     <Folder Include="Areas\LocalEvent\Views\Shared\" />
     <Folder Include="Areas\MyTrip\JSFactory\" />
     <Folder Include="Areas\MyTrip\Models\" />
-    <Folder Include="Areas\MyTrip\Views\Shared\" />
+    <Folder Include="Areas\MyTrip\Views\MyTrip\Shared\" />
     <Folder Include="Areas\Payment\JSFactory\" />
     <Folder Include="Areas\Payment\Models\" />
     <Folder Include="Areas\Payment\Views\Shared\" />
@@ -407,11 +424,18 @@
     <Content Include="Areas\Ride\Views\Ride\RideEstimateFare.cshtml" />
     <Content Include="Areas\Ride\Views\Ride\RideFinalTrip.cshtml" />
     <Content Include="js\jquery-2.1.1.min.js.map" />
+    <Content Include="lib\ngCordova\.bower.json" />
+    <Content Include="lib\ngCordova\bower.json" />
+    <Content Include="lib\ngCordova\CHANGELOG.md" />
+    <Content Include="lib\ngCordova\LICENSE" />
+    <Content Include="lib\ngCordova\package.json" />
+    <Content Include="lib\ngCordova\README.md" />
     <None Include="Properties\PublishProfiles\car.pubxml" />
     <Content Include="Views\Index\HomeCreen.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />
     <Content Include="Views\Index\SignUpType.cshtml" />
     <Content Include="Views\Index\SignUpDriver.cshtml" />
+    <Content Include="Views\Index\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
