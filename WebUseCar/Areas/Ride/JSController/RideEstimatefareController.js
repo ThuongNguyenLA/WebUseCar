@@ -3,6 +3,7 @@
         $rootScope.pin_icon = global.getLocalIcon("pin.png");
         $rootScope.car_icon = global.getLocalIcon("car.png");
     }
+    var FOOTER_HEIGHT = 220;
     $("#menuFreeRide a").css("color", "#48ccaa");
     $("#pn1").hide();
     $("#pn2").hide();
@@ -27,7 +28,7 @@
                 var curLocation = new  plugin.google.maps.LatLng(latitude, longitude);
                 var div = document.getElementById("map_canvas");
                 if (div) {
-                    var mapHeight = window.innerHeight - 210;
+                    var mapHeight = window.innerHeight - FOOTER_HEIGHT;
                     div.style.height = mapHeight + 'px';
                     setTimeout(function () {
                         if (window.plugin) {
@@ -114,7 +115,7 @@
             CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var div = document.getElementById("map_canvas");
             if (div) {
-                var mapHeight = window.innerHeight - 210;
+                var mapHeight = window.innerHeight - FOOTER_HEIGHT;
                 div.style.height = mapHeight + 'px';
                 setTimeout(function () {
                     if (window.plugin) {
@@ -173,7 +174,7 @@
                                     } catch (e) { alert(e);}
                                     for (var i = 1; i < 5; i++) {
                                         $rootScope.map.addMarker({
-                                            'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 500), CURRENT_LOCATION.lng + (i / 300)),
+                                            'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 400), CURRENT_LOCATION.lng + (i / 200)),
                                             'title': 'Test ' + i,
                                             'icon': $rootScope.car_icon
                                         });

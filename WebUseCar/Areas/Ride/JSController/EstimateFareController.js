@@ -1,9 +1,8 @@
-﻿var EstimateFareCtrl = function ($rootScope, $scope, $location, $ionicHistory, googleDirections, $stateParams, CommonPopupCtrl) {
+﻿var EstimateFareCtrl = function ($rootScope, $scope, $location, $timeout, $ionicHistory, googleDirections, $stateParams, CommonPopupCtrl) {
     $scope.EstimatePrice = 0;
     $scope.txtPickup = $rootScope.Pickup;
     $scope.txtDropoff = $rootScope.Dropoff;
-    $scope.EstimateFare = function ()
-    {
+    $scope.EstimateFare = function () {
         $location.path("/app/estimatefare");
     }
     $scope.BookCar = function () {
@@ -12,8 +11,7 @@
             disableBack: true
         });
         $ionicHistory.clearHistory();
-        if ($("#txtDropoff").val() == "" || $("#txtDropoff").val() == null)
-        {
+        if ($("#txtDropoff").val() == "" || $("#txtDropoff").val() == null) {
             CommonPopupCtrl.show("Please, input dropoff");
             return;
         }
@@ -24,13 +22,19 @@
         navigator.geolocation.getCurrentPosition(handle_geolocation_query);
     }
     function handle_geolocation_query(position) {
-       // alert("oko");
+        // alert("oko");
         CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         //alert(CURRENT_LOCATION);
 
     }
     initiate_geolocation();
     CalculateDistance($scope.txtDropoff);
+
+
+
+
+
+
     function CalculateDistance(destination) {
         if (destination == null || destination == undefined)
             return;
@@ -53,16 +57,64 @@
                 if (destination) {
                     if (destination.routes) {
                         if (destination.routes[0].legs) {
-                            var ndistance = destination.routes[0].legs[0].distance.text;
-                            $scope.duration = destination.routes[0].legs[0].duration.text;
-                            $scope.EstimatePrice = ndistance.replace("km", "").trim() * 50;
+
+                            var ndistance = destination.routes[0].legs[0].distance.value;
+                            var nduration = destination.routes[0].legs[0].duration.value;
+
+                            $scope.EstimatePrice = ndistance * 50;
                             //alert($scope.distance + ' ---- ' + $scope.duration);
+                            var geocoder = new google.maps.Geocoder();
+                            geocoder.geocode({ 'address': $rootScope.Pickup }, function (results, status) {
+                                if (status == google.maps.GeocoderStatus.OK) {
+                                    var latitude = results[0].geometry.location.lat();
+                                    var longitude = results[0].geometry.location.lng();
+                                    try {
+                                        //alert($scope.duration);
+                                        var data = "?pickupLat="
+                                                 + latitude
+                                                 + "&pickupLng=" + longitude
+                                                 + "&totalDistanceInMeters=" + ndistance
+                                                 + "&totalSeconds=" + nduration;
+                                       // alert(data);
+                                        PostDataAjax("/api/Trip/GetEstimate" + data, "",
+                                           function (respone) {
+                                               $timeout(function () {
+                                                   if (respone.message) {
+                                                       CommonPopupCtrl.show(respone.message);
+                                                   }
+                                                   else {
+                                                       $timeout(function () {
+                                                           if (respone.driver.id) {
+                                                               //alert(respone.driver.imagePath);
+                                                              $("#Price").html(respone.money.value);
+                                                              $("#DriverName").html(respone.driver.firstName + " " + respone.driver.lastName);
+                                                               $("#CarModel").html(respone.vehicle.carModelName);
+                                                               if (!respone.driver.imagePath.isEmpty()) {
+                                                                   $("#DriverAvatar").attr("src", respone.driver.imagePath);
+                                                               }
+
+                                                           }
+                                                       }, 10);
+                                                   }
+
+                                               }, 10);
+                                           }, function (error) {
+                                               CommonPopupCtrl.show(error.responseText);
+                                           }, true, "GET"
+                                         );
+                                    } catch (e) { }
+
+                                }
+                            });
+
+
+
                         }
                     }
                 }
             });
         } catch (e) {
-           // alert(e);
+            // alert(e);
         }
     }
 
@@ -70,5 +122,42 @@
 
         CalculateDistance(destination);
     }
+
+
+
+    //$.ajax({
+    //    type: "GET",
+    //    url: settings.domain + "api/Trip/GetEstimate?pickupLat="
+    //        + settings.currentLocation.lat()
+    //        + "&pickupLng=" + settings.currentLocation.lng()
+    //        + "&totalDistanceInMeters=" + totalDistanceInMeters
+    //        + "&totalSeconds=" + totalSeconds,
+    //    data: null,
+    //    contentType: "application/json; charset=utf-8",
+    //    dataType: "json",
+    //    cache: false,
+    //    success: function (res) {
+    //        if (res.success) {
+
+    //            if (settings.isEstimate) {
+    //                rider.displayEstimatResult(res);
+    //            }
+
+    //            if (settings.isRequestRide) {
+    //                $("#divItineraryPreview #divEstimateItineraryTime").html(res.minutesString);
+    //            }
+    //        } else {
+    //            notify.error(res.message);
+    //            _scrollTop();
+    //        }
+    //    },
+    //    failure: function (errMsg) {
+    //        notify.error(errMsg);
+    //    },
+    //    headers: {
+    //        "Authorization": rider.getToken()
+    //    }
+    //});
+
 }
-EstimateFareCtrl.$inject = ["$rootScope", "$scope", "$location", "$ionicHistory", "googleDirections", "$stateParams", "CommonPopupCtrl"];
+EstimateFareCtrl.$inject = ["$rootScope", "$scope", "$location", "$timeout", "$ionicHistory", "googleDirections", "$stateParams", "CommonPopupCtrl"];
