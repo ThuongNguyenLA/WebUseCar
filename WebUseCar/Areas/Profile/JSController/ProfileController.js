@@ -98,7 +98,6 @@
     //$rootScope.$digest();
     $scope.SaveProfile = function () {
         // CommonPopupCtrl.show("login");
-        debugger;
         var SendData = {
             "firstName": $("#txtFirstName").val(),
             "lastName": $("#txtLastName").val(),

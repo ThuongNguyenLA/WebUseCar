@@ -7,7 +7,8 @@
         $ionicHistory.clearHistory();
         $rootScope.Pickup = $("#txtPickup").val();//$scope.txtPickup;
         $rootScope.Dropoff = $("#txtDropoff").val();// $scope.txtDropoff;
-        $state.go("app.estimatefare");
+        //$state.go("app.estimatefare");
+        $location.path("/app/estimatefare");
     }
     $scope.RequestRide = function () {
         $ionicHistory.nextViewOptions({

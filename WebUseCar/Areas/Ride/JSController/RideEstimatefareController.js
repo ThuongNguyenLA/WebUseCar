@@ -151,17 +151,26 @@
                                     //    'zoom': 15,
                                     //    'bearing': 50
                                     //}, function () { });
+                                    try {
+                                        var geocoder = new google.maps.Geocoder();
+                                        geocoder.geocode({ 'address': $rootScope.Dropoff }, function (results, status) {
+                                            if (status == google.maps.GeocoderStatus.OK) {
+                                                var latitudeDropoff = results[0].geometry.location.lat();
+                                                var longitudeDropoff = results[0].geometry.location.lng();
+                                                var curLocationDropoff = new plugin.google.maps.LatLng(latitudeDropoff, longitudeDropoff);
 
-                                    var points = [
-                                           CURRENT_LOCATION,
-                                           new plugin.google.maps.LatLng(41.799240000000005, 140.75875000000002)
-                                    ];
-                                    var latLngBounds = new plugin.google.maps.LatLngBounds(points);
-
-                                    $rootScope.map.animateCamera({
-                                        'target': latLngBounds
-                                    });
-
+                                                var points = [CURRENT_LOCATION, curLocationDropoff];
+                                                var latLngBounds = new plugin.google.maps.LatLngBounds(points);
+                                                $rootScope.map.animateCamera({
+                                                    'target': latLngBounds
+                                                });
+                                                $rootScope.map.addMarker({
+                                                    'position': curLocationDropoff,
+                                                    'icon': $rootScope.pin_icon
+                                                }, function (marker) { });
+                                            }
+                                        });
+                                    } catch (e) { alert(e);}
                                     for (var i = 1; i < 5; i++) {
                                         $rootScope.map.addMarker({
                                             'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 500), CURRENT_LOCATION.lng + (i / 300)),
