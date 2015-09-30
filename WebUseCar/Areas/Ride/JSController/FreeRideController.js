@@ -1,4 +1,4 @@
-﻿var FreeRideCtrl = function ($rootScope, $scope, $location, $cordovaContacts, $cordovaEmailComposer, CommonPopupCtrl) {
+﻿var FreeRideCtrl = function ($rootScope, $scope, $location, $cordovaContacts, $cordovaEmailComposer, CommonPopupCtrl, $cordovaSms) {
     $("#menuFreeRide a").css("color", "#48ccaa");
    // alert("controller freeride available");
     $scope.getContact = function () {
@@ -22,8 +22,6 @@
         
         });
     }
-
-
     $scope.sendMail = function () {
         try {
             $cordovaEmailComposer.isAvailable().then(function () {
@@ -55,4 +53,4 @@
         
     }
 }
-FreeRideCtrl.$inject = ["$rootScope", "$scope", "$location", "$cordovaContacts", "$cordovaEmailComposer"];
+FreeRideCtrl.$inject = ["$rootScope", "$scope", "$location", "$cordovaContacts", "$cordovaEmailComposer", "CommonPopupCtrl", "$cordovaSms"];
