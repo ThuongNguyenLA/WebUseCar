@@ -134,69 +134,7 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
     };
 });
 usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl) {
-  
-        //$.ajax({
-        //    type: "GET",
-        //    url: settings.domain + "api/Trip/GetDriversAround?lat=" + settings.currentLocation.lat() + "&lng=" + settings.currentLocation.lng(),
-        //    data: null,
-        //    contentType: "application/json; charset=utf-8",
-        //    dataType: "json",
-        //    cache: false,
-        //    success: function (res) {
-        //        if (res.success) {
-
-        //            markerCurrentLocation.setPosition(settings.currentLocation);
-
-        //            $(markersDriver).each(function () {
-        //                this.setMap(null);
-        //            });
-
-        //            markersDriver = [];
-
-        //            $(res.drivers).each(function () {
-        //                var driver = this.driver;
-        //                var latlng = new google.maps.LatLng(driver.lat, driver.lng);
-        //                var markerDriver = new google.maps.Marker({
-        //                    map: mapCurrentLocation,
-        //                    position: latlng,
-        //                    draggable: true,
-        //                    animation: google.maps.Animation.DROP,
-        //                    title: driver.firstName + " " + driver.lastName,
-        //                    icon: settings.carIcon
-        //                });
-        //                markersDriver.push(markerDriver);
-        //            });
-
-        //            var bounds = new google.maps.LatLngBounds();
-
-        //            if (markersDriver.length > 0) {
-        //                bounds.extend(settings.currentLocation);
-        //                $(markersDriver).each(function () {
-        //                    var markerDriver = this;
-        //                    bounds.extend(markerDriver.getPosition());
-        //                });
-        //            }
-
-        //            if (markersDriver.length > 0) {
-        //                mapCurrentLocation.setCenter(bounds.getCenter());
-        //                mapCurrentLocation.fitBounds(bounds);
-        //            } else {
-        //                mapCurrentLocation.setCenter(settings.currentLocation);
-        //                mapCurrentLocation.setZoom(settings.zoom);
-        //            }
-        //        } else {
-        //            notify.error(res.message);
-        //            _scrollTop();
-        //        }
-        //    },
-        //    failure: function (errMsg) {
-        //        notify.error(errMsg);
-        //    },
-        //    headers: {
-        //        "Authorization": rider.getToken()
-        //    }
-        //});
-    
+   
     var onNativeMapReady = function () {
         if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
             $rootScope.pin_icon = global.getLocalIcon("pin.png");

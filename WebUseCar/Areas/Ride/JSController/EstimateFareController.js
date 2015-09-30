@@ -42,6 +42,14 @@
         try {
             if ($("#txtPickup").val() == "") {
                 currentLocation = CURRENT_LOCATION;
+                var geocoder = geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'latLng': CURRENT_LOCATION }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        if (results[1]) {
+                            $rootScope.Pickup=results[1].formatted_address;
+                        }
+                    }
+                });
             }
             else {
                 currentLocation = $("#txtPickup").val();
@@ -60,9 +68,7 @@
 
                             var ndistance = destination.routes[0].legs[0].distance.value;
                             var nduration = destination.routes[0].legs[0].duration.value;
-
-                            $scope.EstimatePrice = ndistance * 50;
-                            //alert($scope.distance + ' ---- ' + $scope.duration);
+                            $rootScope.Duration = nduration;
                             var geocoder = new google.maps.Geocoder();
                             geocoder.geocode({ 'address': $rootScope.Pickup }, function (results, status) {
                                 if (status == google.maps.GeocoderStatus.OK) {
@@ -85,11 +91,11 @@
                                                    else {
                                                        $timeout(function () {
                                                            if (respone.driver.id) {
-                                                               //alert(respone.driver.imagePath);
+                                                              $rootScope.driver = respone;
                                                               $("#Price").html(respone.money.value);
                                                               $("#DriverName").html(respone.driver.firstName + " " + respone.driver.lastName);
-                                                               $("#CarModel").html(respone.vehicle.carModelName);
-                                                               if (!respone.driver.imagePath.isEmpty()) {
+                                                              $("#CarModel").html(respone.vehicle.carModelName);
+                                                              if (respone.driver.imagePath) {
                                                                    $("#DriverAvatar").attr("src", respone.driver.imagePath);
                                                                }
 
@@ -100,8 +106,7 @@
                                                }, 10);
                                            }, function (error) {
                                                CommonPopupCtrl.show(error.responseText);
-                                           }, true, "GET"
-                                         );
+                                           }, true, "GET");
                                     } catch (e) { }
 
                                 }

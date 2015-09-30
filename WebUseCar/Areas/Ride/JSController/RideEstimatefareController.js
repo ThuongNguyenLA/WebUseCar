@@ -3,7 +3,7 @@
         $rootScope.pin_icon = global.getLocalIcon("pin.png");
         $rootScope.car_icon = global.getLocalIcon("car.png");
     }
-    var FOOTER_HEIGHT = 220;
+    var FOOTER_HEIGHT = 217;
     $("#menuFreeRide a").css("color", "#48ccaa");
     $("#pn1").hide();
     $("#pn2").hide();
@@ -17,6 +17,21 @@
         $rootScope.map.clear();
     }
 
+    function InitDriver()
+    {
+        if ($rootScope.driver) {
+            $("#Duration").html($rootScope.Duration);
+            var respone = $rootScope.driver;
+            //$("#Price").html(respone.money.value);
+            $("#DriverName").html(respone.driver.firstName + " " + respone.driver.lastName);
+            $("#CarModel").html(respone.vehicle.carModelName);
+            if (respone.driver.imagePath) {
+                $("#DriverAvatar").attr("src", respone.driver.imagePath);
+            }
+        }        
+    }
+    InitDriver();
+
     // if we have pickup address value, we create a new marker and center map to this marker
     if ($rootScope.Pickup) {
         // get lat lng from pickup address
@@ -28,7 +43,7 @@
                 var curLocation = new  plugin.google.maps.LatLng(latitude, longitude);
                 var div = document.getElementById("map_canvas");
                 if (div) {
-                    var mapHeight = window.innerHeight - FOOTER_HEIGHT;
+                    var mapHeight = window.innerHeight - parseInt(FOOTER_HEIGHT);
                     div.style.height = mapHeight + 'px';
                     setTimeout(function () {
                         if (window.plugin) {
@@ -38,8 +53,8 @@
                                 MY_MAP_DEFAULT_OPTION['camera'] = {
                                     'latLng': curLocation,
                                     'tilt': 30,
-                                    'zoom': 15,
-                                    'bearing': 50
+                                    'zoom': 12,
+                                    'bearing': 40
                                 };
                                 MY_MAP_DEFAULT_OPTION['mapType'] = plugin.google.maps.MapTypeId.ROADMAP;
                                 $rootScope.map = plugin.google.maps.Map.getMap(div, MY_MAP_DEFAULT_OPTION);
@@ -115,7 +130,7 @@
             CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var div = document.getElementById("map_canvas");
             if (div) {
-                var mapHeight = window.innerHeight - FOOTER_HEIGHT;
+                var mapHeight = window.innerHeight - parseInt(FOOTER_HEIGHT);
                 div.style.height = mapHeight + 'px';
                 setTimeout(function () {
                     if (window.plugin) {
@@ -125,8 +140,8 @@
                             MY_MAP_DEFAULT_OPTION['camera'] = {
                                 'latLng': CURRENT_LOCATION,
                                 'tilt': 30,
-                                'zoom': 15,
-                                'bearing': 50
+                                'zoom': 12,
+                                'bearing': 40
                             };
                             MY_MAP_DEFAULT_OPTION['mapType'] = plugin.google.maps.MapTypeId.ROADMAP;
                             $rootScope.map = plugin.google.maps.Map.getMap(div, MY_MAP_DEFAULT_OPTION);
