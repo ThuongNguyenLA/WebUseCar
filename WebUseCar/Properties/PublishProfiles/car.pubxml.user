@@ -56,7 +56,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Areas/Profile/JSController/ProfileController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/29/2015 23:28:01</publishTime>
     </File>
     <File Include="Areas/Profile/Views/Login/Login.cshtml">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -68,31 +68,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/EstimateFareController.js">
-      <publishTime>09/22/2015 00:38:34</publishTime>
+      <publishTime>10/01/2015 00:02:17</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/FreeRideController.js">
-      <publishTime>09/21/2015 20:09:50</publishTime>
+      <publishTime>10/01/2015 00:23:14</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/RideController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/01/2015 00:40:41</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/RideEstimatefareController.js">
-      <publishTime>09/22/2015 00:28:08</publishTime>
+      <publishTime>10/01/2015 00:11:34</publishTime>
     </File>
     <File Include="Areas/Ride/Views/FreeRide/Index.cshtml">
       <publishTime>09/21/2015 19:57:33</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/EstimateFare.cshtml">
-      <publishTime>09/22/2015 00:39:49</publishTime>
+      <publishTime>09/30/2015 23:42:03</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/Index.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/23/2015 00:10:30</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/Pickup.cshtml">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/RideEstimateFare.cshtml">
-      <publishTime>09/22/2015 00:36:13</publishTime>
+      <publishTime>10/01/2015 00:13:16</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/RideFinalTrip.cshtml">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -101,10 +101,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>09/22/2015 00:40:10</publishTime>
+      <publishTime>10/01/2015 08:59:51</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>09/22/2015 00:40:10</publishTime>
+      <publishTime>10/01/2015 08:59:51</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>09/19/2015 23:16:23</publishTime>
@@ -143,7 +143,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:23</publishTime>
     </File>
     <File Include="bin/WebUseCar.dll">
-      <publishTime>09/21/2015 19:57:40</publishTime>
+      <publishTime>10/01/2015 08:59:40</publishTime>
     </File>
     <File Include="css/drawer.css">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -290,13 +290,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="js/app.js">
-      <publishTime>09/21/2015 23:36:40</publishTime>
+      <publishTime>09/22/2015 19:43:36</publishTime>
     </File>
     <File Include="js/appWelcome.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/23/2015 20:13:24</publishTime>
     </File>
     <File Include="js/controllers.js">
-      <publishTime>09/21/2015 19:13:58</publishTime>
+      <publishTime>10/01/2015 00:27:55</publishTime>
     </File>
     <File Include="js/drawer.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -517,11 +517,41 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="lib/ionic/version.json">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
+    <File Include="lib/ngCordova/.bower.json">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/bower.json">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/CHANGELOG.md">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/dist/ng-cordova-mocks.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/dist/ng-cordova-mocks.min.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/dist/ng-cordova.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/dist/ng-cordova.min.js">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/LICENSE">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/package.json">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
+    <File Include="lib/ngCordova/README.md">
+      <publishTime>09/19/2015 23:16:22</publishTime>
+    </File>
     <File Include="packages.config">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/22/2015 00:40:02</publishTime>
+      <publishTime>10/01/2015 08:59:45</publishTime>
     </File>
     <File Include="scripts/index.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -530,7 +560,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="scripts/ios/cordova_plugins.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/01/2015 00:23:14</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/com.cordova.plugins.sms/www/sms.js">
+      <publishTime>10/01/2015 00:23:14</publishTime>
     </File>
     <File Include="scripts/ios/plugins/com.ionic.keyboard/www/keyboard.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -677,7 +710,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="scripts/ios/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/01/2015 00:23:14</publishTime>
     </File>
     <File Include="scripts/ios/plugins/plugin.http.request/www/http-request.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
@@ -710,25 +743,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Views/Index/HomeCreen.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/23/2015 19:47:12</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>09/21/2015 23:34:14</publishTime>
+      <publishTime>10/01/2015 00:23:14</publishTime>
     </File>
     <File Include="Views/Index/Login.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/23/2015 19:36:12</publishTime>
     </File>
     <File Include="Views/Index/SignUp.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/23/2015 20:02:37</publishTime>
     </File>
     <File Include="Views/Index/SignUpDriver.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/23/2015 20:03:46</publishTime>
     </File>
     <File Include="Views/Index/SignUpType.cshtml">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="Views/Index/TemplateWelcome.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/01/2015 00:23:14</publishTime>
     </File>
     <File Include="Views/Index/WelCome.cshtml">
       <publishTime>08/09/2015 22:00:58</publishTime>

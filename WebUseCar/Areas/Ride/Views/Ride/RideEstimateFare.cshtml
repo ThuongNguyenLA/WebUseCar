@@ -38,7 +38,7 @@
             </table>
             <div id="pn1" style="position:absolute;bottom:124px;background-color:#edeef0;padding-bottom:30px;width:100%;height:50px;display:none">
                 @*<button ng-click="Calculate(txtPickup)" style="width:80%;margin-left:10%;margin-top:10px;background-color:#49ccaa;height:30px;border:none;color:white">Book Now</button>*@
-                <button ng-click="ExportImage()" style="width:80%;margin-left:10%;margin-top:10px;background-color:#49ccaa;height:30px;border:none;color:white">Book Now</button>
+                <button ng-click="BookRider()" style="width:80%;margin-left:10%;margin-top:10px;background-color:#49ccaa;height:30px;border:none;color:white">Book Now</button>
 
             </div>
             <div id="pn2" style="position:absolute;bottom:103px;background-color:white;padding-bottom:30px;width:100%;display:none">
@@ -48,6 +48,7 @@
                             <center>
                                 <span style="line-height:40px" >
                                     Estimate <span id="Duration"></span> minutes arrival
+                                    <button ng-click="BookRider()" ng-model="dd" style="width:80%;margin-left:10%;margin-top:10px;background-color:#49ccaa;height:30px;border:none;color:white">Book Now</button>
                                 </span>
                             </center>
                         </td>
@@ -55,11 +56,11 @@
                     <tr>
                         <td colspan="2">
                             <div style="background-color:#49ccaa">
-                                <img src="/img/avatar.png" id="DriverAvatar" height="30" width="30" style="position:relative;top:8px;left:9px" />
-                                <span style="margin-left:10px;line-height:40px;color:#fff" id="DriverName"></span>
+                                <img src="/img/avatar.png" id="DriverAvatar2" height="30" width="30" style="position:relative;top:8px;left:9px" />
+                                <span style="margin-left:10px;line-height:40px;color:#fff" id="DriverName2"></span>
                                 <div style="float:right;margin-right:5px;margin-top:13px;color:white">
                                     <img src="~/img/icons/icon-car.png" style="margin-right:5px;position:relative;bottom:0;width:25px" />
-                                    <span id="CarModel"></span>
+                                    <span id="CarModel2"></span>
 
                                 </div>
                             </div>

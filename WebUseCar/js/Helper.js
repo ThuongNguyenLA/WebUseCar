@@ -1,5 +1,5 @@
 ﻿var RiderRootUrl = "http://api-rider.xeduadon.com";
-function PostDataAjax(url, data, success,fail,bSetHeader,strmethod) {
+function PostDataAjax(url, data, success,fail,bSetHeader,strmethod,bShowLoading) {
     //if (!timeout)
     //    timeout = 30000;
     //$.ajax({
@@ -16,7 +16,11 @@ function PostDataAjax(url, data, success,fail,bSetHeader,strmethod) {
     //    done: success,
     //    error: error
     //});
-
+    if (bShowLoading == null || bShowLoading == undefined) {
+        bShowLoading = true;
+    }
+    else
+        bShowLoading = false;
     if (strmethod == null || strmethod == undefined)
     {
         strmethod = "POST";
@@ -33,6 +37,7 @@ function PostDataAjax(url, data, success,fail,bSetHeader,strmethod) {
                 "Authorization":localStorage.getItem("token")
             },
             beforeSend: function (hd) {
+                if (!$("#loading").is(":visible") && bShowLoading)
                 $("#loading").show();
                 //if (bSetHeader)
                 //hd.setRequestHeader('Authorization',)// localStorage.getItem("token"));
@@ -49,6 +54,7 @@ function PostDataAjax(url, data, success,fail,bSetHeader,strmethod) {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             beforeSend: function () {
+                if (!$("#loading").is(":visible") && bShowLoading)
                 $("#loading").show();
                 //if (bSetHeader)
                 //hd.setRequestHeader('Authorization',)// localStorage.getItem("token"));
@@ -59,6 +65,7 @@ function PostDataAjax(url, data, success,fail,bSetHeader,strmethod) {
   
 }
 $(document).ajaxComplete(function (event, request, settings) {
+    //if (bShowLoading)
     $("#loading").hide();
 });
 //    $.ajax({

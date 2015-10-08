@@ -16,11 +16,29 @@
         $state.go("app.estimatefare");
     }
     $scope.RequestRide = function () {
+
+
         $ionicHistory.nextViewOptions({
             disableBack: true
         });
         $ionicHistory.clearHistory();
-        $rootScope.Pickup = $("#txtPickup").val();//$scope.txtPickup;
+        var currentLocation = CURRENT_LOCATION;
+        if ($("#txtPickup").val() == "") {
+            currentLocation = CURRENT_LOCATION;
+            var geocoder = geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'latLng': CURRENT_LOCATION }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[1]) {
+                        $rootScope.Pickup = results[1].formatted_address;
+                    }
+                }
+            });
+        }
+        else {
+            currentLocation = $("#txtPickup").val();
+            $rootScope.Pickup = $("#txtPickup").val();
+        }
+        //$scope.txtPickup;
         $rootScope.Dropoff = $("#txtDropoff").val();// $scope.txtDropoff;
         if ($("#txtDropoff").val() == "" || $("#txtDropoff").val() == null) {
             CommonPopupCtrl.show("Please, input dropoff");
@@ -28,7 +46,7 @@
         }
         else {
             var args = {
-                origin: $("#txtPickup").val(),//"1/2 Út Tịch, Phường 4, Tân Bình, Hồ Chí Minh, Việt Nam",
+                origin: currentLocation,//"1/2 Út Tịch, Phường 4, Tân Bình, Hồ Chí Minh, Việt Nam",
                 destination: $("#txtDropoff").val(),
                 travelMode: 'driving',
                 unitSystem: 'metric'
@@ -37,10 +55,11 @@
                 if (destination) {
                     if (destination.routes) {
                         if (destination.routes[0].legs) {
-
+                            debugger;
                             var ndistance = destination.routes[0].legs[0].distance.value;
                             var nduration = destination.routes[0].legs[0].duration.value;
                             $rootScope.Duration = nduration;
+                            $rootScope.Distance = ndistance;
                             var geocoder = new google.maps.Geocoder();
                             geocoder.geocode({ 'address': $rootScope.Pickup }, function (results, status) {
                                 if (status == google.maps.GeocoderStatus.OK) {

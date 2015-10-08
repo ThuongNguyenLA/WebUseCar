@@ -15,10 +15,10 @@ usecar.factory('CommonPopupCtrl', function ($rootScope, $ionicPopup, $timeout) {
     helper = {};
 
     helper.show = function (strPopupContent) {
-        // $scope.data = {}
         if ($rootScope.map) {
             $rootScope.map.setClickable(false);
         }
+        //$rootScope.POPUPISSHOW = true;
         // An elaborate, custom popup
         var myPopup = $ionicPopup.show({
             template: strPopupContent,
@@ -32,7 +32,8 @@ usecar.factory('CommonPopupCtrl', function ($rootScope, $ionicPopup, $timeout) {
             if ($rootScope.map) {
                 $rootScope.map.setClickable(true);
             }
-            console.log('Tapped!', res);
+            //$rootScope.POPUPISSHOW = false;
+            //console.log('Tapped!', res);
         });
     };
     //// A confirm dialog
@@ -137,6 +138,8 @@ usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeou
         var onNativeMapReady = function () {
             if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
                 $rootScope.pin_icon = global.getLocalIcon("pin.png");
+                $rootScope.pin_dest_icon = global.getLocalIcon("pin_dest.png");
+                $rootScope.pin_car_move_icon = global.getLocalIcon("car_move.png");
                 $rootScope.car_icon = global.getLocalIcon("car.png");
             }
             $rootScope.map.addMarker({

@@ -53,6 +53,7 @@
             }
             else {
                 currentLocation = $("#txtPickup").val();
+                $rootScope.Pickup = $("#txtPickup").val();
             }
             var args = {
                 origin: currentLocation,//"1/2 Út Tịch, Phường 4, Tân Bình, Hồ Chí Minh, Việt Nam",
@@ -69,6 +70,7 @@
                             var ndistance = destination.routes[0].legs[0].distance.value;
                             var nduration = destination.routes[0].legs[0].duration.value;
                             $rootScope.Duration = nduration;
+                            $rootScope.Distance = ndistance;
                             var geocoder = new google.maps.Geocoder();
                             geocoder.geocode({ 'address': $rootScope.Pickup }, function (results, status) {
                                 if (status == google.maps.GeocoderStatus.OK) {
