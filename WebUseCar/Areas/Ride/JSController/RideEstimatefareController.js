@@ -11,7 +11,10 @@
         $("#pn1").show();
     }
     else {
-        $("#pn2").show();
+        //$("#pn2").show();
+        //$("#btnBookDriver").click();
+
+        MainExecute();
     }
     if ($rootScope.map) {
         $rootScope.map.clear();
@@ -31,6 +34,17 @@
                 $("#DriverAvatar2").attr("src", respone.driver.imagePath);
             }
         }        
+    }
+    function ResetDriver(Duration, firstName, lastName, carModelName, imagePath) {
+        if ($rootScope.driver) {
+
+            $("#Duration").html(Duration);
+            $("#DriverName2").html(firstName + " " + lastName);
+            $("#CarModel2").html(carModelName);
+            if (imagePath) {
+                $("#DriverAvatar2").attr("src", imagePath);
+            }
+        }
     }
     InitDriver();
 
@@ -305,7 +319,7 @@
     var markerDriverCar = null;
     var DriverData = null;
     var objDriver=null;
-    function DrawMap(lat, lng)
+    function DrawMap(lat, lng,DriverName)
     {
         debugger;
         try {
@@ -315,7 +329,7 @@
             {
                 DriverData = {
                     'position': new plugin.google.maps.LatLng(lat, lng ),
-                    'title': 'Test ',
+                    'title': DriverName,
                     'icon': $rootScope.pin_car_move_icon
                 }
                 $rootScope.map.addMarker(DriverData, function (marker) {
@@ -350,7 +364,7 @@
                            //rider.backToCurrentLocationHandler();
                            //if (!$rootScope.POPUPISSHOW)
                            $("#loading2").hide();
-                           CommonPopupCtrl.show(res.message);
+                           CommonPopupCtrl.show(respone.message);
                        }
                        else if (respone.isStartGo) {
                            debugger;
@@ -367,10 +381,37 @@
                            //hien thi tai xe dang den
                            debugger;
                            if ($("#loading2").is(":visible")) {
-                               CommonPopupCtrl.show("Please, Driver is going to you");
+                            //   CommonPopupCtrl.show("Please, Driver is going to you");
                                $("#loading2").hide();
                            }
-                               DrawMap(respone.requestResult.driverCurrentPosition.lat, respone.requestResult.driverCurrentPosition.lng);
+                           var DriverName = "Taxi";
+                           try {
+                               if (respone.requestResult && respone.requestResult.driver) { 
+                               var destination = new plugin.google.maps.LatLng(respone.requestResult.driver.lat, respone.requestResult.driver.lng);
+                               var args = {
+                                   origin: new plugin.google.maps.LatLng($scope.PickupLat, $scope.PickupLng),//"1/2 Út Tịch, Phường 4, Tân Bình, Hồ Chí Minh, Việt Nam",
+                                   destination: destination,
+                                   travelMode: 'driving',
+                                   unitSystem: 'metric'
+                               }
+                               googleDirections.getDirections(args).then(function (destination) {
+                                   if (destination) {
+                                       if (destination.routes) {
+                                           if (destination.routes[0].legs) {
+                                               var nduration = destination.routes[0].legs[0].duration.value;
+                                               ResetDriver(nduration, respone.requestResult.driver.firstName, respone.requestResult.driver.lastName, respone.requestResult.carModelName, respone.requestResult.driver.imagePath);
+                                               DriverName = respone.requestResult.driver.firstName + " " + respone.requestResult.driver.lastName;
+                                               $("#pn1").hide();
+                                               $("#pn2").show();
+                                               $("#btnBookDriver").hide();
+                                           }
+                                       }
+                                   }
+                               });
+                               }
+                           } catch (e) {alert(e) }
+
+                           DrawMap(respone.requestResult.driverCurrentPosition.lat, respone.requestResult.driverCurrentPosition.lng, DriverName);
                                setTimeout(GetRequestResult(), 1000);
                        }
                    } else {
@@ -388,13 +429,8 @@
 
     }
     
-
-
-
-    $scope.BookRider=function()
+    function MainExecute()
     {
-        $("#pn1").hide();
-        $("#pn2").show();
 
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({ 'address': $rootScope.Pickup }, function (results, status) {
@@ -427,7 +463,7 @@
                                     GetRequestResult();
                                 } else {
                                     if (!$rootScope.POPUPISSHOW)
-                                    CommonPopupCtrl.show(respone.message);
+                                        CommonPopupCtrl.show(respone.message);
                                 }
 
                             }, 10);
@@ -442,6 +478,14 @@
             }
         });
 
+    }
+
+
+    $scope.BookRider=function()
+    {
+    
+
+        MainExecute();
 
 
 
