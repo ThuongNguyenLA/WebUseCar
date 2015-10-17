@@ -173,7 +173,7 @@
         };
     }])
 
-    .directive('drawer', ['$rootScope', '$ionicGesture', function ($rootScope, $ionicGesture) {
+    .directive('drawer', ['$rootScope', '$ionicGesture', '$ionicHistory', function ($rootScope, $ionicGesture, $ionicHistory) {
         return {
             restrict: 'E',
             controller: 'drawerCtrl',
@@ -189,7 +189,22 @@
                     ctrl.close();
                     ctrl.setState('close');
                 };
-                $scope.toggleDrawer = function () {
+                $scope.toggleDrawer = function (url) {
+                    $ionicHistory.nextViewOptions({
+                        disableBack: true
+                    });
+                    $ionicHistory.nextViewOptions({
+                        disableBack: true
+                    });
+                    $ionicHistory.nextViewOptions({
+                        disableBack: true
+                    });
+                    $ionicHistory.nextViewOptions({
+                        disableBack: true
+                    });
+                    $ionicHistory.nextViewOptions({
+                        disableBack: true
+                    });
                     if (ctrl.isOpen()) {
                         if ($rootScope.map !== undefined) {
                             $rootScope.map.setClickable(true);
@@ -204,6 +219,14 @@
                         ctrl.open();
                         ctrl.setState('open');
                         return "open";
+                    }
+                    if (ulr)
+                    {
+                        var div = document.getElementById("map_canvas");
+                        if (div) {
+                            div.innerHTML = "";
+                        }
+                        window.location.href = url;
                     }
                 };
             }

@@ -73,7 +73,8 @@
             <ion-nav-back-button hide-back-button="true">
             </ion-nav-back-button>
             <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-gear-b" ng-click="toggleDrawer()" menu-toggle="left" style="color:#fff"></button>
+               
+                <button class="button button-icon button-clear ion-gear-b" ng-click="toggleDrawer()" menu-toggle="left" style="color:#fff;display:block!important"></button>
             </ion-nav-buttons>
             <ion-nav-buttons side="right">
                 <img src="/img/icons/logout.png" class="logout" onclick="window.location.href='/index/TemplateWelcome#/app/welcome'" />
@@ -85,12 +86,7 @@
 
             </ion-content>
         </ion-view>-->
-        <div id="loading" style="position:absolute;top:0;left:0;height:100vh;width:100%;background-color:gray;opacity:0.8;z-index:9999999999;display:none">
-            <img src="/img/icons/loading.gif" width="50" height="50" style="position:absolute;left:50%;top:50%;margin-left:-25px;margin-top:-25px;" />
-        </div>
-        <div id="loading2" style="position:absolute;top:0;left:0;height:100vh;width:100%;background-color:gray;opacity:0.8;z-index:9999999999;display:none">
-            <img src="/img/icons/loading.gif" width="50" height="50" style="position:absolute;left:50%;top:50%;margin-left:-25px;margin-top:-25px;" />
-        </div>
+
     </ion-side-menu-content>
 
     <!-- Left menu -->
@@ -111,22 +107,22 @@
         <ion-view title="Menu">
             <ion-content style="margin-top:60px;">
                 <ion-list>
-                    <ion-item menu-close id="menuProfile" ng-click="toggleDrawer()" href="#/app/profile">
+                    <ion-item menu-close id="menuProfile" ng-click="toggleDrawer();FooterMenuActive($event,5)">
                         Profile
                     </ion-item>
-                    <ion-item menu-close id="menuMyTrip" ng-click="toggleDrawer()" href="#app/mytrip">
+                    <ion-item menu-close id="menuMyTrip" ng-click="toggleDrawer();FooterMenuActive($event,1)">
                         My Strips
                     </ion-item>
-                    <ion-item menu-close id="menuFreeRide" ng-click="toggleDrawer()" href="#app/freeride">
+                    <ion-item menu-close id="menuFreeRide" ng-click="toggleDrawer();FooterMenuActive($event,6)">
                         Free Rides
                     </ion-item>
-                    <ion-item menu-close  ng-click="toggleDrawer()" href="#app/payment">
+                    <ion-item menu-close  ng-click="toggleDrawer();FooterMenuActive($event,7)">
                         Payment
                     </ion-item>
-                    <ion-item menu-close href="#" ng-click="toggleDrawer()">
+                    <ion-item menu-close >
                         Verifycation
                     </ion-item>
-                    <ion-item menu-close ng-click="toggleDrawer()" href="/index/TemplateWelcome#/app/welcome">
+                    <ion-item menu-close ng-click="toggleDrawer('/index/TemplateWelcome#/app/welcome')">
                         Log out
                     </ion-item>
                 </ion-list>
@@ -173,7 +169,12 @@
             </tr>
         </table>
     </ion-tabs>
-
+<div id="loading" style="position:absolute;top:0;left:0;height:100vh;width:100%;background-color:gray;opacity:0.8;z-index:9999999999;display:none">
+    <img src="/img/icons/loading.gif" width="50" height="50" style="position:absolute;left:50%;top:50%;margin-left:-25px;margin-top:-25px;" />
+</div>
+<div id="loading2" style="position:absolute;top:0;left:0;height:100vh;width:100%;background-color:gray;opacity:0.8;z-index:9999999999;display:none">
+    <img src="/img/icons/loading.gif" width="50" height="50" style="position:absolute;left:50%;top:50%;margin-left:-25px;margin-top:-25px;" />
+</div>
 <!--<ion-footer-bar class="bar bar-footer" style="height:60px;background-color:#48ccaa">
     <table class="icon-footer" style="margin-bottom:5px;">
         <tr>
@@ -204,6 +205,8 @@
     body, div, a, table, table,input {
         font-family:Arial!important;
         font-size:12px!important;
+    }
+    .back-button {
     }
     .header-item {
         color:white !important;

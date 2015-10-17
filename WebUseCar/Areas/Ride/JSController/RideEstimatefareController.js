@@ -218,13 +218,13 @@
                             MY_MAP_DEFAULT_OPTION['mapType'] = plugin.google.maps.MapTypeId.ROADMAP;
                             $rootScope.map = plugin.google.maps.Map.getMap(div, MY_MAP_DEFAULT_OPTION);
                             $rootScope.map.addEventListener(plugin.google.maps.event.MAP_READY, function () {
-                                for (var i = 1; i < 5; i++) {
-                                    $rootScope.map.addMarker({
-                                        'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 300), CURRENT_LOCATION.lng + (i / 200)),
-                                        'title': 'Test ' + i,
-                                        'icon': $rootScope.car_icon
-                                    });
-                                }
+                                //for (var i = 1; i < 5; i++) {
+                                //    $rootScope.map.addMarker({
+                                //        'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 300), CURRENT_LOCATION.lng + (i / 200)),
+                                //        'title': 'Test ' + i,
+                                //        'icon': $rootScope.car_icon
+                                //    });
+                                //}
                             });
                         }
                         else { // if we have init the map, we set map to another div

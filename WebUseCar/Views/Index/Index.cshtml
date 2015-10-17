@@ -24,7 +24,7 @@
     @*<script src="cordova.js"></script>*@
     <!-- your app's js -->
     @*<script src="/scripts/ios/cordova.js"></script>*@
-    @*<script src="/scripts/index.js"></script>*@
+    <script src="/scripts/index.js"></script>
     @*<script src="/scripts/ios/cordova_plugins.js"></script>*@
 
     <!-- your app's js -->
@@ -33,7 +33,7 @@
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places,geometry"></script>
     <script src="/js/map/tommyGoogleMaps.js"></script>
     <script src="/js/app.js?v=1"></script>
-    <script src="/js/drawer.js?v=123"></script>
+    <script src="/js/drawer.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
     <script src="/Areas/Profile/JSController/LoginController.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
     <script src="/Areas/Profile/JSController/ProfileController.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>
     <script src="/Areas/Ride/JSController/RideController.js?v=@DateTime.Now.ToString("ddMMyyHHmmss")"></script>

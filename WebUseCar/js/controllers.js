@@ -62,14 +62,14 @@ usecar.factory('CommonPopupCtrl', function ($rootScope, $ionicPopup, $timeout) {
     //};
     return helper;
 });
-usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory, $rootScope, googleDirections) {
+usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory, $rootScope, $ionicNavBarDelegate) {//googleDirections
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
     // To listen for when this page is active (for example, to refresh data),
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
-
+    $ionicNavBarDelegate.showBackButton(false);
     // Form data for the login modal
     $scope.loginData = {};
 
@@ -99,9 +99,11 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
         //$rootScope.map.setClickable(false);
         $(".icon-footer").find("span").removeClass("active");
         $("#" + id).addClass("active");
+       
         $ionicHistory.nextViewOptions({
             disableBack: true
         });
+        $ionicNavBarDelegate.showBackButton(false);
         $ionicHistory.clearHistory();
         switch (id) {
             case 1:
@@ -120,6 +122,19 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
                 $state.go("app.airport");
                 $ionicHistory.clearHistory();
                 break;
+            case 5:
+                $state.go("app.profile");
+                $ionicHistory.clearHistory();
+                break;
+            case 6:
+                $state.go("app.freeride");
+                $ionicHistory.clearHistory();
+                break;
+            case 7:
+                $state.go("app.payment");
+                $ionicHistory.clearHistory();
+                break;
+                
         }
     }
     // Perform the login action when the user submits the login form

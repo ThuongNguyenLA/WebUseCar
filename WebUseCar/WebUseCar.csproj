@@ -278,12 +278,17 @@
     <Content Include="scripts\ios\plugins\plugin.google.maps\www\googlemaps-cdv-plugin.js" />
     <Content Include="scripts\platformOverrides.js" />
     <Content Include="templates\browse.html" />
+    <Content Include="templates\chat-detail.html" />
     <Content Include="templates\login.html" />
     <Content Include="templates\menuwelcome.html" />
     <Content Include="templates\menu.html" />
     <Content Include="templates\playlists.html" />
     <Content Include="templates\refesh.html" />
     <Content Include="templates\search.html" />
+    <Content Include="templates\tab-account.html" />
+    <Content Include="templates\tab-chats.html" />
+    <Content Include="templates\tab-dash.html" />
+    <Content Include="templates\tabs.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
