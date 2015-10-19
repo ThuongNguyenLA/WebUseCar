@@ -152,7 +152,7 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
     }
 
 })
-.controller('SignUpCtrl', function ($scope, $timeout,$ionicHistory, CommonPopupCtrl) {
+.controller('SignUpCtrl', function ($scope, $timeout, CommonPopupCtrl) {
     PostDataAjax("/api/List/GetCountries?languageCode=en-US", "",
          function (respone) {
              $timeout(function () {
@@ -178,12 +178,7 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
                  $timeout(function () {
                      if (respone && respone.success) {
                          CommonPopupCtrl.show(respone.message);
-                         $ionicHistory.nextViewOptions({
-                             disableBack: true
-                         });
-                         $ionicHistory.clearHistory();
 
-                         window.location.href = "/index/TemplateWelcome#/app/login";
                      }
                      else {
                          CommonPopupCtrl.show(respone.message);

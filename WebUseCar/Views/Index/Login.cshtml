@@ -8,7 +8,7 @@
 <ion-content style="background-color:#f5f2f9;">
     <div style="position:relative;height:100vh">
         <div style="background-color:#fff;text-align:center">
-            <span style="line-height:40px;color:#4fbee6">Rider</span>
+            <span style="line-height:40px;color:#4fbee6">Driver</span>
         </div>
             <input type="button" style="display:none" value="LOGIN VIA FACEBOOK" class="signup-facebook" ng-click="aa()" />
         <div id="status" style="display:none">
@@ -19,16 +19,16 @@
         <div style="width:100%;margin-top:35px">
             <table width="100%" class="signup">
                 <tr>
-                    <td><input placeholder="Email or Phone#" id="user" disable-tap /></td>
+                    <td><input placeholder="Email or Phone#" id="user" /></td>
                 </tr>
                 <tr>
-                    <td><input type="password" placeholder="Password" id="pass" disable-tap /></td>
+                    <td><input type="password" placeholder="Password" id="pass" /></td>
                 </tr>
+                
             </table>
-            <br />
-            <input type="button" value="Login" class="btn-login" ng-click="login()" disable-tap />
 
         </div>
+        <input type="button" value="Login" class="btn-signup" ng-click="login()" />
     </div>
     
 </ion-content>
@@ -69,13 +69,14 @@
             top: 19px;
         }
 
-    .btn-login {
-        background-color: #43afbc!important;
+    .btn-signup {
+        background-color: #43afbc;
         color: white;
         height: 35px;
-        width: 80%!important;
-        margin-top:40px;
-        margin-left: 10%!important;
+        width: 80%;
+        margin-left: 10%;
         border: none;
+        position: absolute;
+        bottom: 61px;
     }
 </style>
