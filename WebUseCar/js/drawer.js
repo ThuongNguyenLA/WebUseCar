@@ -173,7 +173,7 @@
         };
     }])
 
-    .directive('drawer', ['$rootScope', '$ionicGesture', '$ionicHistory', function ($rootScope, $ionicGesture, $ionicHistory) {
+    .directive('drawer', ['$rootScope', '$ionicGesture', function ($rootScope, $ionicGesture) {
         return {
             restrict: 'E',
             controller: 'drawerCtrl',
@@ -189,35 +189,7 @@
                     ctrl.close();
                     ctrl.setState('close');
                 };
-                $scope.toggleDrawer = function (url) {
-                    $ionicHistory.nextViewOptions({
-                        disableBack: true
-                    });
-                    $ionicHistory.nextViewOptions({
-                        disableBack: true
-                    });
-                    $ionicHistory.nextViewOptions({
-                        disableBack: true
-                    });
-                    $ionicHistory.nextViewOptions({
-                        disableBack: true
-                    });
-                    $ionicHistory.nextViewOptions({
-                        disableBack: true
-                    });
-                    try {
-                        if (url) {
-                            if ($rootScope.map) {
-                                $rootScope.map.setClickable(false);
-                            }
-                            var div = document.getElementById("map_canvas");
-                            if (div) {
-                                div.innerHTML = "";
-                            }
-                            window.location.href = url;
-                        }
-                    } catch (e) { }
-                   
+                $scope.toggleDrawer = function () {
                     if (ctrl.isOpen()) {
                         if ($rootScope.map !== undefined) {
                             $rootScope.map.setClickable(true);
@@ -233,7 +205,6 @@
                         ctrl.setState('open');
                         return "open";
                     }
-                   
                 };
             }
         }

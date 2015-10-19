@@ -86,13 +86,7 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
 
     })
 .controller('WelComeCtrl', function ($rootScope,$scope, $ionicSlideBoxDelegate, $location) {
-    try {
-
-
-    } catch (e) {alert(e) }
-    //if ($rootScope.map) {
-    //    $rootScope.map.setClickable(true);
-    //}
+    
     $scope.images = [
                              "/img/1.jpg",
                             "/img/2.jpg",
@@ -115,12 +109,6 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
 })
 .controller('LoginCtrl', function ($rootScope,$scope, $ionicHistory, CommonPopupCtrl) {
     
-    //try {
-
-    //   if ($rootScope.map) {
-    //        $rootScope.map.setClickable(false);
-    //     }
-    //} catch (e) { alert(e) }
     $scope.login = function()
     {
         if ($("#user").val() == "") {
@@ -152,7 +140,7 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
     }
 
 })
-.controller('SignUpCtrl', function ($scope, $timeout,$ionicHistory, CommonPopupCtrl) {
+.controller('SignUpCtrl', function ($scope, $timeout, CommonPopupCtrl) {
     PostDataAjax("/api/List/GetCountries?languageCode=en-US", "",
          function (respone) {
              $timeout(function () {
@@ -178,12 +166,7 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
                  $timeout(function () {
                      if (respone && respone.success) {
                          CommonPopupCtrl.show(respone.message);
-                         $ionicHistory.nextViewOptions({
-                             disableBack: true
-                         });
-                         $ionicHistory.clearHistory();
 
-                         window.location.href = "/index/TemplateWelcome#/app/login";
                      }
                      else {
                          CommonPopupCtrl.show(respone.message);
