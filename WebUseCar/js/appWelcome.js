@@ -90,9 +90,9 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
 
 
     } catch (e) {alert(e) }
-    if ($rootScope.map) {
-        $rootScope.map.setClickable(true);
-    }
+    //if ($rootScope.map) {
+    //    $rootScope.map.setClickable(true);
+    //}
     $scope.images = [
                              "/img/1.jpg",
                             "/img/2.jpg",
@@ -115,12 +115,12 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
 })
 .controller('LoginCtrl', function ($rootScope,$scope, $ionicHistory, CommonPopupCtrl) {
     
-    try {
+    //try {
 
-        if ($rootScope.map) {
-            $rootScope.map.setClickable(false);
-        }
-    } catch (e) { alert(e) }
+    //   if ($rootScope.map) {
+    //        $rootScope.map.setClickable(false);
+    //     }
+    //} catch (e) { alert(e) }
     $scope.login = function()
     {
         if ($("#user").val() == "") {

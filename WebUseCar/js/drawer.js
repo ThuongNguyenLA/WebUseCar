@@ -205,6 +205,19 @@
                     $ionicHistory.nextViewOptions({
                         disableBack: true
                     });
+                    try {
+                        if (url) {
+                            if ($rootScope.map) {
+                                $rootScope.map.setClickable(false);
+                            }
+                            var div = document.getElementById("map_canvas");
+                            if (div) {
+                                div.innerHTML = "";
+                            }
+                            window.location.href = url;
+                        }
+                    } catch (e) { }
+                   
                     if (ctrl.isOpen()) {
                         if ($rootScope.map !== undefined) {
                             $rootScope.map.setClickable(true);
@@ -220,14 +233,7 @@
                         ctrl.setState('open');
                         return "open";
                     }
-                    if (ulr)
-                    {
-                        var div = document.getElementById("map_canvas");
-                        if (div) {
-                            div.innerHTML = "";
-                        }
-                        window.location.href = url;
-                    }
+                   
                 };
             }
         }
