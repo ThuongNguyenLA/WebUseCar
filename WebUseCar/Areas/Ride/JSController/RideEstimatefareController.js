@@ -344,7 +344,7 @@
         try{
 
 
-       $rootScope.watchId = navigator.geolocation.watchPosition(
+            watchId = navigator.geolocation.watchPosition(
             geolocationSuccess,
             function (e) {
                 // fire when get location change error
@@ -364,9 +364,9 @@
     $scope.onStopButtonClick = function () {
         try {
 
-            alert($rootScope.watchId);
+            alert(watchId);
         // 1. stop the watcher
-            navigator.geolocation.clearWatch($rootScope.watchID);
+            navigator.geolocation.clearWatch(watchID);
         // 2. calculate LatLngBounds and set center the move path on the map
         var latLngBounds = new plugin.google.maps.LatLngBounds(points);
         $rootScope.map.animateCamera({
