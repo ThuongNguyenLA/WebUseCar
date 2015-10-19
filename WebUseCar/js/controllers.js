@@ -147,6 +147,12 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
             $scope.closeLogin();
         }, 1000);
     };
+    $scope.onLogoutClick = function () {
+        if ($rootScope.map) {
+            $rootScope.map.remove();
+        }
+        window.location.href = "/index/TemplateWelcome#/app/welcome";
+    };
 });
 usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl, $ionicPlatform) {
     $ionicPlatform.ready(function () {

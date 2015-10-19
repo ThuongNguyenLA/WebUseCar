@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', 'ionic.contrib.drawer', 'ngCordova', 'angular-ios9-uiwebview.patch'])
+angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', 'ionic.contrib.drawer', 'ngCordova', 'ngIOS9UIWebViewPatch'])
 
 .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
