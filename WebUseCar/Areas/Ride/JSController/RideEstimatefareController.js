@@ -311,6 +311,90 @@
     ////////////////////////
 
 
+    var points = [];// this array contains all change point
+    var movePath = undefined; // this is the path of moves
+    var geolocationSuccess = function (position) {
+        // fire when location was changed when move
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        var point = new plugin.google.maps.LatLng(lat, lng);
+        points.push(point);
+        if ($rootScope.map) {
+            if (!movePath) { // if the map does not cotains move path before
+                $rootScope.map.addPolyline({
+                    points: points,
+                    'color': 'red',
+                    'width': 5,
+                    'geodesic': true
+                }, function (polyline) {
+                    movePath = polyline;
+                    $rootScope.map.setCenter(point);// center map to current point
+                });
+            }
+            else {
+                movePath.setPoints(points);
+                $rootScope.map.setCenter(point);// center map to current point
+            }
+        }
+    }
+    //###################################################
+    var watchId = null;
+    // when user click on start button
+    $scope.onStartButtonClick = function () {
+        try{
+
+
+       $rootScope.watchId = navigator.geolocation.watchPosition(
+            geolocationSuccess,
+            function (e) {
+                // fire when get location change error
+                // do something here
+                alert(JSON.stringify(e));
+
+            },
+            { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }
+        );
+
+        } catch (e) { alert("loi 1"+e.toString()); }
+    };
+
+
+    //###################################################
+    // when user cick on stop button
+    $scope.onStopButtonClick = function () {
+        try {
+
+            alert($rootScope.watchId);
+        // 1. stop the watcher
+            navigator.geolocation.clearWatch($rootScope.watchID);
+        // 2. calculate LatLngBounds and set center the move path on the map
+        var latLngBounds = new plugin.google.maps.LatLngBounds(points);
+        $rootScope.map.animateCamera({
+            'target': latLngBounds
+        });
+        // 3. export image
+        $rootScope.map.toDataURL(function (imageData) {
+            // base64 data here....
+            alert(imageData);
+        });
+        // 4. calculate distance
+        var args = {
+            origin: points[0],
+            destination: points[points.length - 1],
+            waypoints: points,
+            travelMode: 'driving',
+            unitSystem: 'metric'
+        }
+        googleDirections.getDirections(args).then(function (directions) {
+            alert(directions.routes[0].legs[0].distance.text);
+        });
+        // 5. reset points array
+        points = [];
+        // 6. remove move path on the map
+        movePath.remove();
+        movePath = undefined;
+        } catch (e) { alert("loi end:"+e.toString());}
+    };
 
 
 
@@ -349,7 +433,7 @@
     }
 
 
-
+    var bIsStartGo = false;
     function GetRequestResult() {
         var data = "?rideBookingId="
          + $scope.BookRideResult.rideBookingId
@@ -360,33 +444,9 @@
            function (respone) {
                $timeout(function () {
                    if (respone.success) {
-                       if (respone.rejected) {
-                           //rider.backToCurrentLocationHandler();
-                           //if (!$rootScope.POPUPISSHOW)
-                           $("#loading2").hide();
-                           CommonPopupCtrl.show(respone.message);
-                       }
-                       else if (respone.isStartGo) {
-                           debugger;
-                          // if (!$rootScope.POPUPISSHOW)
-                           CommonPopupCtrl.show("Let go!");
-                           //$("#btnCancel").hide();
-                           setTimeout(GetRequestResult(), 1000);
-
-                       } else if (respone.isEndGo) {
-                           CommonPopupCtrl.show("Trip finished");
-                       }
-                       else {
-                           //if (!$rootScope.POPUPISSHOW)
-                           //hien thi tai xe dang den
-                           debugger;
-                           if ($("#loading2").is(":visible")) {
-                            //   CommonPopupCtrl.show("Please, Driver is going to you");
-                               $("#loading2").hide();
-                           }
-                           var DriverName = "Taxi";
-                           try {
-                               if (respone.requestResult && respone.requestResult.driver) { 
+                       var DriverName = "Taxi";
+                       try {
+                           if (respone.requestResult && respone.requestResult.driver) {
                                var destination = new plugin.google.maps.LatLng(respone.requestResult.driver.lat, respone.requestResult.driver.lng);
                                var args = {
                                    origin: new plugin.google.maps.LatLng($scope.PickupLat, $scope.PickupLng),//"1/2 Út Tịch, Phường 4, Tân Bình, Hồ Chí Minh, Việt Nam",
@@ -408,9 +468,38 @@
                                        }
                                    }
                                });
-                               }
-                           } catch (e) {alert(e) }
+                           }
+                       } catch (e) { alert(e) }
+                       if (respone.rejected) {
+                           //rider.backToCurrentLocationHandler();
+                           //if (!$rootScope.POPUPISSHOW)
+                           $("#loading2").hide();
+                           CommonPopupCtrl.show(respone.message);
+                       }
+                       else if (respone.isStartGo) {
+                           debugger;
+                          // if (!$rootScope.POPUPISSHOW)
+                           CommonPopupCtrl.show("Let go!");
+                           bIsStartGo = true;
+                           $scope.onStartButtonClick();
+                           //$("#btnCancel").hide();
+                           setTimeout(GetRequestResult(), 1000);
 
+                       } else if (respone.isEndGo) {
+                           bIsStartGo = false;
+                           CommonPopupCtrl.show("Trip finished");
+                           $scope.onStopButtonClick();
+                       }
+                       else {
+                           //if (!$rootScope.POPUPISSHOW)
+                           //hien thi tai xe dang den
+                           debugger;
+                           if ($("#loading2").is(":visible")) {
+                            //   CommonPopupCtrl.show("Please, Driver is going to you");
+                               $("#loading2").hide();
+                           }
+                         
+                           if (!bIsStartGo)
                            DrawMap(respone.requestResult.driverCurrentPosition.lat, respone.requestResult.driverCurrentPosition.lng, DriverName);
                                setTimeout(GetRequestResult(), 1000);
                        }
