@@ -352,7 +352,7 @@
                 alert(JSON.stringify(e));
 
             },
-            { maximumAge: 3000, timeout: 5000, enableHighAccuracy: false }
+            { maximumAge: 30000, timeout: 50000, enableHighAccuracy: true }
         );
 
         } catch (e) { alert("loi 1"+e.toString()); }
@@ -364,9 +364,9 @@
     $scope.onStopButtonClick = function () {
         try {
 
-            alert(watchId);
+            
         // 1. stop the watcher
-            navigator.geolocation.clearWatch(watchID);
+            navigator.geolocation.clearWatch(watchId);
         // 2. calculate LatLngBounds and set center the move path on the map
         var latLngBounds = new plugin.google.maps.LatLngBounds(points);
         $rootScope.map.animateCamera({

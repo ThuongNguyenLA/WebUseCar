@@ -225,6 +225,7 @@
     <Content Include="lib\ngCordova\dist\ng-cordova-mocks.min.js" />
     <Content Include="lib\ngCordova\dist\ng-cordova.js" />
     <Content Include="lib\ngCordova\dist\ng-cordova.min.js" />
+    <Content Include="scripts\angular-ios9-uiwebview.patch.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\ios\cordova.js" />
     <Content Include="scripts\ios\cordova_plugins.js" />
