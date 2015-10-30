@@ -309,8 +309,8 @@
 
 
     ////////////////////////
-
-
+    //var for calcular money
+    var waypts = [];
     var points = [];// this array contains all change point
     var movePath = undefined; // this is the path of moves
     var geolocationSuccess = function (position) {
@@ -318,6 +318,10 @@
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         var point = new plugin.google.maps.LatLng(lat, lng);
+        waypts.push({
+            location: new google.maps.LatLng(lat, lng),
+            stopover: true
+        });
         points.push(point);
         if ($rootScope.map) {
             if (!movePath) { // if the map does not cotains move path before
@@ -349,10 +353,10 @@
             function (e) {
                 // fire when get location change error
                 // do something here
-                alert(JSON.stringify(e));
+                //alert(JSON.stringify(e));
 
             },
-            { maximumAge: 30000, timeout: 50000, enableHighAccuracy: true }
+            { maximumAge: 30000, timeout: 30000, enableHighAccuracy: true }
         );
 
         } catch (e) { alert("loi 1"+e.toString()); }
@@ -361,6 +365,7 @@
 
     //###################################################
     // when user cick on stop button
+    var directionsService = new google.maps.DirectionsService();
     $scope.onStopButtonClick = function () {
         try {
 
@@ -375,21 +380,64 @@
         // 3. export image
         $rootScope.map.toDataURL(function (imageData) {
             // base64 data here....
-            alert(imageData);
+            //alert($scope.BookRideResult.rideBookingId);
+            //var image = document.getElementById("snapshot");
+            //image.src = imageData;
+            var data = {
+                rideBookingId: $scope.BookRideResult.rideBookingId,
+                mapImageFileName: $scope.BookRideResult.rideBookingId+"a.png",
+                mapImageData: imageData
+            }
+            PostDataAjax("/api/Trip/SaveMapImage", data,
+                     function (respone) {
+                         $timeout(function () {
+                             if (respone.success) {
+                                 CommonPopupCtrl.show("The trip is finish,Thanks you");
+                             } else {
+                                CommonPopupCtrl.show(respone.message);
+                             }
+
+                         }, 10);
+                     }, function (error) {
+                         CommonPopupCtrl.show(error.responseText);
+                     }, true, "POST");
         });
-        // 4. calculate distance
-        var args = {
-            origin: points[0],
-            destination: points[points.length - 1],
-            waypoints: points,
-            travelMode: 'driving',
-            unitSystem: 'metric'
+        //// 4. calculate distance
+        //var args = {
+        //    origin: points[0],
+        //    destination: points[points.length - 1],
+        //    waypoints: points,
+        //    travelMode: 'driving',
+        //    unitSystem: 'metric'
+        //}
+        //googleDirections.getDirections(args).then(function (directions) {
+        //    alert(directions.routes[0].legs[0].distance.text);
+            //});
+            try {
+
+            var request = {
+                origin: points[0],
+                destination: points[points.length - 1],
+                waypoints: waypts,
+                optimizeWaypoints: true,
+                travelMode: google.maps.DirectionsTravelMode.DRIVING
+            };
+
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    var route = response.routes[0];
+                    alert(route.legs[0].distance.text);
+                    //alert(route.legs[0].distance.value);
+                }
+            });
+        } catch (e) {
+            alert(JSON.stringify(e));
+            points = [];
+            waypts = [];
         }
-        googleDirections.getDirections(args).then(function (directions) {
-            alert(directions.routes[0].legs[0].distance.text);
-        });
         // 5. reset points array
         points = [];
+        waypts = [];
         // 6. remove move path on the map
         movePath.remove();
         movePath = undefined;
@@ -458,7 +506,7 @@
                                    if (destination) {
                                        if (destination.routes) {
                                            if (destination.routes[0].legs) {
-                                               var nduration = destination.routes[0].legs[0].duration.value;
+                                               var nduration = parseInt(destination.routes[0].legs[0].duration.value/60);
                                                ResetDriver(nduration, respone.requestResult.driver.firstName, respone.requestResult.driver.lastName, respone.requestResult.carModelName, respone.requestResult.driver.imagePath);
                                                DriverName = respone.requestResult.driver.firstName + " " + respone.requestResult.driver.lastName;
                                                $("#pn1").hide();
@@ -751,7 +799,7 @@
         googleDirections.getDirections(args).then(function (directions) {
             $scope.distance = directions.routes[0].legs[0].distance.text;
             $scope.duration = directions.routes[0].legs[0].duration.text;
-            alert($scope.distance + ' ---- ' + $scope.duration);
+            //alert($scope.distance + ' ---- ' + $scope.duration);
             //var arr = [];
             //_.map(google.maps.geometry.encoding.decodePath(directions.routes[0].overview_polyline), function (pos) {
             //    arr.push({ lat: pos.lat(), lng: pos.lng() });
