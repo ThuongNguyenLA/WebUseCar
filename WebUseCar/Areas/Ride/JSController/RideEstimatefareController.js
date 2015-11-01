@@ -60,11 +60,10 @@
                         $rootScope.map = plugin.google.maps.Map.getMap(div, MY_MAP_DEFAULT_OPTION);
                         $rootScope.map.addEventListener(plugin.google.maps.event.MAP_READY, onNativeMapReady);
                     }
-                }, 10);
-            }
-        });
-    }
-
+                }
+            }, 10);
+        }
+    });
 
 
 
@@ -167,7 +166,6 @@
     var objDriver=null;
     function DrawMap(lat, lng,DriverName)
     {
-        debugger;
         try {
             //var latlng = new google.maps.LatLng(res.requestResult.driverCurrentPosition.lat, res.requestResult.driverCurrentPosition.lng);
             $rootScope.map.setCenter(new plugin.google.maps.LatLng(lat, lng));
@@ -178,10 +176,9 @@
                     'title': DriverName,
                     'icon': $rootScope.pin_car_move_icon
                 }
-            }, 10);
+            }
         }
-        
-
+        catch(ex){}
     }
 
 
