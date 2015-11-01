@@ -10,9 +10,16 @@
     function onDeviceReady() {
         // Handle the Cordova pause and resume events
         document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-        
+        document.addEventListener('resume', onResume.bind(this), false);
+
+        // Android customization
+        cordova.plugins.backgroundMode.setDefaults({ text: 'Tracking your GPS.' });
+
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+        var bgIsStillRunning = cordova.plugins.backgroundMode.isEnabled();
+        if (bgIsStillRunning) {
+            cordova.plugins.backgroundMode.disable();
+        }
     };
 
     function onPause() {

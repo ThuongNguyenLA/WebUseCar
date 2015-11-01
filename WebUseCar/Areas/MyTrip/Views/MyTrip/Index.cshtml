@@ -13,40 +13,24 @@
 
 
 
-        <div style="margin-top:15px;color:#fff;padding-bottom:80px">
-            <div>
+        <div style="margin-top:15px;color:#fff;padding-bottom:80px" >
+            
+            <div style="margin-top:10px" ng-repeat="objTrip in lstTrip">
                 <div style="position:relative;height:40px;background-color:#49ccaa">
-                    <img src="~/img/avatar.png" height="60" style="position:absolute;top:-10px;left:10px" />
+                    <img src="{{objTrip.driver.imagePath}}" height="60" style="position:absolute;top:-10px;left:10px" />
                     <div style="float:left;margin-left:90px">
                         <div>
-                            Yesterday,11h30
+                            {{objTrip.pickupDateTime}}
                         </div>
                         <div>
-                            Toyota
+                            {{objTrip.driver.firstName + " "+ objTrip.driver.lastName}} ({{objTrip.carModel.carMake.name}})
                         </div>
                     </div>
                     <div style="float:right;margin-top:11px;margin-right:10px">
-                        87USD
+                        {{objTrip.realPrice}}{{objTrip.currency}}
                     </div>
                 </div>
-                <img src="/img/bg_1.png" width="100%" height="250">
-            </div>
-            <div style="margin-top:10px">
-                <div style="position:relative;height:40px;background-color:#49ccaa">
-                    <img src="~/img/avatar.png" height="60" style="position:absolute;top:-10px;left:10px" />
-                    <div style="float:left;margin-left:90px">
-                        <div>
-                            Yesterday,11h30
-                        </div>
-                        <div>
-                            Toyota
-                        </div>
-                    </div>
-                    <div style="float:right;margin-top:11px;margin-right:10px">
-                        87USD
-                    </div>
-                </div>
-                <img src="/img/bg_1.png" width="100%" height="250">
+                <img src="{{objTrip.imagePath}}" width="100%" height="250">
             </div>
         </div>
 

@@ -1,5 +1,41 @@
-﻿var MyTripCtrl = function ($rootScope, $scope, $location, googleDirections) {
-   
+﻿var MyTripCtrl = function ($rootScope, $scope, $location, googleDirections, $timeout, CommonPopupCtrl) {
+    var myDate = new Date();
+    var objTimezoneOffset = myDate.getTimezoneOffset();
+    try {
+        var data = "?pageIndex="
+                 + 1 + "&timezoneOffsetInMinutes=" + objTimezoneOffset;
+        // alert(data);
+        PostDataAjax("/api/Trip/GetMyTrips" + data, "",
+           function (respone) {
+               $timeout(function () {
+                   if (respone.message) {
+                       CommonPopupCtrl.show(respone.message);
+                   }
+                   else {
+                       $scope.lstTrip = respone.results;
+                   }
+
+               }, 100);
+           }, function (error) {
+               CommonPopupCtrl.show(error.responseText);
+           }, true, "GET");
+    } catch (e) { }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //var map = new google.maps.Map(document.getElementById('map-canvas')); // Render our map within the empty div
     //var image1 = new google.maps.MarkerImage("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/car-.png", null, null, null, new google.maps.Size(40, 52)); // Create a variable for our marker image.
     //debugger;
@@ -233,4 +269,4 @@
     //initialise();
     //google.maps.event.addDomListener(window, 'load', initialise); // Execute our 'initialise' function once the page has loaded. 
 }
-MyTripCtrl.$inject = ["$rootScope", "$scope", "$location", "googleDirections"];
+MyTripCtrl.$inject = ["$rootScope", "$scope", "$location", "googleDirections", "$timeout", "CommonPopupCtrl"];
