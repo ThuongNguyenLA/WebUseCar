@@ -298,7 +298,6 @@
                             $rootScope.map.setDiv(div);
                         }
                     }
-                }
             }, 10);
         }
     });
@@ -473,9 +472,7 @@
                 objDriver.setPosition(new plugin.google.maps.LatLng(lat, lng));
 
             
-        } catch (e) {
-            alert(e);
-        }
+        } 
         catch(ex){}
     }
 
