@@ -56,7 +56,7 @@
             if (status == google.maps.GeocoderStatus.OK) {
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();
-                var curLocation = new  plugin.google.maps.LatLng(latitude, longitude);
+                var curLocation = new plugin.google.maps.LatLng(latitude, longitude);
                 var div = document.getElementById("map_canvas");
                 if (div) {
                     var mapHeight = window.innerHeight - parseInt(FOOTER_HEIGHT);
@@ -109,7 +109,7 @@
                                                 var longitudeDropoff = results[0].geometry.location.lng();
                                                 var curLocationDropoff = new plugin.google.maps.LatLng(latitudeDropoff, longitudeDropoff);
 
-                                                var points = [curLocation,curLocationDropoff];
+                                                var points = [curLocation, curLocationDropoff];
                                                 var latLngBounds = new plugin.google.maps.LatLngBounds(points);
                                                 $rootScope.map.animateCamera({
                                                     'target': latLngBounds
@@ -118,10 +118,10 @@
                                                     'position': curLocationDropoff,
                                                     'icon': $rootScope.pin_dest_icon
                                                 }, function (marker) { });
-                                                
+
                                             }
                                         });
-                                       
+
 
                                         //for (var i = 1; i < 5; i++) {
                                         //    $rootScope.map.addMarker({
@@ -131,7 +131,7 @@
                                         //    });
                                         //}
 
-                                        
+
 
                                     });
                                     //try {
@@ -156,7 +156,7 @@
                                     //{
                                     //    alert(e);
                                     //}
-                                    
+
 
                                     $rootScope.map.getCameraPosition(function (camera) {
                                         var currentZoom = camera.zoom;
@@ -187,7 +187,7 @@
 
 
                                 }
-                               
+
                                 $rootScope.map.setDiv(div);
                             }
                         }
@@ -256,10 +256,10 @@
                                                     'position': curLocationDropoff,
                                                     'icon': $rootScope.pin_dest_icon
                                                 }, function (marker) { });
-                                               
+
                                             }
                                         });
-                                    } catch (e) { alert(e);}
+                                    } catch (e) { alert(e); }
                                     //for (var i = 1; i < 5; i++) {
                                     //    $rootScope.map.addMarker({
                                     //        'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 400), CURRENT_LOCATION.lng + (i / 200)),
@@ -294,17 +294,14 @@
                                     $rootScope.map.setZoom(currentZoom - 1);
                                 });
                             }
-                            
+
                             $rootScope.map.setDiv(div);
                         }
                     }
-            }, 10);
-        }
-    });
-
-
-
-
+                }, 10);
+            }
+        });
+    }
 
     ////////////////////////
     //var for calcular money
@@ -472,7 +469,7 @@
                 objDriver.setPosition(new plugin.google.maps.LatLng(lat, lng));
 
             
-        } 
+        }
         catch(ex){}
     }
 
@@ -616,48 +613,8 @@
 
     $scope.BookRider=function()
     {
-    
-
         MainExecute();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
     }
-
-
-
-    //////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //function GetPositionByAddress(strAddress, callback)
     //{
@@ -920,8 +877,5 @@
     //        }
     //    }, 10);
     //}
-
-
-
 }
 RideEstimatefareCtrl.$inject = ["$rootScope", "$scope", "$location", "googleDirections", "$stateParams", "CommonPopupCtrl", "$timeout"];
