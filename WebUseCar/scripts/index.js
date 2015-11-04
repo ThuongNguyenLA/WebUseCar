@@ -8,7 +8,7 @@
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
-        // Handle the Cordova pause and resume events
+         //Handle the Cordova pause and resume events
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener('resume', onResume.bind(this), false);
 
@@ -20,6 +20,8 @@
         if (bgIsStillRunning) {
             cordova.plugins.backgroundMode.disable();
         }
+        var myEvent = new CustomEvent("myDeviceIsReady");
+        document.dispatchEvent(myEvent);
     };
 
     function onPause() {

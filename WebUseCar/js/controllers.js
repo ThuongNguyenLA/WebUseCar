@@ -154,62 +154,63 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
         window.location.href = "/index/TemplateWelcome#/app/welcome";
     };
 });
-usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl, $ionicPlatform) {
-    $ionicPlatform.ready(function () {
-        var onNativeMapReady = function () {
-            if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
-                $rootScope.pin_icon = global.getLocalIcon("pin.png");
-                $rootScope.pin_dest_icon = global.getLocalIcon("pin_dest.png");
-                $rootScope.pin_car_move_icon = global.getLocalIcon("car_move.png");
-                $rootScope.car_icon = global.getLocalIcon("car.png");
-            }
-            $rootScope.map.addMarker({
-                'position': CURRENT_LOCATION,
-                'icon': $rootScope.pin_icon
-            }, function (marker) {
-                marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
-                    marker.getPosition(function (latLng) {
-                        draggPosition = latLng;
-                        marker.setTitle(latLng.toUrlValue());
-                        marker.showInfoWindow();
-                    });
+usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl, $ionicPlatform) {   
+    var onNativeMapReady = function () {
+        if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
+            $rootScope.pin_icon = global.getLocalIcon("pin.png");
+            $rootScope.pin_dest_icon = global.getLocalIcon("pin_dest.png");
+            $rootScope.pin_car_move_icon = global.getLocalIcon("car_move.png");
+            $rootScope.car_icon = global.getLocalIcon("car.png");
+        }
+        $rootScope.map.addMarker({
+            'position': CURRENT_LOCATION,
+            'icon': $rootScope.pin_icon
+        }, function (marker) {
+            marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
+                marker.getPosition(function (latLng) {
+                    draggPosition = latLng;
+                    marker.setTitle(latLng.toUrlValue());
+                    marker.showInfoWindow();
                 });
             });
-            try {
-                var data = "?lat=" + CURRENT_LOCATION.lat + "&lng=" + CURRENT_LOCATION.lng;
-                PostDataAjax("/api/Trip/GetDriversAround" + data, "",
-                function (respone) {
-                    $timeout(function () {
-                        if (respone.message) {
-                            CommonPopupCtrl.show(respone.message);
-                        }
-                        else {
-                            try {
-                                $(respone.drivers).each(function () {
-                                    var driver = this.driver;
-                                    var latlng = new google.maps.LatLng(driver.lat, driver.lng);
-                                    $rootScope.map.addMarker({
-                                        'position': new plugin.google.maps.LatLng(driver.lat, driver.lng),
-                                        'title': driver.firstName + " " + driver.lastName,
-                                        'icon': $rootScope.car_icon
-                                    });
+        });
+        try {
+            var data = "?lat=" + CURRENT_LOCATION.lat + "&lng=" + CURRENT_LOCATION.lng;
+            PostDataAjax("/api/Trip/GetDriversAround" + data, "",
+            function (respone) {
+                $timeout(function () {
+                    if (respone.message) {
+                        CommonPopupCtrl.show(respone.message);
+                    }
+                    else {
+                        try {
+                            $(respone.drivers).each(function () {
+                                var driver = this.driver;
+                                var latlng = new google.maps.LatLng(driver.lat, driver.lng);
+                                $rootScope.map.addMarker({
+                                    'position': new plugin.google.maps.LatLng(driver.lat, driver.lng),
+                                    'title': driver.firstName + " " + driver.lastName,
+                                    'icon': $rootScope.car_icon
                                 });
-                            } catch (e) { alert(e); }
-                        }
+                            });
+                        } catch (e) { alert(e); }
+                    }
 
-                    }, 10);
-                }, function (error) {
-                    CommonPopupCtrl.show(error.responseText);
-                }, true, "GET");
-            } catch (e) { alert(e); }
-            //for (var i = 1; i < 5; i++) {
-            //    $rootScope.map.addMarker({
-            //        'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 1000), CURRENT_LOCATION.lng + (i / 1000)),
-            //        'title': 'Test ' + i,
-            //        'icon': $rootScope.car_icon
-            //    });
-            //}
-        };
+                }, 10);
+            }, function (error) {
+                CommonPopupCtrl.show(error.responseText);
+            }, true, "GET");
+        } catch (e) { alert(e); }
+        //for (var i = 1; i < 5; i++) {
+        //    $rootScope.map.addMarker({
+        //        'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 1000), CURRENT_LOCATION.lng + (i / 1000)),
+        //        'title': 'Test ' + i,
+        //        'icon': $rootScope.car_icon
+        //    });
+        //}
+    };
+    // StartMap function will be excecute when deviceready is fire
+    var StartMap = function () {
         navigator.geolocation.getCurrentPosition(function (position) {
             CURRENT_LOCATION = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var div = document.getElementById("map_canvas_2");
@@ -240,8 +241,8 @@ usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeou
         function () {
             console.log("get current location failed");
         });
-    });
-    
+    };
+    document.addEventListener('myDeviceIsReady', StartMap, false);
 })
 usecar.controller('TestSubCtrl', function ($scope, $ionicPopup, $timeout) {
     alert("sub");
