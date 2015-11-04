@@ -322,6 +322,14 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/de.appplant.cordova.plugin.background-mode/www/background-mode.js",
+        "id": "de.appplant.cordova.plugin.background-mode.BackgroundMode",
+        "clobbers": [
+            "cordova.plugins.backgroundMode",
+            "plugin.backgroundMode"
+        ]
+    },
+    {
         "file": "plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js",
         "id": "de.appplant.cordova.plugin.email-composer.EmailComposer",
         "clobbers": [
@@ -341,6 +349,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "com.cordova.plugins.sms": "0.1.5",
+    "com.googlemaps.ios": "1.10.3",
     "com.ionic.keyboard": "1.0.4",
     "cordova-plugin-camera": "1.2.0",
     "cordova-plugin-console": "1.0.1",
@@ -350,9 +359,9 @@ module.exports.metadata =
     "cordova-plugin-geolocation": "1.0.1",
     "cordova-plugin-splashscreen": "2.1.0",
     "cordova-plugin-whitelist": "1.0.0",
+    "de.appplant.cordova.plugin.background-mode": "0.6.4",
     "de.appplant.cordova.plugin.email-composer": "0.8.3dev",
-    "plugin.google.maps": "1.3.2",
-    "com.googlemaps.ios": "1.10.3"
+    "plugin.google.maps": "1.3.2"
 }
 // BOTTOM OF METADATA
 });
