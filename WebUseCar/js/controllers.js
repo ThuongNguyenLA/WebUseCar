@@ -156,24 +156,26 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
 });
 usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl, $ionicPlatform) {   
     var onNativeMapReady = function () {
-        if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
-            $rootScope.pin_icon = global.getLocalIcon("pin.png");
-            $rootScope.pin_dest_icon = global.getLocalIcon("pin_dest.png");
-            $rootScope.pin_car_move_icon = global.getLocalIcon("car_move.png");
-            $rootScope.car_icon = global.getLocalIcon("car.png");
-        }
-        $rootScope.map.addMarker({
-            'position': CURRENT_LOCATION,
-            'icon': $rootScope.pin_icon
-        }, function (marker) {
-            marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
-                marker.getPosition(function (latLng) {
-                    draggPosition = latLng;
-                    marker.setTitle(latLng.toUrlValue());
-                    marker.showInfoWindow();
+        $timeout(function () {
+            if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
+                $rootScope.pin_icon = global.getLocalIcon("pin.png");
+                $rootScope.pin_dest_icon = global.getLocalIcon("pin_dest.png");
+                $rootScope.pin_car_move_icon = global.getLocalIcon("car_move.png");
+                $rootScope.car_icon = global.getLocalIcon("car.png");
+            }
+            $rootScope.map.addMarker({
+                'position': CURRENT_LOCATION,
+                'icon': $rootScope.pin_icon
+            }, function (marker) {
+                marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
+                    marker.getPosition(function (latLng) {
+                        draggPosition = latLng;
+                        marker.setTitle(latLng.toUrlValue());
+                        marker.showInfoWindow();
+                    });
                 });
             });
-        });
+        }, 1000);
         try {
             var data = "?lat=" + CURRENT_LOCATION.lat + "&lng=" + CURRENT_LOCATION.lng;
             PostDataAjax("/api/Trip/GetDriversAround" + data, "",
