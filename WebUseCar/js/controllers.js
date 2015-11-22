@@ -157,6 +157,11 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
 usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl, $ionicPlatform) {   
     var onNativeMapReady = function () {
         $timeout(function () {
+            var bw = true;
+            var i = 0;
+            while (bw) {
+                i++;
+            console.log("1");
             if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
                 $rootScope.pin_icon = global.getLocalIcon("pin.png");
                 $rootScope.pin_dest_icon = global.getLocalIcon("pin_dest.png");
@@ -175,7 +180,8 @@ usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeou
                     });
                 });
             });
-        }, 1000);
+            
+            
         try {
             var data = "?lat=" + CURRENT_LOCATION.lat + "&lng=" + CURRENT_LOCATION.lng;
             PostDataAjax("/api/Trip/GetDriversAround" + data, "",
@@ -203,6 +209,10 @@ usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeou
                 CommonPopupCtrl.show(error.responseText);
             }, true, "GET");
         } catch (e) { alert(e); }
+
+        if (i == 30) bw = false;
+         }
+        }, 5000);
         //for (var i = 1; i < 5; i++) {
         //    $rootScope.map.addMarker({
         //        'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 1000), CURRENT_LOCATION.lng + (i / 1000)),
