@@ -1,4 +1,4 @@
-﻿var LocalEventDetailCtrl = function ($rootScope, $scope, $state, $stateParams, $ionicHistory) {
+﻿var LocalEventDetailCtrl = ["$rootScope", "$scope", "$state", "$stateParams", "$ionicHistory", function ($rootScope, $scope, $state, $stateParams, $ionicHistory) {
     $scope.ddlCat = $stateParams.id;
     $("#ddlCat").val($stateParams.id);
     $scope.ChooseLocalEvent = function (val) {
@@ -17,10 +17,9 @@
             }
         })
     }
-    
 
 
 
-}
-LocalEventDetailCtrl.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "$ionicHistory"];
+
+}];
 

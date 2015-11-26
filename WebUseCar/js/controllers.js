@@ -11,7 +11,7 @@ usecar.controller("PaymentCtrl", PaymentCtrl);
 usecar.controller("LocalEventCtrl", LocalEventCtrl);
 usecar.controller("LocalEventDetailCtrl", LocalEventDetailCtrl);
 usecar.controller("RideEstimatefareCtrl", RideEstimatefareCtrl);
-usecar.factory('CommonPopupCtrl', function ($rootScope, $ionicPopup, $timeout) {
+usecar.factory('CommonPopupCtrl', ['$rootScope', '$ionicPopup', '$timeout', function ($rootScope, $ionicPopup, $timeout) {
     helper = {};
 
     helper.show = function (strPopupContent) {
@@ -61,8 +61,8 @@ usecar.factory('CommonPopupCtrl', function ($rootScope, $ionicPopup, $timeout) {
     //    });
     //};
     return helper;
-});
-usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory, $rootScope, $ionicNavBarDelegate) {//googleDirections
+}]);
+usecar.controller('AppCtrl', ['$scope', '$ionicModal', '$timeout', '$location', '$state', '$ionicHistory', '$rootScope', '$ionicNavBarDelegate', function ($scope, $ionicModal, $timeout, $location, $state, $ionicHistory, $rootScope, $ionicNavBarDelegate) {//googleDirections
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
     // To listen for when this page is active (for example, to refresh data),
@@ -73,12 +73,12 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
     // Form data for the login modal
     $scope.loginData = {};
 
-    // Create the login modal that we will use later
-    $ionicModal.fromTemplateUrl('templates/login.html', {
-        scope: $scope
-    }).then(function (modal) {
-        $scope.modal = modal;
-    });
+    //// Create the login modal that we will use later
+    //$ionicModal.fromTemplateUrl('templates/login.html', {
+    //    scope: $scope
+    //}).then(function (modal) {
+    //    $scope.modal = modal;
+    //});
 
     // Triggered in the login modal to close it
     $scope.closeLogin = function () {
@@ -153,35 +153,29 @@ usecar.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location,
         }
         window.location.href = "/index/TemplateWelcome#/app/welcome";
     };
-});
-usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl, $ionicPlatform) {   
+}]);
+usecar.controller('HomeCtrl', ['$scope', '$rootScope', '$ionicPopup', '$timeout', '$ionicSlideBoxDelegate', 'CommonPopupCtrl', '$ionicPlatform', function ($scope, $rootScope, $ionicPopup, $timeout, $ionicSlideBoxDelegate, CommonPopupCtrl, $ionicPlatform) {   
     var onNativeMapReady = function () {
-        $timeout(function () {
-            var bw = true;
-            var i = 0;
-            while (bw) {
-                i++;
-            console.log("1");
-            if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
-                $rootScope.pin_icon = global.getLocalIcon("pin.png");
-                $rootScope.pin_dest_icon = global.getLocalIcon("pin_dest.png");
-                $rootScope.pin_car_move_icon = global.getLocalIcon("car_move.png");
-                $rootScope.car_icon = global.getLocalIcon("car.png");
-            }
-            $rootScope.map.addMarker({
-                'position': CURRENT_LOCATION,
-                'icon': $rootScope.pin_icon
-            }, function (marker) {
-                marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
-                    marker.getPosition(function (latLng) {
-                        draggPosition = latLng;
-                        marker.setTitle(latLng.toUrlValue());
-                        marker.showInfoWindow();
-                    });
+        if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
+            $rootScope.pin_icon = global.getLocalIcon("pin.png");
+            $rootScope.pin_dest_icon = global.getLocalIcon("pin_dest.png");
+            $rootScope.pin_car_move_icon = global.getLocalIcon("car_move.png");
+            $rootScope.car_icon = global.getLocalIcon("car.png");
+        }
+        $rootScope.map.addMarker({
+            'position': CURRENT_LOCATION,
+            'icon': $rootScope.pin_icon
+        }, function (marker) {
+            marker.addEventListener(plugin.google.maps.event.MARKER_DRAG_END, function (marker) {
+                marker.getPosition(function (latLng) {
+                    draggPosition = latLng;
+                    marker.setTitle(latLng.toUrlValue());
+                    marker.showInfoWindow();
                 });
             });
-            
-            
+        });
+
+
         try {
             var data = "?lat=" + CURRENT_LOCATION.lat + "&lng=" + CURRENT_LOCATION.lng;
             PostDataAjax("/api/Trip/GetDriversAround" + data, "",
@@ -209,10 +203,6 @@ usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeou
                 CommonPopupCtrl.show(error.responseText);
             }, true, "GET");
         } catch (e) { alert(e); }
-
-        if (i == 30) bw = false;
-         }
-        }, 5000);
         //for (var i = 1; i < 5; i++) {
         //    $rootScope.map.addMarker({
         //        'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 1000), CURRENT_LOCATION.lng + (i / 1000)),
@@ -255,12 +245,12 @@ usecar.controller('HomeCtrl', function ($scope, $rootScope, $ionicPopup, $timeou
         });
     };
     document.addEventListener('myDeviceIsReady', StartMap, false);
-})
-usecar.controller('TestSubCtrl', function ($scope, $ionicPopup, $timeout) {
+}])
+usecar.controller('TestSubCtrl', ['$scope', '$ionicPopup', '$timeout', function ($scope, $ionicPopup, $timeout) {
     alert("sub");
-});
+}]);
 
-usecar.controller('PlaylistsCtrl', function ($scope, $ionicPopup, $timeout) {
+usecar.controller('PlaylistsCtrl', ['$scope', '$ionicPopup', '$timeout', function ($scope, $ionicPopup, $timeout) {
     $scope.playlists = [
       { title: 'Reggae', id: 1 },
       { title: 'Chill', id: 2 },
@@ -328,8 +318,8 @@ usecar.controller('PlaylistsCtrl', function ($scope, $ionicPopup, $timeout) {
             console.log('Thank you for not eating my delicious ice cream cone');
         });
     };
-});
-usecar.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
+}]);
+usecar.controller('MapCtrl', ['$scope', '$ionicLoading', '$compile', function ($scope, $ionicLoading, $compile) {
 
     function initialize() {
         debugger;
@@ -392,8 +382,8 @@ usecar.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
         alert('Example of infowindow with ng-click')
     };
     initialize();
-});
-usecar.controller('ListCtrl', function ($scope) {
+}]);
+usecar.controller('ListCtrl', ['$scope', function ($scope) {
     debugger;
     $scope.data = {
         showDelete: false
@@ -421,8 +411,8 @@ usecar.controller('ListCtrl', function ($scope) {
       { id: 2 }
 
     ];
-});
-usecar.controller("RefeshCtrl", function ($scope, $timeout) {
+}]);
+usecar.controller("RefeshCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
     //$scope.items = ['Item 1', 'Item 2', 'Item 3'];
     //$scope.doRefresh = function () {
     //    $timeout(function () {
@@ -435,15 +425,12 @@ usecar.controller("RefeshCtrl", function ($scope, $timeout) {
     //    }, 1000);
 
     //};
-});
+}]);
 
-usecar.controller('MainCtrl', function ($scope, $ionicSideMenuDelegate) {
+usecar.controller('MainCtrl', ['$scope', '$ionicSideMenuDelegate', function ($scope, $ionicSideMenuDelegate) {
     console.log('MainCtrl');
     alert("aaa");
     $scope.toggleLeft = function () {
         $ionicSideMenuDelegate.toggleLeft();
     };
-});
-
-
-
+}]);

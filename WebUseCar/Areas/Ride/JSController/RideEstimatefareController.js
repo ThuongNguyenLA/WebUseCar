@@ -1,4 +1,4 @@
-﻿var RideEstimatefareCtrl = function ($rootScope, $scope, $location, googleDirections, $stateParams, CommonPopupCtrl, $timeout) {
+﻿var RideEstimatefareCtrl = ["$rootScope", "$scope", "$location", "googleDirections", "$stateParams", "CommonPopupCtrl", "$timeout", function ($rootScope, $scope, $location, googleDirections, $stateParams, CommonPopupCtrl, $timeout) {
     if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
         $rootScope.pin_icon = global.getLocalIcon("pin.png");
         $rootScope.car_icon = global.getLocalIcon("car.png");
@@ -20,11 +20,10 @@
         $rootScope.map.clear();
     }
 
-    function InitDriver()
-    {
+    function InitDriver() {
         //alert($rootScope.driver);
         if ($rootScope.driver) {
-           
+
             $("#Duration").html($rootScope.Duration);
             var respone = $rootScope.driver;
             //$("#Price").html(respone.money.value);
@@ -33,7 +32,7 @@
             if (respone.driver.imagePath) {
                 $("#DriverAvatar2").attr("src", respone.driver.imagePath);
             }
-        }        
+        }
     }
     function ResetDriver(Duration, firstName, lastName, carModelName, imagePath) {
         if ($rootScope.driver) {
@@ -340,7 +339,7 @@
     var watchId = null;
     // when user click on start button
     $scope.onStartButtonClick = function () {
-        try{
+        try {
             watchId = navigator.geolocation.watchPosition(
                 geolocationSuccess,
                 function (e) {
@@ -355,7 +354,7 @@
             cordova.plugins.backgroundMode.enable();
         }
         catch (e) {
-            alert("loi 1"+e.toString()); 
+            alert("loi 1" + e.toString());
         }
     };
 
@@ -366,7 +365,7 @@
     $scope.onStopButtonClick = function () {
         try {
             // 1. stop the watcher
-                navigator.geolocation.clearWatch(watchId);
+            navigator.geolocation.clearWatch(watchId);
             // 2. calculate LatLngBounds and set center the move path on the map
             var latLngBounds = new plugin.google.maps.LatLngBounds(points);
             $rootScope.map.animateCamera({
@@ -380,7 +379,7 @@
                 //image.src = imageData;
                 var data = {
                     rideBookingId: $scope.BookRideResult.rideBookingId,
-                    mapImageFileName: $scope.BookRideResult.rideBookingId+"a.png",
+                    mapImageFileName: $scope.BookRideResult.rideBookingId + "a.png",
                     mapImageData: imageData
                 }
                 PostDataAjax("/api/Trip/SaveMapImage", data,
@@ -389,7 +388,7 @@
                                  if (respone.success) {
                                      CommonPopupCtrl.show("The trip is finish,Thanks you");
                                  } else {
-                                    CommonPopupCtrl.show(respone.message);
+                                     CommonPopupCtrl.show(respone.message);
                                  }
 
                              }, 10);
@@ -407,8 +406,8 @@
             //}
             //googleDirections.getDirections(args).then(function (directions) {
             //    alert(directions.routes[0].legs[0].distance.text);
-                //});
-                try {
+            //});
+            try {
 
                 var request = {
                     origin: points[0],
@@ -439,38 +438,36 @@
             // 7. disable background mode
             cordova.plugins.backgroundMode.disable();
         }
-        catch (e) { 
-            alert("loi end:"+e.toString());
+        catch (e) {
+            alert("loi end:" + e.toString());
         }
     };
 
     //////////////////
     var markerDriverCar = null;
     var DriverData = null;
-    var objDriver=null;
-    function DrawMap(lat, lng,DriverName)
-    {
+    var objDriver = null;
+    function DrawMap(lat, lng, DriverName) {
         try {
             //var latlng = new google.maps.LatLng(res.requestResult.driverCurrentPosition.lat, res.requestResult.driverCurrentPosition.lng);
             $rootScope.map.setCenter(new plugin.google.maps.LatLng(lat, lng));
-            if (DriverData == null)
-            {
+            if (DriverData == null) {
                 DriverData = {
-                    'position': new plugin.google.maps.LatLng(lat, lng ),
+                    'position': new plugin.google.maps.LatLng(lat, lng),
                     'title': DriverName,
                     'icon': $rootScope.pin_car_move_icon
                 }
                 $rootScope.map.addMarker(DriverData, function (marker) {
                     objDriver = marker;
-                   
+
                 });
             }
             if (objDriver)
                 objDriver.setPosition(new plugin.google.maps.LatLng(lat, lng));
 
-            
+
         }
-        catch(ex){}
+        catch (ex) { }
     }
 
 
@@ -499,7 +496,7 @@
                                    if (destination) {
                                        if (destination.routes) {
                                            if (destination.routes[0].legs) {
-                                               var nduration = parseInt(destination.routes[0].legs[0].duration.value/60);
+                                               var nduration = parseInt(destination.routes[0].legs[0].duration.value / 60);
                                                ResetDriver(nduration, respone.requestResult.driver.firstName, respone.requestResult.driver.lastName, respone.requestResult.carModelName, respone.requestResult.driver.imagePath);
                                                DriverName = respone.requestResult.driver.firstName + " " + respone.requestResult.driver.lastName;
                                                $("#pn1").hide();
@@ -519,7 +516,7 @@
                        }
                        else if (respone.isStartGo) {
                            debugger;
-                          // if (!$rootScope.POPUPISSHOW)
+                           // if (!$rootScope.POPUPISSHOW)
                            CommonPopupCtrl.show("Let go!");
                            bIsStartGo = true;
                            $scope.onStartButtonClick();
@@ -536,13 +533,13 @@
                            //hien thi tai xe dang den
                            debugger;
                            if ($("#loading2").is(":visible")) {
-                            //   CommonPopupCtrl.show("Please, Driver is going to you");
+                               //   CommonPopupCtrl.show("Please, Driver is going to you");
                                $("#loading2").hide();
                            }
-                         
+
                            if (!bIsStartGo)
-                           DrawMap(respone.requestResult.driverCurrentPosition.lat, respone.requestResult.driverCurrentPosition.lng, DriverName);
-                               setTimeout(GetRequestResult(), 1000);
+                               DrawMap(respone.requestResult.driverCurrentPosition.lat, respone.requestResult.driverCurrentPosition.lng, DriverName);
+                           setTimeout(GetRequestResult(), 1000);
                        }
                    } else {
                        //if (!$rootScope.POPUPISSHOW)
@@ -554,13 +551,12 @@
                }, 10);
            }, function (error) {
                CommonPopupCtrl.show(error.responseText);
-           }, true, "GET",false);
+           }, true, "GET", false);
 
 
     }
-    
-    function MainExecute()
-    {
+
+    function MainExecute() {
 
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({ 'address': $rootScope.Pickup }, function (results, status) {
@@ -611,8 +607,7 @@
     }
 
 
-    $scope.BookRider=function()
-    {
+    $scope.BookRider = function () {
         MainExecute();
     }
 
@@ -628,7 +623,7 @@
     //        }
     //    });
     //}
-    
+
 
     //var onNativeMapReady = function () {
     //    if ($rootScope.pin_icon === undefined || $rootScope.car_icon === undefined) {
@@ -668,7 +663,7 @@
     //            });
     //        });
     //    }
-        
+
     //    for (var i = 1; i < 5; i++) {
     //        $rootScope.map.addMarker({
     //            'position': new plugin.google.maps.LatLng(CURRENT_LOCATION.lat + (i / 100), CURRENT_LOCATION.lng + (i / 100)),
@@ -769,8 +764,8 @@
         });
     }
     $scope.ExportImage = function () {
-       
-       
+
+
         return;
         if ($rootScope.map !== undefined) {
             $rootScope.map.toDataURL(function (imageData) {
@@ -792,11 +787,11 @@
     //    $rootScope.map.getMyLocation(function (location) {
 
     //        var msg = ["Current your location:\n",
-	//					"latitude:" + location.latLng.lat,
-	//					"longitude:" + location.latLng.lng,
-	//					"speed:" + location.speed,
-	//					"time:" + location.time,
-	//					"bearing:" + location.bearing].join("\n");
+    //					"latitude:" + location.latLng.lat,
+    //					"longitude:" + location.latLng.lng,
+    //					"speed:" + location.speed,
+    //					"time:" + location.time,
+    //					"bearing:" + location.bearing].join("\n");
     //        var MYLOCATION = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
     //        $rootScope.map.moveCamera({
     //            'target': MYLOCATION,
@@ -837,12 +832,12 @@
     //                } catch (e) {
     //                    alert(e);
     //                }
-                    
-                
+
+
     //            }
-               
+
     //        });
-            
+
     //    }, function (msg) {
     //        alert("error: " + msg);
     //    });
@@ -877,5 +872,4 @@
     //        }
     //    }, 10);
     //}
-}
-RideEstimatefareCtrl.$inject = ["$rootScope", "$scope", "$location", "googleDirections", "$stateParams", "CommonPopupCtrl", "$timeout"];
+}];

@@ -2,7 +2,7 @@
 angular.module( "tommy.GoogleMaps", []);
 angular.module("tommy.GoogleMaps").value('googleMaps', google.maps);
 angular.module("tommy.GoogleMaps")
-  .provider('googleDirections', function() {
+  .provider('googleDirections', [function() {
 
     var defaults = {
         unitSystem: null,
@@ -93,8 +93,8 @@ angular.module("tommy.GoogleMaps")
 
     this.$get.$inject = ['$rootScope', '$q', 'googleMaps', '$window'];
 
-})
-  .directive('disableTap', function($timeout) {
+}])
+  .directive('disableTap', [function($timeout) {
     return {
       link: function() {
         $timeout(function() {
@@ -112,8 +112,8 @@ angular.module("tommy.GoogleMaps")
         },500);
       }
     };
-  })
-  .directive('tommyAddressAutocomplete', function() {
+  }])
+  .directive('tommyAddressAutocomplete', [function() {
     /**
      * A directive for adding google places autocomplete to a text box
      * google places autocomplete info: https://developers.google.com/maps/documentation/javascript/places
@@ -274,4 +274,4 @@ angular.module("tommy.GoogleMaps")
 
       }
     };
-  });
+  }]);

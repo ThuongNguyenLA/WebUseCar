@@ -1,25 +1,25 @@
-﻿var FreeRideCtrl = function ($rootScope, $scope, $location, $cordovaContacts, $cordovaEmailComposer, CommonPopupCtrl, $cordovaSms) {
+﻿var FreeRideCtrl = ["$rootScope", "$scope", "$location", "$cordovaContacts", "$cordovaEmailComposer", "CommonPopupCtrl", "$cordovaSms", function ($rootScope, $scope, $location, $cordovaContacts, $cordovaEmailComposer, CommonPopupCtrl, $cordovaSms) {
     $("#menuFreeRide a").css("color", "#48ccaa");
-   // alert("controller freeride available");
+    // alert("controller freeride available");
     $scope.getContact = function () {
         $cordovaContacts.pickContact().then(function (contactPicked) {
-             //alert(contactPicked);
+            //alert(contactPicked);
             console.log(contactPicked);// you can see all values of result in console log
             var options = {
                 android: {
                     intent: 'INTENT'  // send SMS with the native android SMS messaging
                 }
             };
-            if(contactPicked && contactPicked.phoneNumbers){
+            if (contactPicked && contactPicked.phoneNumbers) {
                 $cordovaSms.send(contactPicked.phoneNumbers[0].value, 'SMS content', options)
-              .then(function() {
+              .then(function () {
                   // Success! SMS was sent
                   alert('send sms success');
-              }, function(error) {
+              }, function (error) {
                   // An error occurred
               });
             }
-        
+
         });
     }
     $scope.sendMail = function () {
@@ -50,7 +50,6 @@
         } catch (e) {
             CommonPopupCtrl.show("Please, setup email to invite new contact");
         }
-        
+
     }
-}
-FreeRideCtrl.$inject = ["$rootScope", "$scope", "$location", "$cordovaContacts", "$cordovaEmailComposer", "CommonPopupCtrl", "$cordovaSms"];
+}];

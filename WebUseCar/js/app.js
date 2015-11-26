@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', 'ionic.contrib.drawer', 'ngCordova', 'ngIOS9UIWebViewPatch'])
 
-.run(function ($ionicPlatform, $rootScope) {
+.run(['$ionicPlatform', '$rootScope', function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
         if ($rootScope.map) {
             $rootScope.map.clear();
@@ -25,9 +25,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
       StatusBar.styleDefault();
     }
   });
-})
+}])
 
-.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     $ionicConfigProvider.views.maxCache(0);
   $stateProvider
 
@@ -95,15 +95,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
             }
         }
     })
-    .state('app.login', {
-        url: "/login",
-        views: {
-            'menuContent': {
-                templateUrl: '/Profile/Login/Login',
-                controller: 'LoginCtrl'
-            }
-        }
-    })
+    //.state('app.login', {
+    //    url: "/login",
+    //    views: {
+    //        'menuContent': {
+    //            templateUrl: '/Profile/Login/Login',
+    //            controller: 'LoginCtrl'
+    //        }
+    //    }
+    //})
     .state('app.profile', {
         url: "/profile",
         views: {
@@ -211,4 +211,4 @@ angular.module('starter', ['ionic', 'starter.controllers', 'tommy.GoogleMaps', '
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 
-});
+}]);

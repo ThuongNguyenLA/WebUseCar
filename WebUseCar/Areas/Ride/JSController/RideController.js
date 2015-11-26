@@ -1,7 +1,6 @@
-﻿var RideCtrl = function ($rootScope, $scope, $location, $ionicHistory, $state, googleDirections, CommonPopupCtrl, $timeout) {
-    $scope.EstimateFare = function ()
-    {
-         
+﻿var RideCtrl = ["$rootScope", "$scope", "$location", "$ionicHistory", "$state", "googleDirections", "CommonPopupCtrl", "$timeout", function ($rootScope, $scope, $location, $ionicHistory, $state, googleDirections, CommonPopupCtrl, $timeout) {
+    $scope.EstimateFare = function () {
+
         $rootScope.Pickup = $("#txtPickup").val();//$scope.txtPickup;
         $rootScope.Dropoff = $("#txtDropoff").val();// $scope.txtDropoff;
         //$state.go("app.estimatefare");
@@ -112,6 +111,5 @@
 
         }
     }
-   
-}
-RideCtrl.$inject = ["$rootScope", "$scope", "$location", "$ionicHistory", "$state", "googleDirections", "CommonPopupCtrl", "$timeout"];
+
+}];

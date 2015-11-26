@@ -1,4 +1,4 @@
-﻿var AirportCtrl = function ($rootScope, $scope,$location) {
+﻿var AirportCtrl = ["$rootScope", "$scope", "$location", function ($rootScope, $scope, $location) {
 
 
 
@@ -6,5 +6,4 @@
 
 
 
-}
-AirportCtrl.$inject = ["$rootScope", "$scope", "$location"];
+}];

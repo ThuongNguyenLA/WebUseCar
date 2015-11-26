@@ -1,4 +1,4 @@
-﻿var LocalEventCtrl = function ($rootScope, $scope, $state, $stateParams, $ionicHistory, $timeout, CommonPopupCtrl) {
+﻿var LocalEventCtrl = ["$rootScope", "$scope", "$state", "$stateParams", "$ionicHistory", "$timeout", "CommonPopupCtrl", function ($rootScope, $scope, $state, $stateParams, $ionicHistory, $timeout, CommonPopupCtrl) {
     //if ($stateParams.id != null) {
 
     //    $(".localevent-cat").hide();
@@ -9,15 +9,15 @@
     //    $(".localevent").hide();
 
     //}
-   
+
     function initiate_geolocation() {
         navigator.geolocation.getCurrentPosition(handle_geolocation_query);
     }
 
     function handle_geolocation_query(position) {
-        $scope.lat=position.coords.latitude;
-        $scope.long=position.coords.longitude;
-        PostDataAjax("/api/LocalEvent/GetCategoryLocalEvents?lat=" + position.coords.latitude + "&lng="+position.coords.longitude, "", function (respone) {
+        $scope.lat = position.coords.latitude;
+        $scope.long = position.coords.longitude;
+        PostDataAjax("/api/LocalEvent/GetCategoryLocalEvents?lat=" + position.coords.latitude + "&lng=" + position.coords.longitude, "", function (respone) {
             $timeout(function () {
                 if (respone.message != "") {
                     CommonPopupCtrl.show(respone.message);
@@ -31,7 +31,7 @@
                 //    }
                 //}, 500);
             }, 500);
-        }, function (e) {  CommonPopupCtrl.show(e.responseText);},true, "GET");
+        }, function (e) { CommonPopupCtrl.show(e.responseText); }, true, "GET");
     }
     initiate_geolocation();
     $scope.ddlCat = ($stateParams.id == null ? "-1" : $stateParams.id);
@@ -67,12 +67,10 @@
         }, function (e) { CommonPopupCtrl.show(e.responseText); }, true, "GET");
     }
 
-    $scope.ChooseLocalEvent = function (catID)
-    {
+    $scope.ChooseLocalEvent = function (catID) {
         BindData(catID);
     }
-    function BindData(catID)
-    {
+    function BindData(catID) {
         $ionicHistory.nextViewOptions({
             disableBack: true
         });
@@ -99,8 +97,7 @@
             $("#pnDetail").hide();
         }
     }
-    $scope.Detail = function (itemid)
-    {
+    $scope.Detail = function (itemid) {
         $('#description').css('height', '45px');
         $('#description').css('overflow', 'hidden');
         $("#readMore").show();
@@ -123,6 +120,5 @@
 
 
 
-}
-LocalEventCtrl.$inject = ["$rootScope", "$scope", "$state", "$stateParams", "$ionicHistory", "$timeout", "CommonPopupCtrl"];
+}];
 

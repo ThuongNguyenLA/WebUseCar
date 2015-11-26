@@ -1,4 +1,4 @@
-﻿var ProfileCtrl = function ($rootScope, $scope, $timeout, CommonPopupCtrl) {
+﻿var ProfileCtrl = ["$rootScope", "$scope", "$timeout", "CommonPopupCtrl", function ($rootScope, $scope, $timeout, CommonPopupCtrl) {
     $scope.rider = null;
     //$("#token").val(localStorage.getItem("token"));
     $scope.ChangeAvatar = function () {
@@ -38,7 +38,7 @@
     function BindData() {
         PostDataAjax("/api/Profile/GetRider", "", function (respone) {
             $timeout(function () {
-                
+
                 if (respone.message != "") {
                     CommonPopupCtrl.show(respone.message);
                     return;
@@ -70,7 +70,7 @@
                      // callback(null);
                  }
              }, 10);
-         }, function () { },false,"GET"
+         }, function () { }, false, "GET"
        );
         PostDataAjax("/api/List/GetStates", "",
          function (respone) {
@@ -86,7 +86,7 @@
                      // callback(null);
                  }
              }, 10);
-         },function () { },false,"GET"
+         }, function () { }, false, "GET"
        );
 
 
@@ -138,5 +138,4 @@
 
 
 
-}
-ProfileCtrl.$inject = ["$rootScope", "$scope", "$timeout", "CommonPopupCtrl"];
+}];

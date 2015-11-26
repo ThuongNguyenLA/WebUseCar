@@ -1,4 +1,4 @@
-﻿var MyTripCtrl = function ($rootScope, $scope, $location, googleDirections, $timeout, CommonPopupCtrl) {
+﻿var MyTripCtrl = ["$rootScope", "$scope", "$location", "googleDirections", "$timeout", "CommonPopupCtrl", function ($rootScope, $scope, $location, googleDirections, $timeout, CommonPopupCtrl) {
     var myDate = new Date();
     var objTimezoneOffset = myDate.getTimezoneOffset();
     try {
@@ -84,11 +84,11 @@
     ////    $rootScope.map.getMyLocation(function (location) {
 
     ////        var msg = ["Current your location:\n",
-	////					"latitude:" + location.latLng.lat,
-	////					"longitude:" + location.latLng.lng,
-	////					"speed:" + location.speed,
-	////					"time:" + location.time,
-	////					"bearing:" + location.bearing].join("\n");
+    ////					"latitude:" + location.latLng.lat,
+    ////					"longitude:" + location.latLng.lng,
+    ////					"speed:" + location.speed,
+    ////					"time:" + location.time,
+    ////					"bearing:" + location.bearing].join("\n");
     ////        var MYLOCATION = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
     ////        $rootScope.map.moveCamera({
     ////            'target': MYLOCATION,
@@ -173,13 +173,13 @@
     ////                        'zoom': true
     ////                    }
     ////                });
-                    
+
     ////                $rootScope.map.addEventListener(plugin.google.maps.event.MAP_READY, onNativeMapReady);
     ////            }
     ////        }
     ////    }, 10);
     ////}
-    
+
     //$scope.OnBlur = function (result) {
     //    var lat = result.geometry.location.lat();
     //    var lng = result.geometry.location.lng();
@@ -192,7 +192,7 @@
     //    abc(lat, lng);
     //};
     //var abc = function (lat, lng) {
-        
+
     //    var myLatlng = new google.maps.LatLng(lat, lng); // Add the coordinates
     //    var mapOptions = {
     //        zoom: 15, // The initial zoom level when your map loads (0-20)
@@ -223,7 +223,7 @@
     //        map: map, // assign the marker to our map variable
     //        title: 'Click to visit our company on Google Places' // Marker ALT Text
     //    });
-            
+
     //    var marker1 = new google.maps.Marker({ // Set the marker
     //        position: new google.maps.LatLng(lat + 0.005, lng + 0.003), // Position marker to coordinates
     //        icon: image1, //use our image as the marker
@@ -264,9 +264,8 @@
     //        var lat = position.coords.latitude;
     //        abc(lat, lng);
     //    });
-        
+
     //}
     //initialise();
     //google.maps.event.addDomListener(window, 'load', initialise); // Execute our 'initialise' function once the page has loaded. 
-}
-MyTripCtrl.$inject = ["$rootScope", "$scope", "$location", "googleDirections", "$timeout", "CommonPopupCtrl"];
+}];

@@ -1,5 +1,5 @@
 ﻿var usecar = angular.module('app', ['ionic']);
-usecar.factory('CommonPopupCtrl', function ($ionicPopup, $timeout) {
+usecar.factory('CommonPopupCtrl', ['$ionicPopup', '$timeout', function ($ionicPopup, $timeout) {
     helper = {};
 
     helper.show = function (strPopupContent) {
@@ -19,8 +19,8 @@ usecar.factory('CommonPopupCtrl', function ($ionicPopup, $timeout) {
         });
     };
     return helper;
-});
-usecar.config(function ($stateProvider, $urlRouterProvider) {
+}]);
+usecar.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $stateProvider
         //$routeProvider.when('/signup', {
         //     templateUrl: '/Index/Signup'
@@ -84,8 +84,8 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
             });
        $urlRouterProvider.otherwise('app/homecreen');
 
-    })
-.controller('WelComeCtrl', function ($rootScope,$scope, $ionicSlideBoxDelegate, $location) {
+    }])
+.controller('WelComeCtrl', ['$rootScope','$scope', '$ionicSlideBoxDelegate', '$location', function ($rootScope,$scope, $ionicSlideBoxDelegate, $location) {
     
     $scope.images = [
                              "/img/1.jpg",
@@ -106,8 +106,8 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
         $location.path("/app/signup");
     }
 
-})
-.controller('LoginCtrl', function ($rootScope,$scope, $ionicHistory, CommonPopupCtrl) {
+}])
+.controller('LoginCtrl', ['$rootScope','$scope', '$ionicHistory', 'CommonPopupCtrl', function ($rootScope,$scope, $ionicHistory, CommonPopupCtrl) {
     
     $scope.login = function()
     {
@@ -132,15 +132,18 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
                     $ionicHistory.clearHistory();
                  
                     window.location.href = "/index#/app/home";
-            }).fail(function (e) { $("#loading").hide(); CommonPopupCtrl.show(JSON.parse(e.responseText).error); });
+            }).fail(function (e) {
+                $("#loading").hide();
+                //CommonPopupCtrl.show(JSON.parse(e.responseText).error);
+            });
         } catch (e) {
             //alert(e)
         }
       
     }
 
-})
-.controller('SignUpCtrl', function ($scope, $timeout, CommonPopupCtrl) {
+}])
+.controller('SignUpCtrl', ['$scope', '$timeout', 'CommonPopupCtrl', function ($scope, $timeout, CommonPopupCtrl) {
     PostDataAjax("/api/List/GetCountries?languageCode=en-US", "",
          function (respone) {
              $timeout(function () {
@@ -156,23 +159,23 @@ usecar.config(function ($stateProvider, $urlRouterProvider) {
                  }
              }, 10);
          }, function (e) { CommonPopupCtrl.show(e.responseText); },false,"GET"
-       );
+    );
     $scope.Save = function () {
-    dataSend ={
-        Email: $("#txtEmail").val(), Password: $("#txtPassword").val(), FirstName: $("#txtFirstName").val(), LastName: $("#txtLastName").val(), Country:$("#ddlCountry").val(), Phone: $("#txtPhone").val()
-    };
+        dataSend = {
+            Email: $("#txtEmail").val(), Password: $("#txtPassword").val(), FirstName: $("#txtFirstName").val(), LastName: $("#txtLastName").val(), Country: $("#ddlCountry").val(), Phone: $("#txtPhone").val()
+        };
         PostDataAjax("/api/SignUp/Submit", dataSend,
-             function (respone) {
-                 $timeout(function () {
-                     if (respone && respone.success) {
-                         CommonPopupCtrl.show(respone.message);
+                 function (respone) {
+                     $timeout(function () {
+                         if (respone && respone.success) {
+                             CommonPopupCtrl.show(respone.message);
 
-                     }
-                     else {
-                         CommonPopupCtrl.show(respone.message);
-                     }
-                 }, 10);
+                         }
+                         else {
+                             CommonPopupCtrl.show(respone.message);
+                         }
+                     }, 10);
 
-             });
-    }
-});
+                 });
+    };
+}]);

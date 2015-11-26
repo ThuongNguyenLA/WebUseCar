@@ -1,4 +1,4 @@
-﻿var LoginCtrl = function ($rootScope, $scope, $ionicHistory) {
+﻿var LoginCtrl = ["$rootScope", "$scope", "$ionicHistory", function ($rootScope, $scope, $ionicHistory) {
     $scope.login()
     {
         $ionicHistory.nextViewOptions({
@@ -10,5 +10,4 @@
         window.location.href = "/index#/app/home";
 
     }
-}
-LoginCtrl.$inject = ["$rootScope", "$scope", "$ionicHistory"];
+}];

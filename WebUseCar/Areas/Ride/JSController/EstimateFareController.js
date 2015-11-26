@@ -1,4 +1,4 @@
-﻿var EstimateFareCtrl = function ($rootScope, $scope, $location, $timeout, $ionicHistory, googleDirections, $stateParams, CommonPopupCtrl) {
+﻿var EstimateFareCtrl = ["$rootScope", "$scope", "$location", "$timeout", "$ionicHistory", "googleDirections", "$stateParams", "CommonPopupCtrl", function ($rootScope, $scope, $location, $timeout, $ionicHistory, googleDirections, $stateParams, CommonPopupCtrl) {
     $scope.EstimatePrice = 0;
     $scope.txtPickup = $rootScope.Pickup;
     $scope.txtDropoff = $rootScope.Dropoff;
@@ -46,7 +46,7 @@
                 geocoder.geocode({ 'latLng': CURRENT_LOCATION }, function (results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         if (results[1]) {
-                            $rootScope.Pickup=results[1].formatted_address;
+                            $rootScope.Pickup = results[1].formatted_address;
                         }
                     }
                 });
@@ -83,7 +83,7 @@
                                                  + "&pickupLng=" + longitude
                                                  + "&totalDistanceInMeters=" + ndistance
                                                  + "&totalSeconds=" + nduration;
-                                       // alert(data);
+                                        // alert(data);
                                         PostDataAjax("/api/Trip/GetEstimate" + data, "",
                                            function (respone) {
                                                $timeout(function () {
@@ -93,11 +93,11 @@
                                                    else {
                                                        $timeout(function () {
                                                            if (respone.driver.id) {
-                                                              $rootScope.driver = respone;
-                                                              $("#Price").html(respone.money.value);
-                                                              $("#DriverName").html(respone.driver.firstName + " " + respone.driver.lastName);
-                                                              $("#CarModel").html(respone.vehicle.carModelName);
-                                                              if (respone.driver.imagePath) {
+                                                               $rootScope.driver = respone;
+                                                               $("#Price").html(respone.money.value);
+                                                               $("#DriverName").html(respone.driver.firstName + " " + respone.driver.lastName);
+                                                               $("#CarModel").html(respone.vehicle.carModelName);
+                                                               if (respone.driver.imagePath) {
                                                                    $("#DriverAvatar").attr("src", respone.driver.imagePath);
                                                                }
 
@@ -166,5 +166,4 @@
     //    }
     //});
 
-}
-EstimateFareCtrl.$inject = ["$rootScope", "$scope", "$location", "$timeout", "$ionicHistory", "googleDirections", "$stateParams", "CommonPopupCtrl"];
+}];

@@ -1,10 +1,9 @@
-﻿var PaymentCtrl = function ($rootScope, $scope, $location) {
+﻿var PaymentCtrl = ["$rootScope", "$scope", "$location", function ($rootScope, $scope, $location) {
     $("#menuPayment a").css("color", "#48ccaa");
-    
 
 
 
 
 
-}
-PaymentCtrl.$inject = ["$rootScope", "$scope", "$location"];
+
+}];

@@ -11,766 +11,781 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/Airport/JSController/AirportController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 23:11:47</publishTime>
     </File>
     <File Include="Areas/Airport/Views/Airport/Index.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/Airport/Views/Web.config">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/LocalEvent/JSController/DetailController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 23:09:21</publishTime>
     </File>
     <File Include="Areas/LocalEvent/JSController/LocalEventController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 23:09:37</publishTime>
     </File>
     <File Include="Areas/LocalEvent/Views/LocalEvent/Index.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Areas/LocalEvent/Views/LocalEvent/LocalEventDetail.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Areas/LocalEvent/Views/Web.config">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/MyTrip/JSController/MyTripController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 23:08:55</publishTime>
     </File>
     <File Include="Areas/MyTrip/Views/MyTrip/Index.cshtml">
-      <publishTime>09/22/2015 00:16:50</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Areas/MyTrip/Views/Web.config">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/Payment/JSController/PaymentController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 23:08:22</publishTime>
     </File>
     <File Include="Areas/Payment/Views/Payment/Index.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/Payment/Views/Web.config">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/Profile/JSController/LoginController.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 23:07:42</publishTime>
     </File>
     <File Include="Areas/Profile/JSController/ProfileController.js">
-      <publishTime>09/29/2015 23:28:01</publishTime>
+      <publishTime>11/25/2015 23:08:01</publishTime>
     </File>
     <File Include="Areas/Profile/Views/Login/Login.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/Profile/Views/Profile/Profile.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Areas/Profile/Views/Web.config">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/EstimateFareController.js">
-      <publishTime>10/01/2015 00:02:17</publishTime>
+      <publishTime>11/25/2015 23:03:45</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/FreeRideController.js">
-      <publishTime>10/01/2015 00:23:14</publishTime>
+      <publishTime>11/25/2015 23:06:03</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/RideController.js">
-      <publishTime>10/01/2015 00:40:41</publishTime>
+      <publishTime>11/25/2015 23:06:38</publishTime>
     </File>
     <File Include="Areas/Ride/JSController/RideEstimatefareController.js">
-      <publishTime>10/01/2015 00:11:34</publishTime>
+      <publishTime>11/25/2015 23:07:03</publishTime>
     </File>
     <File Include="Areas/Ride/Views/FreeRide/Index.cshtml">
-      <publishTime>09/21/2015 19:57:33</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/EstimateFare.cshtml">
-      <publishTime>09/30/2015 23:42:03</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/Index.cshtml">
-      <publishTime>09/23/2015 00:10:30</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/Pickup.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 23:01:57</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/RideEstimateFare.cshtml">
-      <publishTime>10/01/2015 00:13:16</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Ride/RideFinalTrip.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Areas/Ride/Views/Web.config">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>11/24/2015 23:00:30</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>10/01/2015 08:59:51</publishTime>
+      <publishTime>11/26/2015 23:21:05</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>10/01/2015 08:59:51</publishTime>
+      <publishTime>11/26/2015 23:21:05</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>11/24/2015 23:00:30</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>11/24/2015 23:00:31</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>09/19/2015 23:16:23</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>11/24/2015 23:00:31</publishTime>
     </File>
     <File Include="bin/WebUseCar.dll">
-      <publishTime>10/01/2015 08:59:40</publishTime>
+      <publishTime>11/26/2015 00:16:53</publishTime>
     </File>
     <File Include="css/drawer.css">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="css/index.css">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="css/jquery-ui.css">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="css/style.css">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>08/04/2015 21:52:26</publishTime>
     </File>
     <File Include="img/1.jpg">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="img/2.jpg">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/3.jpg">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="img/avatar.jpg">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/avatar.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/bg_1.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/bg_2.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/car.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:54</publishTime>
     </File>
     <File Include="img/face.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/airport.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/baggage.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/bg_home_creen.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/24/2015 22:04:14</publishTime>
     </File>
     <File Include="img/icons/bg_or.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/book.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/car2.png">
-      <publishTime>09/21/2015 19:27:39</publishTime>
+      <publishTime>09/30/2015 21:03:43</publishTime>
     </File>
     <File Include="img/icons/icon-airport.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/icon-call-driver.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/icon-call.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/icon-car.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/icon-chat.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/icon-clock.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/icon-local-event.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/icon-local.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/icon-money.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/icon-mystrip.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/icon-place-profile.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/icon-plan.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/icon-plug.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/icon-rider.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/icon-visa.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/loading.gif">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/loading.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/local.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/local2.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/logo.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/logout.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="img/icons/logout2.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/icons/ride.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/ionic.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="img/pin.png">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="js/angular-google-maps.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="js/angular-route.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="js/angular.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="js/app.js">
-      <publishTime>09/22/2015 19:43:36</publishTime>
+      <publishTime>11/25/2015 23:24:59</publishTime>
     </File>
     <File Include="js/appWelcome.js">
-      <publishTime>09/23/2015 20:13:24</publishTime>
+      <publishTime>11/25/2015 23:56:56</publishTime>
     </File>
     <File Include="js/controllers.js">
-      <publishTime>10/01/2015 00:27:55</publishTime>
+      <publishTime>11/26/2015 00:13:21</publishTime>
     </File>
     <File Include="js/drawer.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/19/2015 22:48:08</publishTime>
     </File>
     <File Include="js/global.js">
-      <publishTime>09/21/2015 18:19:51</publishTime>
+      <publishTime>09/30/2015 21:03:43</publishTime>
     </File>
     <File Include="js/helper.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="js/jquery-2.1.1.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="js/jquery-2.1.1.min.js.map">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="js/jquery-ui.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="js/map/lodash.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="js/map/tommyGoogleMaps.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 23:25:42</publishTime>
     </File>
     <File Include="lib/ionic/css/ionic.css">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/css/ionic.min.css">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/fonts/ionicons.eot">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/fonts/ionicons.svg">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/fonts/ionicons.ttf">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/fonts/ionicons.woff">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/js/angular-ui/angular-ui-router.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/js/angular-ui/angular-ui-router.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/js/angular/angular-animate.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/angular/angular-animate.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/angular/angular-resource.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/angular/angular-resource.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/angular/angular-sanitize.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/angular/angular-sanitize.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/angular/angular.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/angular/angular.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/ionic-angular.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/ionic-angular.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:33</publishTime>
     </File>
     <File Include="lib/ionic/js/ionic.bundle.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:34</publishTime>
     </File>
     <File Include="lib/ionic/js/ionic.bundle.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:34</publishTime>
     </File>
     <File Include="lib/ionic/js/ionic.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:34</publishTime>
     </File>
     <File Include="lib/ionic/js/ionic.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:34</publishTime>
     </File>
     <File Include="lib/ionic/scss/ionic.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/ionicons/ionicons.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/ionicons/_ionicons-animation.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/ionicons/_ionicons-font.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/ionicons/_ionicons-icons.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/ionicons/_ionicons-variables.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_action-sheet.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_animations.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_backdrop.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_badge.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_bar.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_button-bar.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_button.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_checkbox.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_form.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_grid.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_items.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_list.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_loaders.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_loading.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_menu.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:34</publishTime>
     </File>
     <File Include="lib/ionic/scss/_mixins.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_modal.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_platform.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_popover.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_popup.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_progress.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_radio.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_range.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_refresher.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_reset.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_scaffolding.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_select.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:34</publishTime>
     </File>
     <File Include="lib/ionic/scss/_slide-box.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_spinner.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_split-pane.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_tabs.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:34</publishTime>
     </File>
     <File Include="lib/ionic/scss/_toggle.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_transitions.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_type.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_util.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/scss/_variables.scss">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:55</publishTime>
     </File>
     <File Include="lib/ionic/version.json">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>10/17/2015 18:11:34</publishTime>
     </File>
     <File Include="lib/ngCordova/.bower.json">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/bower.json">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/CHANGELOG.md">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/dist/ng-cordova-mocks.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/dist/ng-cordova-mocks.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/dist/ng-cordova.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/dist/ng-cordova.min.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/LICENSE">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/package.json">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="lib/ngCordova/README.md">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 19:43:59</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 01:13:22</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/01/2015 08:59:45</publishTime>
+      <publishTime>11/26/2015 23:21:03</publishTime>
+    </File>
+    <File Include="scripts/angular-ios9-uiwebview.patch.js">
+      <publishTime>10/19/2015 21:57:47</publishTime>
     </File>
     <File Include="scripts/index.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/26/2015 00:13:11</publishTime>
     </File>
     <File Include="scripts/ios/cordova.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:32</publishTime>
     </File>
     <File Include="scripts/ios/cordova_plugins.js">
-      <publishTime>10/01/2015 00:23:14</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/com.cordova.plugins.sms/www/sms.js">
-      <publishTime>10/01/2015 00:23:14</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/com.ionic.keyboard/www/keyboard.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/com.transistorsoft.cordova.background-geolocation/www/BackgroundGeolocation.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-camera/www/Camera.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-camera/www/CameraConstants.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-camera/www/CameraPopoverOptions.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-camera/www/ios/CameraPopoverHandle.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-console/www/console-via-logger.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-console/www/logger.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/Contact.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactAddress.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactError.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactField.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactFieldType.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactFindOptions.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactName.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ContactOrganization.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/contacts.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ios/Contact.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-contacts/www/ios/contacts.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-device/www/device.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-dialogs/www/notification.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/DirectoryEntry.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/DirectoryReader.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/Entry.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/File.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/FileEntry.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/FileError.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/FileReader.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/FileSystem.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/fileSystemPaths.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/fileSystems-roots.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/fileSystems.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/FileUploadOptions.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/FileUploadResult.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/FileWriter.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/Flags.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/ios/FileSystem.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/LocalFileSystem.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/Metadata.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/ProgressEvent.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/requestFileSystem.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:33</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-geolocation/www/Coordinates.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:34</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-geolocation/www/geolocation.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:34</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-geolocation/www/Position.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:34</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-geolocation/www/PositionError.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:34</publishTime>
     </File>
     <File Include="scripts/ios/plugins/cordova-plugin-splashscreen/www/splashscreen.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:34</publishTime>
+    </File>
+    <File Include="scripts/ios/plugins/de.appplant.cordova.plugin.background-mode/www/background-mode.js">
+      <publishTime>11/05/2015 00:34:34</publishTime>
     </File>
     <File Include="scripts/ios/plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/05/2015 00:34:34</publishTime>
     </File>
     <File Include="scripts/ios/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js">
-      <publishTime>10/01/2015 00:23:14</publishTime>
+      <publishTime>11/05/2015 00:34:34</publishTime>
     </File>
     <File Include="scripts/ios/plugins/plugin.http.request/www/http-request.js">
       <publishTime>09/19/2015 23:16:22</publishTime>
     </File>
     <File Include="scripts/platformOverrides.js">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="templates/browse.html">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="templates/login.html">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="templates/menu.html">
-      <publishTime>09/21/2015 19:02:10</publishTime>
+      <publishTime>10/19/2015 23:15:42</publishTime>
     </File>
     <File Include="templates/menuwelcome.html">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="templates/playlists.html">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="templates/refesh.html">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="templates/search.html">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/08/2015 22:03:57</publishTime>
     </File>
     <File Include="Views/Index/Home.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 20:21:12</publishTime>
     </File>
     <File Include="Views/Index/HomeCreen.cshtml">
-      <publishTime>09/23/2015 19:47:12</publishTime>
+      <publishTime>11/01/2015 11:17:51</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>10/01/2015 00:23:14</publishTime>
+      <publishTime>11/26/2015 23:19:47</publishTime>
     </File>
     <File Include="Views/Index/Login.cshtml">
-      <publishTime>09/23/2015 19:36:12</publishTime>
+      <publishTime>10/19/2015 22:51:33</publishTime>
     </File>
     <File Include="Views/Index/SignUp.cshtml">
-      <publishTime>09/23/2015 20:02:37</publishTime>
+      <publishTime>11/01/2015 11:17:52</publishTime>
     </File>
     <File Include="Views/Index/SignUpDriver.cshtml">
-      <publishTime>09/23/2015 20:03:46</publishTime>
+      <publishTime>10/19/2015 22:30:08</publishTime>
     </File>
     <File Include="Views/Index/SignUpType.cshtml">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>09/19/2015 18:51:09</publishTime>
     </File>
     <File Include="Views/Index/TemplateWelcome.cshtml">
-      <publishTime>10/01/2015 00:23:14</publishTime>
+      <publishTime>11/26/2015 00:15:42</publishTime>
     </File>
     <File Include="Views/Index/WelCome.cshtml">
       <publishTime>08/09/2015 22:00:58</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>09/19/2015 23:16:22</publishTime>
+      <publishTime>11/25/2015 00:22:23</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/20/2015 23:10:17</publishTime>
+      <publishTime>11/26/2015 00:16:53</publishTime>
     </File>
   </ItemGroup>
 </Project>
